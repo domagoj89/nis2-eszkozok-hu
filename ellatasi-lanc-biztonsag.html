@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4HVKETFR8"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-T4HVKETFR8');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NIS2 Ellátási Lánc Biztonsága: Szállítói Követelmények</title>
+  <meta name="description" content="NIS2 21(2)(d) cikk szerinti ellátási lánc biztonsági követelmények. Szállítói szerződések, értékelés és 30 napos implementáció.">
+  <link rel="canonical" href="https://nis2-eszkozok.hu/ellatasi-lanc-biztonsag.html">
+  <meta property="og:title" content="NIS2 Ellátási Lánc Biztonsága: Szállítói Követelmények">
+  <meta property="og:description" content="NIS2 21(2)(d) cikk szerinti ellátási lánc biztonsági követelmények. Szállítói szerződések, értékelés és 30 napos implementáció.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nis2-eszkozok.hu/ellatasi-lanc-biztonsag.html">
+  <meta property="og:locale" content="hu_HU">
+  <meta property="og:site_name" content="nis2-eszkozok.hu">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "NIS2 Ellátási Lánc Biztonsága: Szállítói Követelmények", "description": "NIS2 21(2)(d) cikk szerinti ellátási lánc biztonsági követelmények. Szállítói szerződések, értékelés és 30 napos implementáció.", "author": {"@type": "Organization", "name": "nis2-eszkozok.hu"}, "datePublished": "2026-06-18", "dateModified": "2026-06-18"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Mi a különbség a 'szállító' és az 'alvállalkozó' között NIS2 szempontjából?", "acceptedAnswer": {"@type": "Answer", "text": "A szállító az Ön szervezete felé közvetlenül szerződéses kötelezettséggel rendelkezik. Az alvállalkozó a szállító saját szállítója. A NIS2 szerint azonban mindkettőt azonos biztonsági követelmények alá kell vonni — az Ön szervezete közvetlen szerződésben köteles az alvállalkozókat is biztonsági feltételekhez kötni."}}, {"@type": "Question", "name": "Kell-e minden szállítónak ISO 27001 tanúsítványa?", "acceptedAnswer": {"@type": "Answer", "text": "Nem feltétlenül. Az ISO 27001 erős garancia, de a NIS2 nem teszi kötelezővé. Ehelyett a szállítónak dokumentálnia kell a biztonsági gyakorlatait — legyen az belső szabályozás, SOC 2, vagy más bevált keretrendszer. A kritikus szállítók (felhő, szoftver) esetén azonban nagyon ajánlott."}}, {"@type": "Question", "name": "Mennyi ideig kell tartanom a szállítói audit-dokumentációkat?", "acceptedAnswer": {"@type": "Answer", "text": "A NIS2 egyedi adattartást nem ír elő, de a magyar adatvédelmi és üzleti gyakorlat alapján javasolt legalább 3 év dokumentáció megőrzése. Az audit-jelentések, incidens-bejelentések és szerződések legalább erre az időszakra maradjanak meg."}}, {"@type": "Question", "name": "Mit tegyek, ha egy kritikus szállító nem aláírja a biztonsági mellékleteket?", "acceptedAnswer": {"@type": "Answer", "text": "Ez kemény helyzetbe hozza Önöket. A gyakorlatban: tárgyaljanak a szállítóval, mutassák meg a NIS2 követelményeket, és ajánljanak fel alternatívát (például harmadik féltől végzett auditok). Ha a szállító megtagadja, értékelni kell a kockázatot és dönteni a folytatásról vagy a szállító cseréről."}}, {"@type": "Question", "name": "Milyen szerepe van a SecurityScorecard-szerű platformoknak a NIS2 megfelelőségben?", "acceptedAnswer": {"@type": "Answer", "text": "Ezek nem kötelezőek, de nagyon hasznosak. Objektív, valós idejű adatot nyújtanak a szállítók kockázati profilját illetően. A NIS2 célja a kockázatok csökkentése — a SecurityScorecard és hasonló eszközök (<a href='https://www.bitsight.com'>BitSight</a>, <a href='https://www.upguard.com'>UpGuard</a>) segítenek abban, hogy azonosítsa a gyenge pontokat és cselekedjen gyorsan."}}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">NIS2<span>Eszközök</span>.hu</a>
+      <ul class="nav__links"><li><a href="porownanie.html">Eszközök összehasonlítása</a></li><li><a href="sektory-ksc.html">NIS2 szektorok</a></li><li><a href="kalkulator.html">NIS2 kalkulátor</a></li><li><a href="faq.html">GYIK</a></li></ul>
+      <a href="kalkulator.html" class="nav__cta">Szállítói Biztonsági Program</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="padding-top:1.5rem;">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a><span>›</span>
+    Ellátási lánc biztonsága
+  </div>
+</div>
+
+<div style="background:var(--gray-50);padding:2.5rem 0 3rem;border-bottom:1px solid var(--gray-200);">
+  <div class="container--narrow">
+    <span class="eyebrow">NIS2 Megfelelőség</span>
+    <h1 style="font-size:clamp(1.4rem,3.5vw,2.1rem);margin:.5rem 0 1rem;">NIS2 Ellátási Lánc Biztonsága: Szállítói Szerződések és Kockázatkezelés</h1>
+    <p style="font-size:1.05rem;color:var(--gray-500);">A NIS2 direktíva 21(2)(d) cikke kötelezi a cégeket arra, hogy minden közvetlen szállítójukkal szerződésben rögzítsék a biztonsági követelményeket. Ez a felelősség gyakran meglepetésként érinti a vállalatokat — a szoftverforgalmazóktól a felhőszolgáltatókon át a karbantartó cégekig.</p>
+    <a href="https://securityscorecard.com" class="btn btn--primary" style="margin-top:1.25rem;" target="_blank" rel="nofollow noopener">Letöltés: Szállítói Ellenőrzőlista →</a>
+  </div>
+</div>
+
+
+      <section style="padding:2rem 0;">
+        <div class="container--narrow">
+          <h2 style="font-size:1.3rem;margin-bottom:1rem;">Mi is az a NIS2 21(2)(d)? Szállítói Szerződések Követelménye</h2>
+          <div style="font-size:.95rem;color:var(--gray-700);line-height:1.75;"><p><strong>A NIS2 direktíva 21(2)(d) cikke teljes körűen szabályozza az ellátási lánc biztonságát.</strong> Értelmezése szerint minden szervezetnek – függetlenül az iparágtól – szerződésben meg kell követelnie a szállítóitól bizonyos biztonsági standardok betartását.</p><p>Ez nem egy ajánlás, hanem <strong>kötelező jogi követelmény</strong>. A szerződéseknek tartalmazniuk kell:</p><ul><li>Biztonsági standardok és keretrendszerek (ISO 27001, CIS Controls)</li><li>Incidens bejelentési kötelezettség (legfeljebb 30 nap)</li><li>Audit és ellenőrzési jogok</li><li>Adat- és rendszerkezelési előírások</li><li>Alkalmassá tétel (szubkontraktál) kezelése</li></ul><p>A magyarországi szervezetek számára a <a href='https://nki.gov.hu'>Nemzeti Kibervédelmi Intézet (NKI)</a> is útmutatást nyújt a megfelelőségről.</p></div>
+        </div>
+      </section>
+      <section style="padding:2rem 0;">
+        <div class="container--narrow">
+          <h2 style="font-size:1.3rem;margin-bottom:1rem;">Ki Számít 'Szállítónak' a NIS2 Szerint?</h2>
+          <div style="font-size:.95rem;color:var(--gray-700);line-height:1.75;"><p>Sok vállalatnak az az első meglepetése, hogy mennyire tág a szállító fogalma. <strong>Nem csak az IT-szállítók számítanak.</strong></p><p>Szállítók a NIS2 értelmezésében:</p><ul><li><strong>Szoftverforgalmazók</strong> – CRM, ERP, számlázási szoftver</li><li><strong>Felhőszolgáltatók</strong> – AWS, Azure, Google Cloud, valamint magyar privátfelhő-szolgáltatók</li><li><strong>IT-kiszervezés</strong> – helpdesk, szerver-üzemeltetés, biztonsági monitorozás</li><li><strong>Közüzemi szolgáltatások</strong> – internet-szolgáltatók, elektromosság (SCADA-rendszerek esetén)</li><li><strong>Fizikai biztonság</strong> – vagyonőrség, takarítócég szerverek helyén</li><li><strong>Telekomszolgáltatók</strong> – telefonközpont, VOIP-rendszer</li><li><strong>Biztonsági cégek</strong> – tűzfal-kezelés, pentesting</li></ul><p>A kulcskérdés: akinek bármilyen hozzáférése van az Ön kritikus rendszerihez vagy adataihoz, az szállító.</p></div>
+        </div>
+      </section>
+      <section style="padding:2rem 0;">
+        <div class="container--narrow">
+          <h2 style="font-size:1.3rem;margin-bottom:1rem;">Szállítói Szerződések: Mit Kell Tartalmazniuk?</h2>
+          <div style="font-size:.95rem;color:var(--gray-700);line-height:1.75;"><p>A NIS2 nem ír elő pontos szerződési szövegeket, de világos biztonsági követelmények vannak:</p><ul><li><strong>Biztonsági standardok:</strong> Kerüljenek rögzítésre konkrét nemzetközi standardok (ISO 27001, SOC 2, CIS Controls), valamint a szállító saját biztonsági politikája.</li><li><strong>Incidens-bejelentés:</strong> A szállító köteles 30 napon belül bejelenteni az Ön szervezetét érintő biztonsági incidenst.</li><li><strong>Audit és ellenőrzés:</strong> Az Ön szervezetének joga van biztonsági auditokat végezni vagy külső céggel végeztetni.</li><li><strong>Adat- és rendszerkezelés:</strong> A szállító az Ön adatait kizárólag szerződésben meghatározott céllal és időszakra kezelheti.</li><li><strong>Szubkontraktáció:</strong> Ha a szállító maga is más szállítókat alkalmaz, azokat ugyanilyen biztonsági követelmények alá kell vonni.</li></ul><p>A gyakorlatban: álljon fel egy szabványosított szállítói szerződés-melléklet, amelyet minden szállítónak aláírnia kell.</p></div>
+        </div>
+      </section>
+      <section style="padding:2rem 0;">
+        <div class="container--narrow">
+          <h2 style="font-size:1.3rem;margin-bottom:1rem;">Szállítók Értékelése: Kérdőívek vs. Biztonsági Értékelési Platformok</h2>
+          <div style="font-size:.95rem;color:var(--gray-700);line-height:1.75;"><p><strong>Két fő megközelítés létezik:</strong></p><p><strong>1. Kérdőív-alapú értékelés</strong> – Saját vagy ipari kérdőíveket (pl. CAIQ – Consensus Assessments Initiative Questionnaire) küld a szállítónak, aki kitölt és visszaküld. Előnye: olcsó, rugalmas. Hátránya: az válaszok gyakran megbízhatatlanok, és nem valós idejű monitoring.</p><p><strong>2. Biztonsági értékelési platformok</strong> – Olyan rendszerek, mint a <a href='https://securityscorecard.com'>SecurityScorecard</a>, <a href='https://www.bitsight.com'>BitSight</a> vagy <a href='https://www.upguard.com'>UpGuard</a> folyamatosan figyelik a szállítók kockázati profilját nyílt forráson, DNS-rekordokon, kimutatott sebezhetőségeken és más jelekneken alapulva.</p><p>Ajánlás: <strong>kombináljuk a kettőt.</strong> Kezdjen kérdőívvel (költség-hatékony), majd integrálja a SecurityScorecard-szerű platformokat a kritikus szállítók folyamatos monitorozásához. Az <a href='https://reglyze.com'>Reglyze</a> típusú ISMS-eszközök beépített szállítói kezelési modullal rendelkeznek.</p></div>
+        </div>
+      </section>
+      <section style="padding:2rem 0;">
+        <div class="container--narrow">
+          <h2 style="font-size:1.3rem;margin-bottom:1rem;">Szállítói Biztonsági Program: 30 Napos Implementáció</h2>
+          <div style="font-size:.95rem;color:var(--gray-700);line-height:1.75;"><p><strong>1–5. nap: Szállító-felderítés</strong> – Készítsen listát minden közvetlen szállítóról (szoftver, felhő, kiszervezés, fizikai biztonság). Tüntesse fel az adatkezelést és a rendszerhozzáférés fokát.</p><p><strong>6–10. nap: Szerződés-audit</strong> – Ellenőrizze, hogy a jelenlegi szerződésekben vannak-e biztonsági és incidens-bejelentési záradékok. Ahol nincsenek, készítsen standardosított melléklet-szöveget.</p><p><strong>11–20. nap: Szállítói értékelés</strong> – Összeállíthat egy kérdőívet (vagy használjon CAIQ-ot), és küldje meg a szállítóknak. Párhuzamosan regisztráljon egy értékelési platformot (SecurityScorecard ingyenes próba) a kritikus szállítók számára.</p><p><strong>21–30. nap: Szerződések frissítése és monitoring beállítása</strong> – Az első körös értékelések alapján frissítse az összes szállítói szerződést. Állítson be negyedéves felülvizsgálatot és incidens-bejelentési folyamatot.</p></div>
+        </div>
+      </section>
+      <section style="padding:2rem 0;">
+        <div class="container--narrow">
+          <h2 style="font-size:1.3rem;margin-bottom:1rem;">Szállítói Biztonsági Platformok: SecurityScorecard Gyakorlata</h2>
+          <div style="font-size:.95rem;color:var(--gray-700);line-height:1.75;"><p>A SecurityScorecard olyan egy valós idejű szállítói kockázati szcéna. <strong>Automatikusan figyeli a szállító biztonsági helyzetét</strong> anélkül, hogy kitöltött kérdőívekre kellene várni.</p><p><strong>Hogyan működik:</strong></p><ul><li>Nyílt forráson végez kereséseket (publikált adatszivárgások, DNS-biztonsági problémák)</li><li>Sebezhetőség-adatbázisokhoz kapcsolódik (CVE-k, Shodan)</li><li>TLS-tanúsítványok és e-mail biztonsági protokollok ellenőrzése</li><li>0–100 közötti pontszámot ad az egyes szállítóknak</li><li>Valós idejű riasztásokat küld, ha a pontszám romlani kezd</li></ul><p>Magyarország számára releváns: a <a href='https://www.bitsight.com'>BitSight</a> és <a href='https://www.upguard.com'>UpGuard</a> hasonló funkciót nyújtanak. Az <a href='https://reglyze.com'>Reglyze</a> ISMS-szoftver pedig integrálható e platformokkal a teljes szállítói ökoszisztéma kezeléséhez.</p></div>
+        </div>
+      </section>
+
+      <section style="background:var(--gray-50);padding:2rem 0;">
+        <div class="container--narrow">
+          <h2 style="font-size:1.2rem;margin-bottom:1rem;">10 Kérdés, Amit Minden Szállítónak Fel Kell Tenni</h2>
+          <ul style="list-style:none;padding:0;margin:0;background:#fff;border-radius:8px;padding:1rem;"><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Van-e érvényes ISO 27001 vagy SOC 2 tanúsítványod, és ha igen, mikor jár le?</li><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Hogyan jelentsz bejelent biztonsági incidenst, és mekkora az átlagos válaszidő?</li><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Engedélyezed-e a biztonsági auditokat és penetrációs teszteket az Ön rendszerén?</li><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Milyen szubkontraktorokat használsz, és hogyan ellenőrzöd azok biztonságát?</li><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Hol tárolod az Ön adatait (szerver-helyek, régió), és mi az adattörlési politika?</li><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Van-e biztonsági incidens az elmúlt 2 évben? Ha igen, ezt hogyan kezelted?</li><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Milyen titkosítást és hozzáférés-ellenőrzést alkalmazol az Ön adatain?</li><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Kik férhetnek hozzá az Ön adataihoz (munkatársak, szubkontraktorok, kormány)?</li><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Van-e üzletmenet-folytonossági és katasztrófa-helyreállítási terv?</li><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Hogyan értesítesz, ha a szállítás-támogató vagy egy szállító biztonsága veszélybe kerül?</li></ul>
+        </div>
+      </section>
+
+<section style="padding:2.5rem 0;background:#fff;">
+  <div class="container--narrow">
+    <h2 style="font-size:1.2rem;margin-bottom:1.25rem;">GYIK: NIS2 Szállítói Biztonsági Követelmények</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">Mi a különbség a 'szállító' és az 'alvállalkozó' között NIS2 szempontjából?</button>
+          <div class="faq-answer"><p>A szállító az Ön szervezete felé közvetlenül szerződéses kötelezettséggel rendelkezik. Az alvállalkozó a szállító saját szállítója. A NIS2 szerint azonban mindkettőt azonos biztonsági követelmények alá kell vonni — az Ön szervezete közvetlen szerződésben köteles az alvállalkozókat is biztonsági feltételekhez kötni.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Kell-e minden szállítónak ISO 27001 tanúsítványa?</button>
+          <div class="faq-answer"><p>Nem feltétlenül. Az ISO 27001 erős garancia, de a NIS2 nem teszi kötelezővé. Ehelyett a szállítónak dokumentálnia kell a biztonsági gyakorlatait — legyen az belső szabályozás, SOC 2, vagy más bevált keretrendszer. A kritikus szállítók (felhő, szoftver) esetén azonban nagyon ajánlott.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Mennyi ideig kell tartanom a szállítói audit-dokumentációkat?</button>
+          <div class="faq-answer"><p>A NIS2 egyedi adattartást nem ír elő, de a magyar adatvédelmi és üzleti gyakorlat alapján javasolt legalább 3 év dokumentáció megőrzése. Az audit-jelentések, incidens-bejelentések és szerződések legalább erre az időszakra maradjanak meg.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Mit tegyek, ha egy kritikus szállító nem aláírja a biztonsági mellékleteket?</button>
+          <div class="faq-answer"><p>Ez kemény helyzetbe hozza Önöket. A gyakorlatban: tárgyaljanak a szállítóval, mutassák meg a NIS2 követelményeket, és ajánljanak fel alternatívát (például harmadik féltől végzett auditok). Ha a szállító megtagadja, értékelni kell a kockázatot és dönteni a folytatásról vagy a szállító cseréről.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Milyen szerepe van a SecurityScorecard-szerű platformoknak a NIS2 megfelelőségben?</button>
+          <div class="faq-answer"><p>Ezek nem kötelezőek, de nagyon hasznosak. Objektív, valós idejű adatot nyújtanak a szállítók kockázati profilját illetően. A NIS2 célja a kockázatok csökkentése — a SecurityScorecard és hasonló eszközök (<a href='https://www.bitsight.com'>BitSight</a>, <a href='https://www.upguard.com'>UpGuard</a>) segítenek abban, hogy azonosítsa a gyenge pontokat és cselekedjen gyorsan.</p></div>
+        </div></div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Indítsa El Szállítói Biztonsági Programját Ma</h2>
+    <p>A NIS2 szállítói követelményei szigorúak, de végrehajthatóak. Töltse le az ingyenes szállítói ellenőrzőlistát, és kezdje meg a szállító-felderítést még ma. Napi 30 perc alatt beindíthatja a programot.</p>
+    <a href="kalkulator.html" class="btn btn--primary btn--lg">Letöltés: Szállítói Biztonsági Ellenőrzőlista</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__logo">NIS2<span>Eszközök</span>.hu</div>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="porownanie.html">Eszközök összehasonlítása</a>
+        <a href="kalkulator.html">Quiz</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+    <p class="footer__disclaimer">
+      Ujawnienie afiliacyjne: niektóre linki na tej stronie mogą być linkami afiliacyjnymi.
+      Treść ma charakter informacyjny i nie stanowi porady prawnej.
+    </p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!open) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
