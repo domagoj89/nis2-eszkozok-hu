@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4HVKETFR8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T4HVKETFR8');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NIS2 HR szoftver és bérlista szolgáltatók Magyarország 2026</title>
+  <meta name="description" content="HR és bérlista szoftver szolgáltatók NIS2 megfelelőségi útmutatója. Adatvédelem, incidens-bejelentés, bérlőizoláció és audit naplózás kötelezettségei.">
+  <link rel="canonical" href="https://nis2-eszkozok.hu/sektory/hr-payroll.html">
+  <meta property="og:title" content="NIS2 HR szoftver és bérlista szolgáltatók Magyarország 2026">
+  <meta property="og:description" content="HR és bérlista szoftver szolgáltatók NIS2 megfelelőségi útmutatója. Adatvédelem, incidens-bejelentés, bérlőizoláció és audit naplózás kötelezettségei.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nis2-eszkozok.hu/sektory/hr-payroll.html">
+  <meta property="og:locale" content="hu_HU">
+  <meta property="og:site_name" content="NIS2-Eszkozok.hu">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NIS2 HR szoftver és bérlista szolgáltatók Magyarország 2026">
+  <meta name="twitter:description" content="HR és bérlista szoftver szolgáltatók NIS2 megfelelőségi útmutatója. Adatvédelem, incidens-bejelentés, bérlőizoláció és audit naplózás kötelezettségei.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Főoldal",
+      "item": "https://nis2-eszkozok.hu/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ágazatok",
+      "item": "https://nis2-eszkozok.hu/sektory/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "NIS2 HR szoftver- és bérlista szolgáltatók számára Magyarország — 2026. évi megfelelőségi útmutató",
+      "item": "https://nis2-eszkozok.hu/sektory/hr-payroll.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Mi a különbség az NIS2 és a GDPR kötelezettségei között egy HR szoftver-szállító számára?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A GDPR az alkalmazotti személyes adatok kezelésének jogszerűségét és a felhasználók jogait védi, míg az NIS2 a biztonsági intézkedéseket és az incidens-bejelentési folyamatot szabályozza. Az Ön cégnél mindkettő egyaránt érvényes: GDPR-nak való megfelelőség az adatkezelésről, NIS2-nak való megfelelőség a biztonsági intézkedésekről és az incidensi kezeléséről szól. Az incidens-bejelentésben az SZTFH-nak kell értesíteni az adatsértésről (NIS2), az érintetteket pedig a GDPR szerint kell tájékoztatni."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hogyan valósíthatom meg a hardver-alapú MFA-t az adminisztratív felhasználók számára költséghatékonyan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Javasolt az FIDO2-kompatibilis biztonsági kulcsok beszerzése (pl. YubiKey), amelyeket az összes adminisztratív fiók számára kötelezővé kell tenni. Ezek költsége felhasználónként 40-60 euró körül mozog. A hardver-alapú MFA ellentétben a szoftver-alapú megoldásokkal nem lehet phishing útján ellopni, ezért az SZTFH ezt az elvárt biztonsági szint a payroll-rendszerekhez. Az implementálást fázisban elvégezheti: először az legmagasabb szintű hozzáféréssel rendelkező felhasználóknál, majd fokozatosan kiterjesztheti az összes adminisztratív felhasználóra."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Milyen büntetésekre számítok, ha nem teljesítem az NIS2 kötelezettségeket 2026-ig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Az SZTFH akár 20 millió euró vagy az éves globális bevétel 4%-áig terjedő bírsággal sújthatja az Annex II szerinti fontos entitásokat. A gyakorlatban az első szintű jogsértésekért (dokumentáció hiánya, audit naplók) kevesebb bírság kerülhet kiszabásra, de az incidensi bejelentések mulasztása vagy súlyos adatszivárgások esetén maximális büntetésre lehet számítani. Egy bérlista-biztonsági incidens, amely több ügyfél adatait érintette és nem jelentette be az SZTFH-nak, közvetlenül maximális bírsághoz vezethet, mivel az alkalmazotti adatok különösen szenzitívek."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">NIS2<span>Eszközök</span>.hu</a>
+      <ul class="nav__links">
+        <li><a href="../porownanie.html">Eszközök összehasonlítása</a></li>
+        <li><a href="../kalkulator.html">NIS2 kalkulátor</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+      </ul>
+      <a href="../kalkulator.html" class="nav__cta">Ellenőrizze, vonatkozik-e →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="padding-top:1.5rem;">
+  <div class="breadcrumb">
+    <a href="../index.html">Főoldal</a><span>›</span>
+    <a href="index.html">Ágazatok</a><span>›</span>
+    NIS2 HR szoftver- és bérlista szolgáltatók számára Magyarország — 2026. évi megfelelőségi útmutató
+  </div>
+</div>
+
+<!-- HERO -->
+<div style="background:var(--gray-50);padding:2.5rem 0 3rem;border-bottom:1px solid var(--gray-200);">
+  <div class="container--narrow">
+    <span style="display:inline-block;background:#16a34a;color:#fff;font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.3rem .85rem;border-radius:4px;margin-bottom:1rem;">II. Melléklet — Fontos entitás</span>
+    <h1 style="font-size:clamp(1.4rem,3.5vw,2.1rem);color:var(--navy);margin:.25rem 0 1rem;line-height:1.25;">NIS2 HR szoftver- és bérlista szolgáltatók számára Magyarország — 2026. évi megfelelőségi útmutató</h1>
+    <p style="font-size:1.05rem;color:var(--gray-500);line-height:1.65;margin:0;">Ez az útmutató az alkalmazotti és bérlistadatokat több szervezet számára kezelő szoftverszállítók és szolgáltatók számára készült. Megtudhatja, hogyan teljesítheti az SZTFH által előírt kiberbiztonsági követelményeket és az adatvédelem mellett a digitális szolgáltatott bírságokat elkerülheti.</p>
+  </div>
+</div>
+
+<!-- WHO QUALIFIES -->
+<div class="container--narrow" style="padding:2.5rem 1.25rem 0;">
+  <div style="background:var(--gray-50);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;">
+    <p style="font-size:.95rem;color:var(--navy-dark);line-height:1.65;margin:0;">HR szoftverszállítók és bérlista-szolgáltatók, amelyek legalább 50 munkavállalóval rendelkező szervezetek számára kezelik az alkalmazotti személyes és fizetési adatokat, valamint több ügyfél adatait egyidejűleg tárolják vagy feldolgozzák. Az Annex II szerinti fontos entitás besorolása alá tartoznak azok a digitális szolgáltatók, amelyek kritikus infrastruktúrához vagy jelentős számú uniós felhasználóhoz kapcsolódnak, függetlenül a mérettől.</p>
+  </div>
+</div>
+
+<!-- OBLIGATIONS -->
+<div class="container--narrow" style="padding:2.5rem 1.25rem 0;">
+  <h2 style="font-size:1.3rem;color:var(--navy);margin:0 0 1.25rem;">NIS2 fő kötelezettségek ebben az ágazatban</h2>
+  <div style="border-top:1px solid var(--gray-100);">
+    
+    <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
+      <div style="flex-shrink:0;width:24px;height:24px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <strong style="color:var(--navy);font-size:.95rem;">Alkalmazotti és bérlistaadat biztonsága GDPR + NIS2 kettős kötelezettség alapján</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Implementálni kell titkosítást az adatátvitele során és az adatbázisban, többtényezős hitelesítést (MFA) az adminisztratív felhasználók számára, valamint szállítói biztonsági auditorokat kell végezni legalább évente. Az alkalmazotti személyes adatok (név, szja-szám, bankadatok) kettős jogi védelmet élveznek: a GDPR adatvédelmi és a NIS2 kiberbiztonsági előírásokat egyaránt teljesíteni kell.</p>
+      </div>
+    </div>
+    <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
+      <div style="flex-shrink:0;width:24px;height:24px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <strong style="color:var(--navy);font-size:.95rem;">Incidens-bejelentési kötelezettség digitális szolgáltatóként több ügyfél adata megsértése esetén</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Ha az Ön platformján egy biztonsági incidens több ügyfél bérlistaadatait érinti, 24 órán belül be kell jelentenie az SZTFH-nak, majd az érintett ügyfeleket is haladéktalanul értesítenie kell. A bejelentésben fel kell tüntetni a megsértett adatok körét, az érintett alkalmazottak számát és a szerv által javasolt reparatív intézkedéseket.</p>
+      </div>
+    </div>
+    <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
+      <div style="flex-shrink:0;width:24px;height:24px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <strong style="color:var(--navy);font-size:.95rem;">Bérlő-izoláció és ügyfél-adatmegkülönböztetés több-bérlős SaaS rendszerekben</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Szóban forgó többügyfelős platformok adatait logikai és fizikai szinteken egyértelműen el kell szigetelni, hogy egyik ügyfél se férhessen hozzá másik adataihoz. Azonos kiszolgálón vagy adatbázison több ügyfél adatát tároljuk, akkor kötelezően alkalmazni kell ügyfél-specifikus titkosítási kulcsokat és hozzáférés-ellenőrzéseket (RBAC). Az adatbázis szintjén row-level security vagy particionálási eljárások szükségesek.</p>
+      </div>
+    </div>
+    <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
+      <div style="flex-shrink:0;width:24px;height:24px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <strong style="color:var(--navy);font-size:.95rem;">Adminisztratív hozzáférés-ellenőrzés és audit naplózás payroll rendszerekhez</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Minden adminisztratív felhasználónak kötelezően hardver-alapú többtényezős hitelesítés (pl. FIDO2 biztonsági kulcs) szükséges, nem pedig szoftver-alapú MFA. Az összes bérlista- és alkalmazotti adat-módosítást részletes audit naplóban kell rögzíteni, beleértve a felhasználót, az időpontot, a művelet típusát és a megváltozott adatokat. A naplók legalább 18 hónapig megőrzendők és rendszeres felülvizsgálatot kell végezni az anomáliák felderítésére.</p>
+      </div>
+    </div>
+    <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
+      <div style="flex-shrink:0;width:24px;height:24px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <strong style="color:var(--navy);font-size:.95rem;">Szállítói biztonsági ellenőrzések és kontraktus-befejezési adattörlési eljárások</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Az Ön szolgáltatáslánca minden alszállítójára (felhőszolgáltatók, harmadik fél analitikai eszközök) szállítói biztonsági értékeléseket kell végezni. Az ügyfélszerzződésekbe be kell építeni az adatok teljes törlésének garanciáját a kontraktus végén: az összes ügyfél-adat (beleértve a szaporított másolatokat és biztonsági mentéseket) 30 napon belül véglegesen törölni kell, amit írásban kell igazolni.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TYPICAL GAPS -->
+<div class="container--narrow" style="padding:2.5rem 1.25rem 0;">
+  <h2 style="font-size:1.3rem;color:var(--navy);margin:0 0 1rem;">Tipikus megfelelési hiányosságok ebben az ágazatban</h2>
+  <ul style="list-style:none;padding:0;margin:0;border-top:1px solid var(--gray-100);">
+    
+    <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Nem biztosított megfelelő bérlő-izoláció: több ügyfél adatai azonos adatbázisban vagy szerveren találhatók azonos titkosítási kulcsok vagy hozzáférés-ellenőrzések nélkül, ami kockázatos adat-szivárgáshoz vezethet.
+    </li>
+    <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Az adminisztratív felhasználók nem rendelkeznek hardver-alapú MFA-val: szoftver-alapú kódgenerátorok vagy SMS-alapú megoldások helyett, amely nem felel meg az SZTFH elvárásainak.
+    </li>
+    <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Hiányzó vagy elégtelen audit naplózás: az alkalmazotti és bérlistaadat-módosítások nincsenek részletesen nyomon követve, így az adatvédelmi incidensiók vagy jogosulatlan hozzáférés észlelhetetlen.
+    </li>
+    <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Nem formalizált adattörlési eljárások kontraktus-befejezés során: ügyfeleik adatait nem törölik véglegesen a szerződés végén, így az Ön felelőssége marad az adatok őrzésére.
+    </li>
+  </ul>
+</div>
+
+<!-- TOOLS -->
+<div class="container--narrow" style="padding:2.5rem 1.25rem 0;">
+  <h2 style="font-size:1.3rem;color:var(--navy);margin:0 0 1rem;">Ajánlott eszközök erre az ágazatra</h2>
+  <div style="display:grid;gap:1rem;">
+    
+    <div style="background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
+        <strong style="color:var(--navy);font-size:1rem;">Sprinto</strong>
+        <span style="font-size:.78rem;color:var(--gray-400);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:.2rem .6rem;">sprinto.com</span>
+      </div>
+      <p style="font-size:.88rem;color:var(--gray-600);line-height:1.55;margin:0;"></p>
+      <a href="../eszkozok/sprinto.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Ellenőrizze az eszközt →</a>
+    </div>
+    <div style="background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
+        <strong style="color:var(--navy);font-size:1rem;">Secfix</strong>
+        <span style="font-size:.78rem;color:var(--gray-400);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:.2rem .6rem;">secfix.com</span>
+      </div>
+      <p style="font-size:.88rem;color:var(--gray-600);line-height:1.55;margin:0;"></p>
+      <a href="../eszkozok/secfix.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Ellenőrizze az eszközt →</a>
+    </div>
+    <div style="background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
+        <strong style="color:var(--navy);font-size:1rem;">Drata</strong>
+        <span style="font-size:.78rem;color:var(--gray-400);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:.2rem .6rem;">drata.com</span>
+      </div>
+      <p style="font-size:.88rem;color:var(--gray-600);line-height:1.55;margin:0;"></p>
+      <a href="../eszkozok/drata.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Ellenőrizze az eszközt →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="container--narrow" style="padding:2.5rem 1.25rem;" itemscope itemtype="https://schema.org/FAQPage">
+  <h2 style="font-size:1.3rem;color:var(--navy);margin:0 0 1rem;">Gyakran ismételt kérdések</h2>
+  <div style="border-top:1px solid var(--gray-100);">
+    
+  <div style="padding:1.25rem 0;border-bottom:1px solid var(--gray-100);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Mi a különbség az NIS2 és a GDPR kötelezettségei között egy HR szoftver-szállító számára?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">A GDPR az alkalmazotti személyes adatok kezelésének jogszerűségét és a felhasználók jogait védi, míg az NIS2 a biztonsági intézkedéseket és az incidens-bejelentési folyamatot szabályozza. Az Ön cégnél mindkettő egyaránt érvényes: GDPR-nak való megfelelőség az adatkezelésről, NIS2-nak való megfelelőség a biztonsági intézkedésekről és az incidensi kezeléséről szól. Az incidens-bejelentésben az SZTFH-nak kell értesíteni az adatsértésről (NIS2), az érintetteket pedig a GDPR szerint kell tájékoztatni.</p>
+    </div>
+  </div>
+  <div style="padding:1.25rem 0;border-bottom:1px solid var(--gray-100);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Hogyan valósíthatom meg a hardver-alapú MFA-t az adminisztratív felhasználók számára költséghatékonyan?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">Javasolt az FIDO2-kompatibilis biztonsági kulcsok beszerzése (pl. YubiKey), amelyeket az összes adminisztratív fiók számára kötelezővé kell tenni. Ezek költsége felhasználónként 40-60 euró körül mozog. A hardver-alapú MFA ellentétben a szoftver-alapú megoldásokkal nem lehet phishing útján ellopni, ezért az SZTFH ezt az elvárt biztonsági szint a payroll-rendszerekhez. Az implementálást fázisban elvégezheti: először az legmagasabb szintű hozzáféréssel rendelkező felhasználóknál, majd fokozatosan kiterjesztheti az összes adminisztratív felhasználóra.</p>
+    </div>
+  </div>
+  <div style="padding:1.25rem 0;border-bottom:1px solid var(--gray-100);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Milyen büntetésekre számítok, ha nem teljesítem az NIS2 kötelezettségeket 2026-ig?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">Az SZTFH akár 20 millió euró vagy az éves globális bevétel 4%-áig terjedő bírsággal sújthatja az Annex II szerinti fontos entitásokat. A gyakorlatban az első szintű jogsértésekért (dokumentáció hiánya, audit naplók) kevesebb bírság kerülhet kiszabásra, de az incidensi bejelentések mulasztása vagy súlyos adatszivárgások esetén maximális büntetésre lehet számítani. Egy bérlista-biztonsági incidens, amely több ügyfél adatait érintette és nem jelentette be az SZTFH-nak, közvetlenül maximális bírsághoz vezethet, mivel az alkalmazotti adatok különösen szenzitívek.</p>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div style="background:var(--navy);padding:3rem 1.25rem;text-align:center;margin-top:2rem;">
+  <div class="container--narrow">
+    <h2 style="color:#fff;font-size:1.4rem;margin:0 0 .75rem;">Ellenőrizze szervezete követelményeit</h2>
+    <p style="color:rgba(255,255,255,.75);margin:0 0 1.5rem;font-size:.95rem;">
+      SZTFH/NIS2 · Magyarország · 2026
+    </p>
+    <a href="../kalkulator.html" style="display:inline-block;background:#16a34a;color:#fff;padding:.85rem 2.25rem;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;">
+      Kalkulátor indítása →
+    </a>
+  </div>
+</div>
+
+<footer style="background:var(--gray-50);border-top:1px solid var(--gray-200);padding:2rem 1.25rem;text-align:center;">
+  <div class="container">
+    <p style="color:var(--gray-400);font-size:.82rem;margin:0;">
+      © 2026 NIS2-Eszkozok.hu · SZTFH/NIS2 · SZTFH
+      <br>Informacje mają charakter edukacyjny i nie stanowią porady prawnej.
+      <br><a href="../index.html" style="color:var(--gray-400);">Főoldal</a> ·
+      <a href="index.html" style="color:var(--gray-400);">Ágazatok</a> ·
+      <a href="../porownanie.html" style="color:var(--gray-400);">Eszközök összehasonlítása</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

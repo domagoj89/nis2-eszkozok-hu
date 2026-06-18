@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4HVKETFR8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T4HVKETFR8');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NIS2 telehealthplatfok kiberbiztonsági követelményei Magyarország 2026</title>
+  <meta name="description" content="Telehealth szolgáltatók NIS2 és GDPR megfelelősége: páciensadatok védelme, incidensbejelentés, ellátási folyamatok biztonsága.">
+  <link rel="canonical" href="https://nis2-eszkozok.hu/sektory/telemedicine.html">
+  <meta property="og:title" content="NIS2 telehealthplatfok kiberbiztonsági követelményei Magyarország 2026">
+  <meta property="og:description" content="Telehealth szolgáltatók NIS2 és GDPR megfelelősége: páciensadatok védelme, incidensbejelentés, ellátási folyamatok biztonsága.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nis2-eszkozok.hu/sektory/telemedicine.html">
+  <meta property="og:locale" content="hu_HU">
+  <meta property="og:site_name" content="NIS2-Eszkozok.hu">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NIS2 telehealthplatfok kiberbiztonsági követelményei Magyarország 2026">
+  <meta name="twitter:description" content="Telehealth szolgáltatók NIS2 és GDPR megfelelősége: páciensadatok védelme, incidensbejelentés, ellátási folyamatok biztonsága.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Főoldal",
+      "item": "https://nis2-eszkozok.hu/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ágazatok",
+      "item": "https://nis2-eszkozok.hu/sektory/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "NIS2 a teleegészségügyi platformok számára Magyarországon — 2026-os követelmények",
+      "item": "https://nis2-eszkozok.hu/sektory/telemedicine.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Mikor kell egy telehealth platform végponttól végpontig terjedő titkosítást implementálni videokonsultációknál?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A végponttól végpontig terjedő titkosítás azonnal szükséges, mivel az SZTFH ezt alapkövetelménynek tekinti az egészségügyi adatok szállítása során a NIS2 32. cikke értelmében. Az implementáció a technikai lehetőségek függvényében maximum 2024 végéig, de érdemes már 2026 előtt befejezni, hogy elegendő teszt- és tanúsítási idő maradjon."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Milyen típusú alfeld dolgozókkal kell adatfeldolgozási megállapodást kötni?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Az összes olyan szervezettel, amely a páciensadatokhoz hozzáférhet vagy feldolgozza azokat, például: cloud infrastruktúra szolgáltatók, videokonferencia platformok (Teams, Zoom stb.), EHR-integráció szállítók, támogatási és karbantartási cégek, valamint biztonsági auditálást végzők. Az SZTFH elvárja, hogy ezek írásban dokumentálva legyenek és az adatfeldolgozási kötelezettségek világosan rögzítve legyenek."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Milyen büntetéseket kockáztat a telehealth platform, ha nem jelent be incidenseket az SZTFH-nak?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Kiberbiztonsági törvény (NIS2) szerinti incidensbejelentés elmulasztása az SZTFH által közvetlen szankciót von maga után. Az irányelvek szerint olyan szervezetek, amelyek nem teljesítik az öt munkanapnál hosszabb határidőt az incidensbejelentésre, legalább 10.000 EUR (vagy magyar forint egyenértékese) közigazgatási bírsággal sújthatók, valamint a GDPR szerinti 72 órás bejelentési kötelezettség megsértése miatt további szankciók is alkalmazhatók."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">NIS2<span>Eszközök</span>.hu</a>
+      <ul class="nav__links">
+        <li><a href="../porownanie.html">Eszközök összehasonlítása</a></li>
+        <li><a href="../kalkulator.html">NIS2 kalkulátor</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+      </ul>
+      <a href="../kalkulator.html" class="nav__cta">Ellenőrizze, vonatkozik-e →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="padding-top:1.5rem;">
+  <div class="breadcrumb">
+    <a href="../index.html">Főoldal</a><span>›</span>
+    <a href="index.html">Ágazatok</a><span>›</span>
+    NIS2 a teleegészségügyi platformok számára Magyarországon — 2026-os követelmények
+  </div>
+</div>
+
+<!-- HERO -->
+<div style="background:var(--gray-50);padding:2.5rem 0 3rem;border-bottom:1px solid var(--gray-200);">
+  <div class="container--narrow">
+    <span style="display:inline-block;background:#16a34a;color:#fff;font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.3rem .85rem;border-radius:4px;margin-bottom:1rem;">II. Melléklet — Fontos entitás</span>
+    <h1 style="font-size:clamp(1.4rem,3.5vw,2.1rem);color:var(--navy);margin:.25rem 0 1rem;line-height:1.25;">NIS2 a teleegészségügyi platformok számára Magyarországon — 2026-os követelmények</h1>
+    <p style="font-size:1.05rem;color:var(--gray-500);line-height:1.65;margin:0;">Ez az oldal a magyarországi telehealth platformokat, távorvoslási szolgáltatásokat és digitális egészségügyi alkalmazásokat üzemeltető szervezeteknek szól. Megtudhatja, hogyan teljesíthetik a NIS2/Kiberbiztonsági tv. által előírt kiberbiztonsági és adatvédelmi kötelezettségeket.</p>
+  </div>
+</div>
+
+<!-- WHO QUALIFIES -->
+<div class="container--narrow" style="padding:2.5rem 1.25rem 0;">
+  <div style="background:var(--gray-50);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;">
+    <p style="font-size:.95rem;color:var(--navy-dark);line-height:1.65;margin:0;">Az alábbi szervezetek a NIS2-ből fontos entitásnak minősülnek: legalább 500 páciensre kiterjedő aktív telehealth platformok, országos vagy regionális szintű távorvoslási hálózatok, valamint olyan digitális egészségügyi alkalmazások, amelyek közvetlenül integrálódnak kórházi és háziorvosi rendszerekbe. Különösen a videokonsultáció, távomonitorozás és e-receptúra funkciókat nyújtó szolgáltatások tartoznak ide.</p>
+  </div>
+</div>
+
+<!-- OBLIGATIONS -->
+<div class="container--narrow" style="padding:2.5rem 1.25rem 0;">
+  <h2 style="font-size:1.3rem;color:var(--navy);margin:0 0 1.25rem;">NIS2 fő kötelezettségek ebben az ágazatban</h2>
+  <div style="border-top:1px solid var(--gray-100);">
+    
+    <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
+      <div style="flex-shrink:0;width:24px;height:24px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <strong style="color:var(--navy);font-size:.95rem;">Páciensadatok biztonságos továbbítása videó- és üzenetküldő platformokon</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">A telehealth platformoknak garantálniuk kell a végponttól végpontig terjedő titkosítást az összes videokonsultáció és orvos-beteg üzenetváltás során. Az SZTFH elvárja, hogy a páciensazonosítók, egészségügyi feljegyzések és telemedicina során továbbított diagnosztikai adatok a szállítás és tárolás során is magas szintű titkosítással (TLS 1.2 vagy újabb) legyenek védve. Az alkalmazásoknak dokumentálniuk kell az alkalmazott kriptográfiai módszereket és azok alkalmasságát az egészségügyi adatokra vonatkozó magyar és uniós szabályok szerint.</p>
+      </div>
+    </div>
+    <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
+      <div style="flex-shrink:0;width:24px;height:24px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <strong style="color:var(--navy);font-size:.95rem;">GDPR és NIS2 összehangolása az egészségügyi adatok feldolgozásában</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">A telehealth operátoroknak összhangban kell biztosítaniuk a GDPR 32. cikk szerinti technikai és szervezeti intézkedéseket és az NIS2 szerinti biztonsági követelményeket. Ez magában foglal adatkezelési megállapodásokat (DPA) az összes alfeld dolgozóval, beleértve a cloud infrastruktúra szolgáltatókat, videokonferencia-platform operátorokat és EHR-integráció partnereket. A pácienseknek nyomon követhető hozzájárulással kell rendelkezniük, és explicit tájékoztatást kell kapniuk az adatfeldolgozás láncolatáról.</p>
+      </div>
+    </div>
+    <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
+      <div style="flex-shrink:0;width:24px;height:24px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <strong style="color:var(--navy);font-size:.95rem;">Szállítási lánc biztonsága a kórházi EHR rendszerek integrálásához</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Az olyan telehealth platformok, amelyek közvetlenül csatlakoznak a kórházi vagy háziorvosi elektronikus betegnyilvántartásokhoz (EHR), kötelessége végig ellenőrizni és dokumentálni az adatok integrálásának biztonsági szintjét. Ez magában foglalja az API-hozzáférések hitelesítésének meghatározását, az adatmozgás között lévő integritásvédelmet és az API-interfészek rendszeres biztonsági auditálását. Szükséges az interfészek felhasználói jogosultságainak folyamatos felülvizsgálata és az adathozzáférési jogok szigorú korlátozása kórházi partnereknél.</p>
+      </div>
+    </div>
+    <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
+      <div style="flex-shrink:0;width:24px;height:24px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <strong style="color:var(--navy);font-size:.95rem;">Incidensbejelentési követelmények a platform meghibásodása esetén</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">A telehealth platformok öt munkanapon belül kötelessek bejelenteni az SZTFH-nak azokat az incidenseket, amelyek a páciensellátás folyamatosságát akadályozzák (például platform-leállások, adatszivárgás, telemedicina-szolgáltatások megszakadása). Az incidensbejelentéshez tartoznia kell a hatás időtartamának, az érintett páciensek számának, valamint a szervezet által megtett helyreállítási intézkedéseknek. A jelentéseknek meg kell jelölniük az adatok bizalmasságára, integritására és hozzáférhetőségére gyakorolt hatást.</p>
+      </div>
+    </div>
+    <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
+      <div style="flex-shrink:0;width:24px;height:24px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <strong style="color:var(--navy);font-size:.95rem;">Penetrációs tesztelés és biztonsági értékelés a klinikai folyamatok szintjén</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">A telehealth szervezeteknek évente legalább egy, külső biztonsági cég által végzett penetrációs tesztet kell végeztetniük a platform infrastruktúrájára, API-interfészeire és felhasználói autentikációs moduljaira. Az értékelésnek ki kell terjednie a páciensadatok lekérésére, manipulálására és a telemedicina-szeziók megszakítására irányuló támadások szimulálására. Az eredményeket dokumentálni kell, és a kiértékelt kockázatokat a 12 hónapon belüli korrekciós terv szerint kell elhárítani.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TYPICAL GAPS -->
+<div class="container--narrow" style="padding:2.5rem 1.25rem 0;">
+  <h2 style="font-size:1.3rem;color:var(--navy);margin:0 0 1rem;">Tipikus megfelelési hiányosságok ebben az ágazatban</h2>
+  <ul style="list-style:none;padding:0;margin:0;border-top:1px solid var(--gray-100);">
+    
+    <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>A videokonsultáció platformok sok esetben nem valósítanak meg végponttól végpontig terjedő titkosítást; a platform csak szállítási szinten (TLS) titkosítja az adatokat, de a szerver közvetlenül tárolt nyílt szövegben, ami páciensadatok expozícióját veszélyezteti.
+    </li>
+    <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>A digitális egészségügyi alkalmazások nem fedik le a formális penetrációs tesztelést — a szervezetek csak általános biztonsági ellenőrzéseket végeznek, holott az egészségügyi adatok kezelésének orvosi szimuláción alapuló sérülékenység-értékelése szükséges.
+    </li>
+    <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>A szervezetek nem rendelkeznek teljes körű adatfeldolgozási megállapodásokkal az összes alfeld dolgozóval — különösen a cloud-alapú videokonferencia-szolgáltatások és az EHR-integráció partnerei hiányosan dokumentáltak.
+    </li>
+    <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>A platform-leállások nem kerülnek dokumentált incidensként kezelve, és az SZTFH-nak nem jelentik a páciensellátási hatást, amely a NIS2 2.5. cikk szerinti bejelentési kötelezettség megsértésének tekinthető.
+    </li>
+  </ul>
+</div>
+
+<!-- TOOLS -->
+<div class="container--narrow" style="padding:2.5rem 1.25rem 0;">
+  <h2 style="font-size:1.3rem;color:var(--navy);margin:0 0 1rem;">Ajánlott eszközök erre az ágazatra</h2>
+  <div style="display:grid;gap:1rem;">
+    
+    <div style="background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
+        <strong style="color:var(--navy);font-size:1rem;">Sprinto</strong>
+        <span style="font-size:.78rem;color:var(--gray-400);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:.2rem .6rem;">sprinto.com</span>
+      </div>
+      <p style="font-size:.88rem;color:var(--gray-600);line-height:1.55;margin:0;"></p>
+      <a href="../eszkozok/sprinto.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Ellenőrizze az eszközt →</a>
+    </div>
+    <div style="background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
+        <strong style="color:var(--navy);font-size:1rem;">Secfix</strong>
+        <span style="font-size:.78rem;color:var(--gray-400);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:.2rem .6rem;">secfix.com</span>
+      </div>
+      <p style="font-size:.88rem;color:var(--gray-600);line-height:1.55;margin:0;"></p>
+      <a href="../eszkozok/secfix.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Ellenőrizze az eszközt →</a>
+    </div>
+    <div style="background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
+        <strong style="color:var(--navy);font-size:1rem;">Drata</strong>
+        <span style="font-size:.78rem;color:var(--gray-400);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:.2rem .6rem;">drata.com</span>
+      </div>
+      <p style="font-size:.88rem;color:var(--gray-600);line-height:1.55;margin:0;"></p>
+      <a href="../eszkozok/drata.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Ellenőrizze az eszközt →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="container--narrow" style="padding:2.5rem 1.25rem;" itemscope itemtype="https://schema.org/FAQPage">
+  <h2 style="font-size:1.3rem;color:var(--navy);margin:0 0 1rem;">Gyakran ismételt kérdések</h2>
+  <div style="border-top:1px solid var(--gray-100);">
+    
+  <div style="padding:1.25rem 0;border-bottom:1px solid var(--gray-100);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Mikor kell egy telehealth platform végponttól végpontig terjedő titkosítást implementálni videokonsultációknál?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">A végponttól végpontig terjedő titkosítás azonnal szükséges, mivel az SZTFH ezt alapkövetelménynek tekinti az egészségügyi adatok szállítása során a NIS2 32. cikke értelmében. Az implementáció a technikai lehetőségek függvényében maximum 2024 végéig, de érdemes már 2026 előtt befejezni, hogy elegendő teszt- és tanúsítási idő maradjon.</p>
+    </div>
+  </div>
+  <div style="padding:1.25rem 0;border-bottom:1px solid var(--gray-100);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Milyen típusú alfeld dolgozókkal kell adatfeldolgozási megállapodást kötni?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">Az összes olyan szervezettel, amely a páciensadatokhoz hozzáférhet vagy feldolgozza azokat, például: cloud infrastruktúra szolgáltatók, videokonferencia platformok (Teams, Zoom stb.), EHR-integráció szállítók, támogatási és karbantartási cégek, valamint biztonsági auditálást végzők. Az SZTFH elvárja, hogy ezek írásban dokumentálva legyenek és az adatfeldolgozási kötelezettségek világosan rögzítve legyenek.</p>
+    </div>
+  </div>
+  <div style="padding:1.25rem 0;border-bottom:1px solid var(--gray-100);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Milyen büntetéseket kockáztat a telehealth platform, ha nem jelent be incidenseket az SZTFH-nak?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">A Kiberbiztonsági törvény (NIS2) szerinti incidensbejelentés elmulasztása az SZTFH által közvetlen szankciót von maga után. Az irányelvek szerint olyan szervezetek, amelyek nem teljesítik az öt munkanapnál hosszabb határidőt az incidensbejelentésre, legalább 10.000 EUR (vagy magyar forint egyenértékese) közigazgatási bírsággal sújthatók, valamint a GDPR szerinti 72 órás bejelentési kötelezettség megsértése miatt további szankciók is alkalmazhatók.</p>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div style="background:var(--navy);padding:3rem 1.25rem;text-align:center;margin-top:2rem;">
+  <div class="container--narrow">
+    <h2 style="color:#fff;font-size:1.4rem;margin:0 0 .75rem;">Ellenőrizze szervezete követelményeit</h2>
+    <p style="color:rgba(255,255,255,.75);margin:0 0 1.5rem;font-size:.95rem;">
+      SZTFH/NIS2 · Magyarország · 2026
+    </p>
+    <a href="../kalkulator.html" style="display:inline-block;background:#16a34a;color:#fff;padding:.85rem 2.25rem;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;">
+      Kalkulátor indítása →
+    </a>
+  </div>
+</div>
+
+<footer style="background:var(--gray-50);border-top:1px solid var(--gray-200);padding:2rem 1.25rem;text-align:center;">
+  <div class="container">
+    <p style="color:var(--gray-400);font-size:.82rem;margin:0;">
+      © 2026 NIS2-Eszkozok.hu · SZTFH/NIS2 · SZTFH
+      <br>Informacje mają charakter edukacyjny i nie stanowią porady prawnej.
+      <br><a href="../index.html" style="color:var(--gray-400);">Főoldal</a> ·
+      <a href="index.html" style="color:var(--gray-400);">Ágazatok</a> ·
+      <a href="../porownanie.html" style="color:var(--gray-400);">Eszközök összehasonlítása</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
