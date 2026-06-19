@@ -16,7 +16,7 @@
     onepassword:  { name: "1Password",    url: "https://1password.com",       review: "narzedzia/1password.html" },
     nordlayer:    { name: "NordLayer",    url: "https://nordlayer.com",       review: "narzedzia/nordlayer.html" },
     cobalt:       { name: "Cobalt.io",    url: "https://cobalt.io",           review: "behatolasi-tesztek.html" },
-    bsi:          { name: "BSI ISO 27001",url: "https://bsigroup.com/pl-PL/", review: "iso-27001-tanusitas.html" },
+    bsi:          { name: "BSI ISO 27001",url: "https://bsigroup.com/hu-HU/", review: "iso-27001-tanusitas.html" },
   };
 
   // ── Tool recommendation by sector + budget ─────────────────────────────────
