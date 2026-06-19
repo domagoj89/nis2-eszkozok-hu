@@ -1,691 +1,625 @@
-/* KSC/NIS2 Eligibility Quiz — quiz.js */
+/* KSC/NIS2 Compliance Quiz v2 — quiz.js */
 
 (function () {
   "use strict";
 
-  // ── Config ─────────────────────────────────────────────────────────────────
-  const FORM_ENDPOINT = "/subscribe";
+  const REPORT_ENDPOINT    = "/generate-report";
+  const SUBSCRIBE_ENDPOINT = "/subscribe";
 
-  // ── Tools registry ─────────────────────────────────────────────────────────
-  const TOOLS = {
-    reglyze: {
-      name: "Reglyze",
-      tagline: "Najlepsze dla MŚP bez CISO — start za €0",
-      price: "€0–490/rok",
-      badge: "Nasz faworyt #1",
-      badgeFeatured: true,
-      reviewUrl: "narzedzia/reglyze.html",
-      vendorUrl: "https://reglyze.com"
-    },
-    secfix: {
-      name: "Secfix",
-      tagline: "ISO 27001 + NIS2 w jednej platformie",
-      price: "Wycena indywidualna",
-      badge: "Certyfikacja ISO",
-      badgeFeatured: false,
-      reviewUrl: "narzedzia/secfix.html",
-      vendorUrl: "https://secfix.com"
-    },
-    isms_online: {
-      name: "ISMS.online",
-      tagline: "Pełny ISMS w przeglądarce, platforma EU-native",
-      price: "€499/rok",
-      badge: "Mid-market",
-      badgeFeatured: false,
-      reviewUrl: "narzedzia/isms-online.html",
-      vendorUrl: "https://isms.online"
-    },
-    sprinto: {
-      name: "Sprinto",
-      tagline: "Najszybsze wdrożenie compliance na rynku",
-      price: "Wycena indywidualna",
-      badge: "Szybkie wdrożenie",
-      badgeFeatured: false,
-      reviewUrl: "narzedzia/sprinto.html",
-      vendorUrl: "https://sprinto.com"
-    },
-    vanta: {
-      name: "Vanta",
-      tagline: "Lider enterprise GRC — 8 000+ klientów",
-      price: "$10 000+/rok",
-      badge: "Enterprise",
-      badgeFeatured: false,
-      reviewUrl: "narzedzia/vanta.html",
-      vendorUrl: "https://vanta.com"
-    },
-    complycloud: {
-      name: "ComplyCloud",
-      tagline: "GDPR + NIS2 z siedzibą w UE",
-      price: "Wycena indywidualna",
-      badge: "Privacy-first",
-      badgeFeatured: false,
-      reviewUrl: "narzedzia/complycloud.html",
-      vendorUrl: "https://complycloud.eu"
-    },
-    drata: {
-      name: "Drata",
-      tagline: "Automatyzacja GRC klasy enterprise",
-      price: "$15 000+/rok",
-      badge: "Enterprise Automation",
-      badgeFeatured: false,
-      reviewUrl: "narzedzia/drata.html",
-      vendorUrl: "https://drata.com"
-    }
+  // ── Affiliate + tool links ──────────────────────────────────────────────────
+  const LINKS = {
+    reglyze:      { name: "Reglyze",      url: "https://reglyze.com",         review: "narzedzia/reglyze.html" },
+    secfix:       { name: "Secfix",       url: "https://secfix.com",          review: "narzedzia/secfix.html" },
+    isms_online:  { name: "ISMS.online",  url: "https://isms.online",         review: "narzedzia/isms-online.html" },
+    knowbe4:      { name: "KnowBe4",      url: "https://knowbe4.com",         review: "nis2-kepzes.html" },
+    hiscox:       { name: "Hiscox Cyber", url: "https://hiscox.com",          review: "cyber-biztositas.html" },
+    onepassword:  { name: "1Password",    url: "https://1password.com",       review: "narzedzia/1password.html" },
+    nordlayer:    { name: "NordLayer",    url: "https://nordlayer.com",       review: "narzedzia/nordlayer.html" },
+    cobalt:       { name: "Cobalt.io",    url: "https://cobalt.io",           review: "behatolasi-tesztek.html" },
+    bsi:          { name: "BSI ISO 27001",url: "https://bsigroup.com/pl-PL/", review: "iso-27001-tanusitas.html" },
   };
 
-  // ── Tool recommendation map ────────────────────────────────────────────────
-  // key: "<resultType>:<budget>" → [primary, secondary]
-  const TOOL_RECS = {
-    "kluczowy:free":   ["reglyze",    "isms_online"],
-    "kluczowy:low":    ["isms_online", "reglyze"],
-    "kluczowy:mid":    ["secfix",     "isms_online"],
-    "kluczowy:high":   ["secfix",     "vanta"],
-    "wazny:free":      ["reglyze",    "complycloud"],
-    "wazny:low":       ["reglyze",    "isms_online"],
-    "wazny:mid":       ["isms_online","reglyze"],
-    "wazny:high":      ["secfix",     "isms_online"],
-    "depends:free":    ["reglyze",    "complycloud"],
-    "depends:low":     ["reglyze",    "complycloud"],
-    "depends:mid":     ["reglyze",    "isms_online"],
-    "depends:high":    ["secfix",     "reglyze"],
-    "no:free":         ["reglyze",    "complycloud"],
-    "no:low":          ["reglyze",    "complycloud"],
-    "no:mid":          ["complycloud","reglyze"],
-    "no:high":         ["complycloud","secfix"]
+  // ── Tool recommendation by sector + budget ─────────────────────────────────
+  const ISMS_RECS = {
+    "annex1:free":  "reglyze",   "annex1:low":   "isms_online",
+    "annex1:mid":   "secfix",    "annex1:high":  "secfix",
+    "annex2:free":  "reglyze",   "annex2:low":   "reglyze",
+    "annex2:mid":   "isms_online","annex2:high":  "secfix",
+    "other:free":   "reglyze",   "other:low":    "reglyze",
+    "other:mid":    "reglyze",   "other:high":   "isms_online",
   };
 
   // ── State ──────────────────────────────────────────────────────────────────
   const state = {
     step: 0,
     answers: {},
-    emailSubmitted: false
+    score: 0,
+    missing: [],
+    email: null,
   };
 
   // ── Questions ──────────────────────────────────────────────────────────────
   const questions = [
     {
       id: "sector",
-      title: "W jakim sektorze działa Twoja firma?",
-      hint: "Wybierz sektor, który najlepiej opisuje główną działalność Twojej firmy.",
+      title: "Melyik szektorban működik a vállalkozása?",
+      hint: "Válassza ki azt a szektort, amely legjobban leírja a fő tevékenységet.",
       options: [
-        {
-          value: "annex1",
-          icon: "⚡",
-          label: "Sektor kluczowy (Załącznik I)",
-          sub: "Energia, transport, bankowość, finanse, ochrona zdrowia, woda, infrastruktura cyfrowa, administracja publiczna, sektor kosmiczny"
-        },
-        {
-          value: "annex2",
-          icon: "📦",
-          label: "Sektor ważny (Załącznik II)",
-          sub: "Usługi pocztowe, gospodarka odpadami, produkcja chemikaliów, produkcja żywności, produkcja przemysłowa, dostawcy usług cyfrowych, badania naukowe"
-        },
-        {
-          value: "other",
-          icon: "🏗️",
-          label: "Inny sektor",
-          sub: "Budownictwo, handel detaliczny, gastronomia, edukacja (prywatna), inne"
-        }
+        { value: "annex1", icon: "⚡", label: "Kulcsfontosságú szektor (Annexe I)",
+          sub: "Energia, közlekedés, bankszektor, pénzügy, egészségügy, víz, digitális infrastruktúra, közigazgatás" },
+        { value: "annex2", icon: "📦", label: "Fontos szektor (Annexe II)",
+          sub: "Posta, hulladékgazdálkodás, vegyipar, élelmiszer, ipari gyártás, digitálisszolgáltatók, kkv/IT" },
+        { value: "other", icon: "🏗️", label: "Egyéb szektor",
+          sub: "Építőipar, kiskereskedelem, vendéglátás, magánoktatás, egyéb" },
       ]
     },
     {
       id: "size",
-      title: "Ile osób zatrudnia Twoja firma?",
-      hint: "Łącznie z osobami pracującymi na umowy cywilnoprawne jeśli są traktowane jak pracownicy.",
+      title: "Hány főt foglalkoztat a vállalkozása?",
+      hint: "Az összes munkavállalót és közreműködőt beleszámítva.",
       options: [
-        {
-          value: "micro",
-          icon: "👤",
-          label: "Mniej niż 50 pracowników",
-          sub: "Mikroprzedsiębiorstwo lub mała firma"
-        },
-        {
-          value: "medium",
-          icon: "👥",
-          label: "50–249 pracowników",
-          sub: "Średnie przedsiębiorstwo"
-        },
-        {
-          value: "large",
-          icon: "🏢",
-          label: "250 lub więcej pracowników",
-          sub: "Duże przedsiębiorstwo"
-        }
+        { value: "micro",  icon: "👤", label: "50 főnél kevesebb alkalmazott",  sub: "Mikro / kisvállalkozás" },
+        { value: "medium", icon: "👥", label: "50–249 alkalmazott",              sub: "Középvállalkozás" },
+        { value: "large",  icon: "🏢", label: "250 vagy több alkalmazott",       sub: "Nagyvállalkozás" },
       ]
     },
     {
       id: "revenue",
-      title: "Jaki jest roczny obrót Twojej firmy?",
-      hint: "Chodzi o roczne przychody. Suma bilansowa traktowana jest podobnie.",
+      title: "Mekkora a vállalkozása éves árbevétele?",
+      hint: "Éves bevétel vagy mérlegfőösszeg.",
       options: [
-        {
-          value: "small",
-          icon: "💶",
-          label: "Poniżej 10 mln EUR rocznie",
-          sub: "Mikroprzedsiębiorstwo lub mała firma"
-        },
-        {
-          value: "medium",
-          icon: "💰",
-          label: "10–50 mln EUR rocznie",
-          sub: "Lub suma bilansowa 10–43 mln EUR"
-        },
-        {
-          value: "large",
-          icon: "💎",
-          label: "Powyżej 50 mln EUR rocznie",
-          sub: "Lub suma bilansowa powyżej 43 mln EUR"
-        }
+        { value: "small",  icon: "💶", label: "10 millió EUR alatt évente",  sub: "Mikro / kisvállalkozás" },
+        { value: "medium", icon: "💰", label: "10–50 millió EUR évente",     sub: "Középvállalkozás" },
+        { value: "large",  icon: "💎", label: "50 millió EUR felett évente", sub: "Nagyvállalkozás" },
       ]
     },
     {
       id: "budget",
-      title: "Jaki budżet roczny ma Twoja firma na zgodność z NIS2/KSC?",
-      hint: "Dopasujemy narzędzie do możliwości finansowych Twojej firmy.",
+      title: "Mekkora éves kerettel rendelkezik a NIS2 megfelelésre?",
+      hint: "Az eszközöket az Ön pénzügyi lehetőségeihez igazítjuk.",
       options: [
-        {
-          value: "free",
-          icon: "🆓",
-          label: "Szukamy darmowego rozwiązania",
-          sub: "Wolny plan lub tylko jednorazowy koszt wdrożenia"
-        },
-        {
-          value: "low",
-          icon: "💵",
-          label: "Do 1 000 PLN rocznie (~€200)",
-          sub: "Podstawowe narzędzie SaaS dla MŚP"
-        },
-        {
-          value: "mid",
-          icon: "💳",
-          label: "1 000–6 000 PLN rocznie (~€200–1 400)",
-          sub: "Pełna platforma compliance klasy mid-market"
-        },
-        {
-          value: "high",
-          icon: "🏦",
-          label: "Powyżej 6 000 PLN rocznie (€1 400+)",
-          sub: "Rozwiązanie enterprise z pełnym wsparciem"
-        }
+        { value: "free", icon: "🆓", label: "Ingyenes megoldást keresek",        sub: "Ingyenes csomag vagy egyszeri bevezetési költség" },
+        { value: "low",  icon: "💵", label: "Évi 60 000 HUF-ig (~200 EUR)",      sub: "Alapszintű SaaS eszköz" },
+        { value: "mid",  icon: "💳", label: "Évi 60 000–360 000 HUF",            sub: "Teljes körű megfelelési platform" },
+        { value: "high", icon: "🏦", label: "Évi 360 000 HUF felett",            sub: "Vállalati szintű megoldás" },
       ]
-    }
+    },
+    {
+      id: "registered",
+      title: "Regisztrálva van-e már a vállalkozása a kiberbiztonsági törvény nyilvántartásában?",
+      hint: "Regisztrációs határidő: a magyar NIS2 átültetés szerint. Ez az első kötelezettség.",
+      options: [
+        { value: "yes",  icon: "✅", label: "Igen, már regisztráltunk",            sub: "Az önbeazonosítás megtörtént" },
+        { value: "no",   icon: "❌", label: "Nem, még nem tettük meg",             sub: "1. prioritás — határidő: a magyar NIS2 átültetés szerint" },
+        { value: "unknown", icon: "❓", label: "Nem tudom / nem vagyok biztos",    sub: "Ezt együtt megvizsgáljuk" },
+      ]
+    },
+    {
+      id: "has_isms",
+      title: "Rendelkezik-e bevezetett információbiztonsági irányítási rendszerrel (ISMS)?",
+      hint: "Az ISMS kiberbiztonságipolitikák, eljárások és kontrollok összessége — az Art. 21 NIS2 szerint kötelező.",
+      options: [
+        { value: "yes",     icon: "✅", label: "Igen, működő ISMS-ünk van",             sub: "Dokumentált biztonsági politikák és eljárások" },
+        { value: "partial", icon: "🔄", label: "Dolgozunk a bevezetésen",               sub: "Folyamatban van — de még nem fejeztük be" },
+        { value: "no",      icon: "❌", label: "Nem, ezen a téren semmink sincs",       sub: "Nincs információbiztonsági irányítási rendszer" },
+      ]
+    },
+    {
+      id: "has_training",
+      title: "Részt vett-e a személyzet és a vezetőség kiberbiztonsági képzésen?",
+      hint: "A vezetőség képzése jogi kötelezettség az Art. 20 NIS2 alapján.",
+      options: [
+        { value: "yes", icon: "✅", label: "Igen, rendszeres képzéseink vannak",         sub: "A munkavállalók és a vezetőség képzett" },
+        { value: "no",  icon: "❌", label: "Nem, nincs ilyen jellegű képzésünk",         sub: "A vezetőség képzése jogi kötelezettség a kiberbiztonsági törvény alapján" },
+      ]
+    },
+    {
+      id: "has_insurance",
+      title: "Rendelkezik-e a vállalkozása kiberkockázati biztosítással?",
+      hint: "A kiberbiztosítás átvállallja a maradványkockázatot, és a NIS2 kockázatkezelés részét képezi.",
+      options: [
+        { value: "yes",     icon: "✅", label: "Igen, van kiberbiztosításunk",              sub: "A kockázat fedezett" },
+        { value: "no",      icon: "❌", label: "Nem, nincs biztosításunk",                  sub: "Az online árajánlat kérése 20 percet vesz igénybe" },
+        { value: "unknown", icon: "❓", label: "Nem tudom / nem hallottam erről",           sub: "Megmagyarázzuk, mi ez és mennyibe kerül" },
+      ]
+    },
+    {
+      id: "role",
+      title: "Milyen szerepet tölt be a vállalkozásnál?",
+      hint: "A tervet az Ön feladataihoz és döntési jogköréhez igazítjuk.",
+      options: [
+        { value: "ceo",        icon: "👔", label: "Tulajdonos / CEO / Vezető testület", sub: "Ön felel a döntésekért és a költségvetésért" },
+        { value: "it",         icon: "💻", label: "IT-vezető / CTO / CISO",             sub: "Ön felel a műszaki megvalósításért" },
+        { value: "compliance", icon: "📋", label: "Megfelelési vezető / Jogász",        sub: "Ön felel a jogi megfelelésért" },
+        { value: "cfo",        icon: "💰", label: "CFO / Pénzügyi igazgató",            sub: "Ön felel a költségvetésért és a pénzügyi kockázatért" },
+      ]
+    },
   ];
 
-  const TOTAL = questions.length; // 4
+  const TOTAL = questions.length;
+
+  // ── Score calculation ──────────────────────────────────────────────────────
+  function computeScore() {
+    const a = state.answers;
+    let score = 2; // base: everyone has some basics
+    const missing = [];
+
+    if (a.registered === "yes")        { score += 2; }
+    else                               { missing.push("registration"); }
+
+    if (a.has_isms === "yes")          { score += 3; }
+    else if (a.has_isms === "partial") { score += 1; missing.push("isms"); }
+    else                               { missing.push("isms"); }
+
+    if (a.has_training === "yes")      { score += 2; }
+    else                               { missing.push("training"); }
+
+    if (a.has_insurance === "yes")     { score += 1; }
+    else                               { missing.push("insurance"); }
+
+    score = Math.min(10, Math.max(1, score));
+    state.score   = score;
+    state.missing = missing;
+    return { score, missing };
+  }
+
+  function computeScope() {
+    const { sector, size, revenue } = state.answers;
+    if (sector === "other") return "out";
+    const isLarge  = size === "large"  || revenue === "large";
+    const isMedium = !isLarge && (size === "medium" || revenue === "medium");
+    if (sector === "annex1" && isLarge)           return "essential";
+    if (sector === "annex1" && isMedium)          return "important";
+    if (sector === "annex2" && (isLarge||isMedium)) return "important";
+    return "check"; // small companies in scope sectors
+  }
+
+  // ── Today actions (client-side, shown on result screen immediately) ────────
+  function buildTodayActions() {
+    const missing   = state.missing;
+    const sector    = state.answers.sector  || "annex2";
+    const budget    = state.answers.budget  || "low";
+    const ismsTool  = LINKS[ISMS_RECS[sector+":"+budget] || "reglyze"];
+    const actions   = [];
+
+    if (missing.includes("registration")) {
+      actions.push({
+        step: actions.length + 1,
+        time: "30 perc · ingyenes",
+        title: "Regisztrálja vállalkozását a kiberbiztonsági törvény nyilvántartásába",
+        desc:  "Határidő: a magyar NIS2 átültetés szerint. Online önbeazonosítási űrlap. Ez az 1. prioritása.",
+        cta:   "Lépésről lépésre útmutató →",
+        url:   "nis2-regisztracio.html",
+        affiliate: false,
+      });
+    }
+
+    if (missing.includes("isms")) {
+      actions.push({
+        step: actions.length + 1,
+        time: "20 perc · ingyenes csomag",
+        title: "Indítsa el az ISMS rendszert — " + ismsTool.name,
+        desc:  "Az ingyenes csomag teljes NIS2 hiányelemzést fed le. Regisztráció után: töltse ki a beépített kiberbiztonsági kérdőívet — az AI automatikusan generálja a szabályzatokat.",
+        cta:   "Kezdje el 0 EUR-ért → " + ismsTool.name,
+        url:   ismsTool.url,
+        affiliate: true,
+        badge: "#1 Ajánlás",
+      });
+    }
+
+    if (missing.includes("insurance")) {
+      actions.push({
+        step: actions.length + 1,
+        time: "20 perc · online árajánlat",
+        title: "Kérjen kiberbiztosítási ajánlatot",
+        desc:  "A kockázatátruházás a NIS2 kockázatkezelés része. Hiscox ajánlat: 20 perc online, ügynökkel való egyeztetés nélkül.",
+        cta:   "Tekintse meg a Hiscox ajánlatát →",
+        url:   LINKS.hiscox.url,
+        affiliate: true,
+      });
+    }
+
+    if (missing.includes("training")) {
+      actions.push({
+        step: actions.length + 1,
+        time: "30 perc · 14 napos ingyenes próbaidőszak",
+        title: "Indítson kiberbiztonsági képzést — KnowBe4",
+        desc:  "A vezetőség képzése jogi kötelezettség (Art. 20 NIS2). KnowBe4: online platform, az első modult 24 órán belül elküldi a csapatnak.",
+        cta:   "Kezdje az ingyenes próbaidőszakot →",
+        url:   LINKS.knowbe4.url,
+        affiliate: true,
+      });
+    }
+
+    // Always suggest 1Password if no training (implies basics missing)
+    if (missing.includes("isms") && actions.length < 5) {
+      actions.push({
+        step: actions.length + 1,
+        time: "30 perc · 14 napos ingyenes próbaidőszak",
+        title: "Vezessen be jelszókezelőt + MFA-t — 1Password",
+        desc:  "A többtényezős hitelesítés (MFA) az Art. 21(j) NIS2 alapján kötelező. 1Password Business: 30 perces beállítás, ugyanazon a napon bevezethető a csapatban.",
+        cta:   "Kezdje az ingyenes próbaidőszakot →",
+        url:   LINKS.onepassword.url,
+        affiliate: true,
+      });
+    }
+
+    return actions.slice(0, 4); // max 4 today actions
+  }
 
   // ── GA4 helper ─────────────────────────────────────────────────────────────
   function track(event, params) {
-    if (typeof gtag === "function") { gtag("event", event, params || {}); }
+    if (typeof gtag === "function") gtag("event", event, params || {});
   }
 
-  // ── URL params (shareable results) ─────────────────────────────────────────
-  function encodeStateToUrl() {
-    const params = new URLSearchParams();
-    if (state.answers.sector)  params.set("s", state.answers.sector);
-    if (state.answers.size)    params.set("z", state.answers.size);
-    if (state.answers.revenue) params.set("r", state.answers.revenue);
-    if (state.answers.budget)  params.set("b", state.answers.budget);
-    const newUrl = window.location.pathname + "?" + params.toString();
-    try { history.replaceState(null, "", newUrl); } catch (e) {}
-  }
-
-  function loadStateFromUrl() {
-    const params = new URLSearchParams(window.location.search);
-    const s = params.get("s"); const z = params.get("z");
-    const r = params.get("r"); const b = params.get("b");
-    const validSectors = ["annex1","annex2","other"];
-    const validSizes   = ["micro","medium","large"];
-    const validRev     = ["small","medium","large"];
-    const validBudgets = ["free","low","mid","high"];
-    if (s && validSectors.includes(s)) state.answers.sector  = s;
-    if (z && validSizes.includes(z))   state.answers.size    = z;
-    if (r && validRev.includes(r))     state.answers.revenue = r;
-    if (b && validBudgets.includes(b)) state.answers.budget  = b;
-    // If all 4 answers pre-filled, jump straight to result
-    if (state.answers.sector && state.answers.size &&
-        state.answers.revenue && state.answers.budget) {
-      return true; // signal: render result immediately
-    }
-    return false;
-  }
-
-  // ── Result computation ──────────────────────────────────────────────────────
-  function computeResult() {
-    const sector  = state.answers.sector;
-    const size    = state.answers.size;
-    const revenue = state.answers.revenue;
-
-    if (sector === "other") {
-      return {
-        type: "no",
-        title: "Twoja firma prawdopodobnie nie podlega KSC/NIS2",
-        subtitle: "Nie dotyczy Cię ustawa o krajowym systemie cyberbezpieczeństwa",
-        body: "Firmy spoza sektorów wymienionych w Załączniku I i II dyrektywy NIS2 generalnie nie podlegają obowiązkom ustawy KSC. Możesz jednak dobrowolnie wdrożyć standardy bezpieczeństwa (np. ISO 27001) jeśli obsługujesz klientów z sektorów objętych KSC lub chcesz wygrywać przetargi publiczne.",
-        badge: "Prawdopodobnie nie podlega",
-        badgeColor: "green"
-      };
-    }
-
-    const isLarge  = size === "large"  || revenue === "large";
-    const isMedium = !isLarge && (size === "medium" || revenue === "medium");
-
-    if (sector === "annex1" && isLarge) {
-      return {
-        type: "kluczowy",
-        title: "Twoja firma to PODMIOT KLUCZOWY",
-        subtitle: "Najwyższy poziom obowiązków KSC i NIS2",
-        body: "Jako duże przedsiębiorstwo w sektorze kluczowym (Załącznik I) podlegasz najbardziej rygorystycznym wymogom KSC. Obowiązki: pełny ISMS zgodny z ISO 27001, raportowanie incydentów do CERT Polska w ciągu 24h, audyt co 2 lata, zarządzanie bezpieczeństwem łańcucha dostaw. Kara za naruszenie: do 10 000 000 EUR lub 2% globalnego obrotu.",
-        badge: "Podmiot kluczowy",
-        badgeColor: "red"
-      };
-    }
-
-    if (sector === "annex1" && isMedium) {
-      return {
-        type: "wazny",
-        title: "Twoja firma to PODMIOT WAŻNY",
-        subtitle: "Obowiązki KSC — nieco mniej rygorystyczne niż podmiot kluczowy",
-        body: "Jako średnie przedsiębiorstwo w sektorze kluczowym (Załącznik I) jesteś podmiotem ważnym. Kontrola jest reaktywna — audyt tylko po incydencie lub skardze. Kara za naruszenie: do 7 000 000 EUR lub 1,4% globalnego obrotu. Deadline samoidentyfikacji: 3 październik 2026.",
-        badge: "Podmiot ważny",
-        badgeColor: "yellow"
-      };
-    }
-
-    if (sector === "annex2" && (isLarge || isMedium)) {
-      return {
-        type: "wazny",
-        title: "Twoja firma to PODMIOT WAŻNY",
-        subtitle: "Obowiązki KSC dla sektora Załącznik II",
-        body: "Jako firma w sektorze z Załącznika II i rozmiarze co najmniej średnim podlegasz obowiązkom jako podmiot ważny. Wymogi: środki zarządzania ryzykiem cyberbezpieczeństwa, raportowanie poważnych incydentów, wyznaczenie osoby odpowiedzialnej. Kara: do 7 000 000 EUR lub 1,4% globalnego obrotu. Deadline: 3 październik 2026.",
-        badge: "Podmiot ważny",
-        badgeColor: "yellow"
-      };
-    }
-
-    if (sector === "annex1" || sector === "annex2") {
-      return {
-        type: "depends",
-        title: "Twoja firma prawdopodobnie nie podlega KSC — ale sprawdź wyjątki",
-        subtitle: "Mikro i małe firmy są generalnie wyłączone — z ważnymi wyjątkami",
-        body: "Mikro i małe przedsiębiorstwa (<50 pracowników i <10 mln EUR obrotu) są generalnie wyłączone z KSC. Jednak ustawa przewiduje wyjątki: dostawcy usług zaufania, rejestry domen, dostawcy usług DNS i inne specyficzne podmioty. Zalecamy konsultację prawną jeśli działasz jako podwykonawca dla podmiotów kluczowych lub ważnych.",
-        badge: "Prawdopodobnie wyłączona — sprawdź wyjątki",
-        badgeColor: "yellow"
-      };
-    }
-
-    return {
-      type: "no",
-      title: "Twoja firma nie podlega KSC/NIS2",
-      subtitle: "",
-      body: "Na podstawie podanych informacji Twoja firma nie wchodzi w zakres ustawy o krajowym systemie cyberbezpieczeństwa.",
-      badge: "Nie podlega",
-      badgeColor: "green"
-    };
-  }
-
-  function getToolPair() {
-    const result = computeResult();
-    const budget = state.answers.budget || "low";
-    const key = result.type + ":" + budget;
-    return TOOL_RECS[key] || ["reglyze", "isms_online"];
-  }
-
-  // ── Render: question step ───────────────────────────────────────────────────
+  // ── Render: question step ──────────────────────────────────────────────────
   function renderStep() {
-    const q = questions[state.step];
-    const container = document.getElementById("quiz-container");
-    if (!container) { return; }
+    const q   = questions[state.step];
+    const el  = document.getElementById("quiz-container");
+    if (!el) return;
 
-    const pct = Math.round((state.step / TOTAL) * 100);
+    const pct    = Math.round((state.step / TOTAL) * 100);
     const isLast = state.step === TOTAL - 1;
 
-    const optionsHtml = q.options.map(opt => `
-      <button class="quiz-option${state.answers[q.id] === opt.value ? " selected" : ""}"
-              data-value="${opt.value}" type="button">
-        <span class="quiz-option__icon">${opt.icon}</span>
-        <span>
-          <span class="quiz-option__text">${opt.label}</span>
-          <span class="quiz-option__sub">${opt.sub}</span>
-        </span>
-      </button>
-    `).join("");
-
-    container.innerHTML = `
+    el.innerHTML = `
       <div class="quiz-card">
         <div class="quiz-progress">
           <div class="quiz-progress__bar" style="width:${pct}%"></div>
         </div>
-        <p class="text-sm text-gray" style="margin-bottom:.25rem;">Pytanie ${state.step + 1} z ${TOTAL}</p>
+        <p class="text-sm text-gray" style="margin-bottom:.25rem;">${state.step + 1}. kérdés / ${TOTAL}</p>
         <h3>${q.title}</h3>
-        <p>${q.hint}</p>
-        <div class="quiz-options" id="quiz-options">${optionsHtml}</div>
+        <p style="color:var(--gray-500);font-size:.9rem;margin-bottom:1rem;">${q.hint}</p>
+        <div class="quiz-options">
+          ${q.options.map(opt => `
+            <button class="quiz-option${state.answers[q.id] === opt.value ? " selected" : ""}"
+                    data-value="${opt.value}" type="button">
+              <span class="quiz-option__icon">${opt.icon}</span>
+              <span>
+                <span class="quiz-option__text">${opt.label}</span>
+                <span class="quiz-option__sub">${opt.sub}</span>
+              </span>
+            </button>
+          `).join("")}
+        </div>
         <div class="quiz-nav">
           ${state.step > 0
-            ? `<button class="btn btn--outline btn--sm" id="quiz-back">← Wstecz</button>`
+            ? `<button class="btn btn--outline btn--sm" id="quiz-back">← Vissza</button>`
             : `<span></span>`}
           <button class="btn btn--primary btn--sm" id="quiz-next"
                   ${state.answers[q.id] ? "" : "disabled"}>
-            ${isLast ? "Zobacz moje narzędzia →" : "Dalej →"}
+            ${isLast ? "Eredményem kiszámítása →" : "Tovább →"}
           </button>
         </div>
-      </div>
-    `;
+      </div>`;
 
-    container.querySelectorAll(".quiz-option").forEach(btn => {
+    el.querySelectorAll(".quiz-option").forEach(btn => {
       btn.addEventListener("click", () => {
         state.answers[q.id] = btn.dataset.value;
-        container.querySelectorAll(".quiz-option").forEach(b => b.classList.remove("selected"));
+        el.querySelectorAll(".quiz-option").forEach(b => b.classList.remove("selected"));
         btn.classList.add("selected");
-        const nextBtn = document.getElementById("quiz-next");
-        if (nextBtn) { nextBtn.removeAttribute("disabled"); }
+        el.querySelector("#quiz-next").removeAttribute("disabled");
         track("quiz_answer", { question: q.id, answer: btn.dataset.value });
+        // Auto-advance on click for faster UX
+        setTimeout(() => {
+          if (isLast) { computeScore(); renderScoreGate(); }
+          else { state.step++; renderStep(); }
+        }, 280);
       });
     });
 
-    const backBtn = document.getElementById("quiz-back");
-    if (backBtn) {
-      backBtn.addEventListener("click", () => { state.step--; renderStep(); });
-    }
+    el.querySelector("#quiz-back")?.addEventListener("click", () => {
+      state.step--;
+      renderStep();
+    });
 
-    const nextBtn = document.getElementById("quiz-next");
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        if (!state.answers[q.id]) { return; }
-        if (isLast) {
-          encodeStateToUrl();
-          if (FORM_ENDPOINT && !state.emailSubmitted) {
-            renderEmailGate();
-          } else {
-            renderResult();
-          }
-        } else {
-          state.step++;
-          renderStep();
-        }
-      });
-    }
+    el.querySelector("#quiz-next")?.addEventListener("click", () => {
+      if (!state.answers[q.id]) return;
+      if (isLast) { computeScore(); renderScoreGate(); }
+      else { state.step++; renderStep(); }
+    });
   }
 
-  // ── Render: email gate ──────────────────────────────────────────────────────
-  function renderEmailGate() {
-    const container = document.getElementById("quiz-container");
-    if (!container) { return; }
+  // ── Render: score + email gate ─────────────────────────────────────────────
+  function renderScoreGate() {
+    const el = document.getElementById("quiz-container");
+    if (!el) return;
 
-    const pair = getToolPair();
-    const primary = TOOLS[pair[0]] || TOOLS.reglyze;
+    const { score, missing } = state;
+    const pct    = Math.round((score / 10) * 100);
+    const scope  = computeScope();
 
-    container.innerHTML = `
+    const scoreColor = score <= 3 ? "#dc2626"
+                     : score <= 6 ? "#d97706"
+                     : "#16a34a";
+
+    const scopeMsg = {
+      essential: "Vállalkozása <strong>kulcsfontosságú szervezet a kiberbiztonsági törvény szerint</strong> — a legmagasabb szintű követelmények vonatkoznak rá.",
+      important:  "Vállalkozása <strong>fontos szervezet a kiberbiztonsági törvény szerint</strong> — teljesítenie kell a NIS2 követelményeket.",
+      check:      "Vállalkozása esetleg a kiberbiztonsági törvény hatálya alá eshet — ellenőrizze a kisvállalkozásokra vonatkozó kivételeket.",
+      out:        "Vállalkozása valószínűleg nem esik a kiberbiztonsági törvény hatálya alá — az alapok bevezetése azonban ajánlott.",
+    }[scope] || "";
+
+    const gapText = missing.length === 0
+      ? "Gratulálunk — az összes kulcsfontosságú intézkedés be van vezetve!"
+      : `<strong>${missing.length}</strong> kulcsfontosságú biztonsági intézkedés hiányzik. A legtöbbet 3 napon belül bevezetheti.`;
+
+    el.innerHTML = `
       <div class="quiz-card">
         <div class="quiz-progress">
-          <div class="quiz-progress__bar" style="width:95%"></div>
+          <div class="quiz-progress__bar" style="width:100%"></div>
         </div>
-        <div class="quiz-email-gate">
-          <div style="font-size:2.5rem;margin-bottom:.75rem;">📬</div>
-          <h3>Wynik jest gotowy!</h3>
-          <p>Podaj email, a wyślemy Ci też gotowy <strong>checklist KSC 2026</strong> (12 kroków do zgodności) — bezpłatnie.</p>
-          <form class="quiz-gate-form" id="quiz-gate-form">
-            <input type="email" class="form-input" placeholder="twoj@email.pl" required>
-            <button type="submit" class="btn btn--primary">Wyślij i zobacz wynik →</button>
+
+        <div style="text-align:center;padding:1rem 0 .5rem;">
+          <div style="font-size:.8rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">
+            Az Ön NIS2 megfelelési pontszáma
+          </div>
+          <div style="font-size:3.5rem;font-weight:800;color:${scoreColor};line-height:1;">
+            ${score}<span style="font-size:1.5rem;color:var(--gray-400);font-weight:500;">/10</span>
+          </div>
+          <div style="margin:.75rem auto;max-width:280px;height:10px;background:#e5e7eb;border-radius:99px;overflow:hidden;">
+            <div style="height:100%;width:${pct}%;background:${scoreColor};border-radius:99px;transition:width 1s;"></div>
+          </div>
+          <p style="font-size:.9rem;color:var(--gray-600);">${scopeMsg}</p>
+          <p style="font-size:.92rem;">${gapText}</p>
+        </div>
+
+        <div style="background:#f0f7ff;border-radius:12px;padding:1.25rem;margin:1rem 0;">
+          <p style="font-size:.95rem;font-weight:700;color:#1a1a2e;margin:0 0 .35rem;">
+            📬 Kapja meg 3 napos cselekvési tervét
+          </p>
+          <p style="font-size:.82rem;color:#555;margin:0 0 .75rem;">
+            Személyre szabott terve: mit tegyen ma, holnap és ezen a héten.
+            Kész hivatkozások az eszközökhöz + AI-prompt Claude / ChatGPT / Gemini számára.
+          </p>
+          <form id="score-email-form" style="display:flex;gap:.5rem;flex-wrap:wrap;">
+            <input type="email" name="email" placeholder="az-on@email.hu" required
+                   style="flex:1;min-width:180px;padding:.6rem .9rem;border:1px solid #d1d5db;border-radius:8px;font-size:.95rem;">
+            <button type="submit" class="btn btn--primary">Küldje el a tervemet →</button>
           </form>
-          <button class="quiz-gate-skip" id="quiz-gate-skip" type="button">Pomiń i pokaż wynik</button>
+          <p style="font-size:.75rem;color:#9ca3af;margin:.5rem 0 0;">Spam nélkül. Egy e-mail a tervvel + opcionális emlékeztetők.</p>
         </div>
-      </div>
-    `;
 
-    track("quiz_email_gate_shown");
+        <button id="quiz-skip-email" type="button"
+                style="background:none;border:none;color:var(--gray-400);font-size:.8rem;cursor:pointer;width:100%;text-align:center;padding:.25rem 0;">
+          Csak az eredményt mutatja, terv nélkül →
+        </button>
+      </div>`;
 
-    const form = document.getElementById("quiz-gate-form");
-    if (form) {
-      form.addEventListener("submit", e => {
-        e.preventDefault();
-        const emailEl = form.querySelector('input[type="email"]');
-        if (!emailEl || !emailEl.value) { return; }
-        const btn = form.querySelector("button[type='submit']");
-        if (btn) { btn.disabled = true; btn.textContent = "Zapisywanie..."; }
-        submitEmail(emailEl.value, "quiz_gate", () => {
-          state.emailSubmitted = true;
-          track("email_captured", { source: "quiz_gate" });
-          renderResult();
-        });
-      });
-    }
+    track("quiz_score_shown", { score, missing: missing.join(","), scope });
 
-    const skipBtn = document.getElementById("quiz-gate-skip");
-    if (skipBtn) {
-      skipBtn.addEventListener("click", () => {
-        track("quiz_email_gate_skipped");
-        renderResult();
-      });
-    }
+    document.getElementById("score-email-form")?.addEventListener("submit", e => {
+      e.preventDefault();
+      const email = e.target.querySelector("input[type=email]").value.trim();
+      if (!email) return;
+      const btn = e.target.querySelector("button");
+      btn.disabled = true;
+      btn.textContent = "Küldés...";
+      state.email = email;
+      _submitEmailAndReport(email, () => renderResult(true));
+    });
+
+    document.getElementById("quiz-skip-email")?.addEventListener("click", () => {
+      track("quiz_email_skipped");
+      renderResult(false);
+    });
   }
 
-  function submitEmail(email, source, onSuccess) {
-    if (!FORM_ENDPOINT) { return; }
-    fetch(FORM_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: email, source: source, ts: new Date().toISOString() })
-    }).then(r => {
-      if (r.ok && onSuccess) { onSuccess(); }
-    }).catch(() => { if (onSuccess) { onSuccess(); } }); // fail open — still show result
-  }
+  // ── Submit email to Beehiiv + trigger report ───────────────────────────────
+  function _submitEmailAndReport(email, onDone) {
+    const { score, missing, answers } = state;
 
-  // ── Render: result ──────────────────────────────────────────────────────────
-  function renderResult() {
-    const container = document.getElementById("quiz-container");
-    if (!container) { return; }
+    // Score tier tag
+    const scoreTier = score <= 3 ? "score_low" : score <= 6 ? "score_mid" : "score_high";
+    const tags = [scoreTier,
+      "sector_" + (answers.sector || "unknown"),
+      "role_"   + (answers.role   || "unknown"),
+      ...(missing.includes("registration") ? ["missing_registration"] : []),
+      ...(missing.includes("isms")         ? ["missing_isms"]         : []),
+      ...(missing.includes("training")     ? ["missing_training"]     : []),
+      ...(missing.includes("insurance")    ? ["missing_insurance"]    : []),
+    ];
 
-    const result = computeResult();
-    const pair   = getToolPair();
-    const iconMap = { kluczowy: "🚨", wazny: "⚠️", depends: "🔍", no: "✅" };
-    const icon    = iconMap[result.type] || "📋";
-    const badgeColorMap = {
-      green:  "background:#dcfce7;color:#166534",
-      yellow: "background:#fefce8;color:#854d0e",
-      red:    "background:#fee2e2;color:#991b1b"
-    };
-    const badgeStyle = badgeColorMap[result.badgeColor] || badgeColorMap.green;
-
-    function toolCardHtml(toolKey, rank) {
-      const t = TOOLS[toolKey];
-      if (!t) { return ""; }
-      const isFeatured = rank === 1 && t.badgeFeatured;
-      return `
-        <div class="result-tool-card${isFeatured ? "" : ""}">
-          <div class="result-tool-card__rank">${rank === 1 ? "★ Rekomendacja #1" : "Alternatywa #2"}</div>
-          <div class="result-tool-card__name">${t.name}</div>
-          <div class="result-tool-card__tag">${t.tagline}</div>
-          <div class="result-tool-card__price">${t.price}</div>
-          <div class="result-tool-card__actions">
-            <a href="${t.vendorUrl}" class="btn btn--primary btn--xs" target="_blank" rel="nofollow noopener">
-              Wypróbuj ↗
-            </a>
-            <a href="${t.reviewUrl}" class="btn btn--outline btn--xs">Recenzja</a>
-          </div>
-        </div>
-      `;
-    }
-
-    const toolsHtml = `
-      <div class="result-tools">
-        ${toolCardHtml(pair[0], 1)}
-        ${toolCardHtml(pair[1], 2)}
-      </div>
-    `;
-
-    const shareUrl = window.location.href;
-
-    container.innerHTML = `
-      <div class="quiz-card">
-        <div class="quiz-result">
-          <div class="quiz-result__icon">${icon}</div>
-          <div style="display:inline-block;padding:.3rem 1rem;border-radius:20px;font-size:.8rem;font-weight:700;margin-bottom:1rem;${badgeStyle}">
-            ${result.badge}
-          </div>
-          <h3>${result.title}</h3>
-          ${result.subtitle
-            ? `<p style="font-weight:600;color:var(--gray-500);margin-bottom:.75rem;">${result.subtitle}</p>`
-            : ""}
-          <p style="text-align:left;margin-top:.75rem;">${result.body}</p>
-
-          ${result.type !== "no"
-            ? `<div style="margin-top:1.5rem;text-align:left;">
-                 <p style="font-size:.82rem;color:var(--gray-500);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem;">
-                   Dopasowane narzędzia dla Twojej firmy
-                 </p>
-                 ${toolsHtml}
-               </div>`
-            : `<div style="margin-top:1.5rem;text-align:left;">
-                 <p style="font-size:.82rem;color:var(--gray-500);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem;">
-                   Warto mieć na przyszłość
-                 </p>
-                 ${toolsHtml}
-               </div>`}
-
-          <div style="margin-top:1.5rem;padding:.85rem 1rem;background:var(--gray-50);border-radius:6px;font-size:.8rem;color:var(--gray-600);">
-            📎 <strong>Udostępnij wynik:</strong>
-            <input type="text" value="${shareUrl}" readonly
-              style="width:100%;margin-top:.35rem;padding:.4rem .6rem;border:1px solid var(--gray-300);border-radius:4px;font-size:.78rem;font-family:inherit;"
-              onclick="this.select()">
-          </div>
-
-          <div style="margin-top:1.5rem;padding:1rem;background:#f0f7ff;border-radius:8px;text-align:left;">
-            <p style="font-size:.85rem;font-weight:700;color:#1a1a2e;margin-bottom:.4rem;">📄 Twój spersonalizowany raport zgodności</p>
-            <p style="font-size:.82rem;color:#555;margin-bottom:.75rem;">Pobierz raport PDF z Twoim planem działań, listą obowiązków i gotowym promptem dla AI (Claude / ChatGPT), który poprowadzi Cię krok po kroku.</p>
-            <button class="btn btn--primary btn--sm" id="quiz-get-report">Pobierz raport →</button>
-            <div id="quiz-report-status" style="margin-top:.5rem;font-size:.8rem;color:#555;display:none;"></div>
-          </div>
-
-          <div style="margin-top:1.25rem;display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;">
-            <button class="btn btn--outline btn--sm" id="quiz-restart">← Zacznij od nowa</button>
-            <a href="porownanie.html" class="btn btn--primary btn--sm">Porównaj wszystkie narzędzia →</a>
-          </div>
-        </div>
-      </div>
-    `;
-
-    track("quiz_completed", { result_type: result.type, budget: state.answers.budget });
-
-    const restartBtn = document.getElementById("quiz-restart");
-    if (restartBtn) {
-      restartBtn.addEventListener("click", () => {
-        state.step = 0;
-        state.answers = {};
-        state.emailSubmitted = false;
-        try { history.replaceState(null, "", window.location.pathname); } catch (e) {}
-        renderStep();
-      });
-    }
-
-    const reportBtn = document.getElementById("quiz-get-report");
-    if (reportBtn) {
-      reportBtn.addEventListener("click", () => {
-        if (!state.emailSubmitted) {
-          _showReportEmailGate();
-        } else {
-          _generateReport();
-        }
-      });
-    }
-  }
-
-  // ── Report: email gate + generation ────────────────────────────────────────
-
-  function _showReportEmailGate() {
-    const box = document.getElementById("quiz-report-status");
-    if (!box) { return; }
-    box.style.display = "block";
-    box.innerHTML = `
-      <form id="report-email-form" style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.35rem;">
-        <input type="email" placeholder="twoj@email.pl" required
-          style="flex:1;min-width:180px;padding:.4rem .6rem;border:1px solid #ccc;border-radius:4px;font-size:.82rem;">
-        <button type="submit" class="btn btn--primary btn--xs">Wyślij i pobierz →</button>
-      </form>
-    `;
-    track("report_email_gate_shown");
-    const form = document.getElementById("report-email-form");
-    if (form) {
-      form.addEventListener("submit", e => {
-        e.preventDefault();
-        const emailEl = form.querySelector("input[type=email]");
-        if (!emailEl || !emailEl.value) { return; }
-        const btn = form.querySelector("button");
-        if (btn) { btn.disabled = true; btn.textContent = "Wysyłanie..."; }
-        submitEmail(emailEl.value, "report_gate", () => {
-          state.emailSubmitted = true;
-          track("email_captured", { source: "report_gate" });
-          box.innerHTML = "";
-          _generateReport();
-        });
-      });
-    }
-  }
-
-  function _generateReport() {
-    const reportBtn = document.getElementById("quiz-get-report");
-    const status    = document.getElementById("quiz-report-status");
-    if (reportBtn) { reportBtn.disabled = true; reportBtn.textContent = "Generowanie..."; }
-    if (status)    { status.style.display = "block"; status.textContent = "Generuję Twój raport... (10–20 sekund)"; }
-    track("report_requested", { sector: state.answers.sector, budget: state.answers.budget });
-
-    fetch("/generate-report", {
+    // Call both endpoints in parallel
+    const subscribeCall = fetch(SUBSCRIBE_ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        sector:  state.answers.sector,
-        size:    state.answers.size,
-        revenue: state.answers.revenue,
-        budget:  state.answers.budget,
-        lang:    document.documentElement.lang || "pl",
-        domain:  window.location.hostname,
+        email,
+        source: "quiz_score_gate",
+        tags,
+        quiz_answers: {
+          sector: answers.sector, size: answers.size, revenue: answers.revenue,
+          budget: answers.budget, registered: answers.registered,
+          has_isms: answers.has_isms, has_training: answers.has_training,
+          has_insurance: answers.has_insurance, role: answers.role,
+          score,
+        },
       }),
-    })
-    .then(r => r.json())
-    .then(data => {
-      if (data.html) {
-        const win = window.open("", "_blank");
-        if (win) {
-          win.document.write(data.html);
-          win.document.close();
-          track("report_generated");
-          if (status) { status.style.display = "none"; }
-        } else {
-          if (status) { status.textContent = "Zezwól na otwieranie nowych okien w przeglądarce i spróbuj ponownie."; }
-        }
-      } else {
-        if (status) { status.textContent = "Błąd generowania raportu. Spróbuj ponownie."; }
-      }
-      if (reportBtn) { reportBtn.disabled = false; reportBtn.textContent = "Pobierz raport →"; }
-    })
-    .catch(() => {
-      if (status) { status.textContent = "Błąd połączenia. Spróbuj ponownie."; }
-      if (reportBtn) { reportBtn.disabled = false; reportBtn.textContent = "Pobierz raport →"; }
+    }).catch(() => {});
+
+    const reportCall = fetch(REPORT_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        sector:        answers.sector,
+        size:          answers.size,
+        revenue:       answers.revenue,
+        budget:        answers.budget,
+        registered:    answers.registered,
+        has_isms:      answers.has_isms,
+        has_training:  answers.has_training,
+        has_insurance: answers.has_insurance,
+        role:          answers.role,
+        score,
+        missing,
+        email,
+        lang:   document.documentElement.lang || "hu",
+        domain: window.location.hostname,
+      }),
+    }).catch(() => {});
+
+    Promise.allSettled([subscribeCall, reportCall]).then(() => {
+      track("quiz_completed", { score, sector: answers.sector, email_captured: true });
+      if (onDone) onDone();
     });
   }
 
-  // ── FAQ accordion (unchanged) ───────────────────────────────────────────────
+  // ── Render: result with today-actions ──────────────────────────────────────
+  function renderResult(emailCaptured) {
+    const el = document.getElementById("quiz-container");
+    if (!el) return;
+
+    const { score, missing, answers } = state;
+    const scope    = computeScope();
+    const actions  = buildTodayActions();
+    const pct      = Math.round((score / 10) * 100);
+    const scoreColor = score <= 3 ? "#dc2626" : score <= 6 ? "#d97706" : "#16a34a";
+
+    const scopeBadge = {
+      essential: { text: "🚨 Kulcsfontosságú szervezet",  color: "#fee2e2", tc: "#991b1b" },
+      important:  { text: "⚠️ Fontos szervezet",          color: "#fefce8", tc: "#854d0e" },
+      check:      { text: "🔍 Ellenőrizze a kivételeket", color: "#fefce8", tc: "#854d0e" },
+      out:        { text: "✅ Valószínűleg nem érintett",  color: "#dcfce7", tc: "#166534" },
+    }[scope] || { text: "NIS2", color: "#e5e7eb", tc: "#374151" };
+
+    function actionCard(a) {
+      const isAffiliate = a.affiliate;
+      return `
+        <div style="background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:1rem 1.1rem;margin-bottom:.75rem;${isAffiliate ? "border-left:3px solid var(--navy);" : ""}">
+          <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.35rem;">
+            <span style="background:var(--navy);color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;">${a.step}</span>
+            <span style="font-size:.75rem;color:var(--gray-500);">${a.time}</span>
+            ${isAffiliate && a.badge ? `<span style="background:#dcfce7;color:#166534;font-size:.68rem;font-weight:700;padding:.1rem .45rem;border-radius:4px;">${a.badge}</span>` : ""}
+          </div>
+          <div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem;">${a.title}</div>
+          <div style="font-size:.82rem;color:#555;margin-bottom:.6rem;">${a.desc}</div>
+          <a href="${a.url}" ${isAffiliate ? 'target="_blank" rel="nofollow noopener"' : ''}
+             style="display:inline-block;padding:.45rem .9rem;background:var(--navy);color:#fff;border-radius:6px;font-size:.82rem;font-weight:600;text-decoration:none;">
+            ${a.cta}
+          </a>
+        </div>`;
+    }
+
+    const reskipBlock = missing.length === 0
+      ? `<div style="background:#dcfce7;border-radius:10px;padding:1rem;text-align:center;margin-bottom:1rem;">
+           <strong>🎉 Vállalkozása kiváló állapotban van!</strong><br>
+           <span style="font-size:.85rem;">Az összes kulcsfontosságú NIS2 intézkedés be van vezetve. Fontolja meg az ISO 27001 tanúsítványt a megfelelés igazolásához.</span>
+           <br><a href="iso-27001-tanusitas.html" style="font-size:.82rem;color:var(--navy);font-weight:700;">Tudjon meg többet az ISO 27001-ről →</a>
+         </div>`
+      : actions.map(actionCard).join("");
+
+    el.innerHTML = `
+      <div class="quiz-card">
+
+        ${emailCaptured
+          ? `<div style="background:#dcfce7;border-radius:8px;padding:.6rem 1rem;font-size:.82rem;color:#166534;font-weight:600;margin-bottom:1rem;text-align:center;">
+               ✅ A terv elküldve: ${state.email || "az Ön e-mail-címére"} — ellenőrizze postafiókját
+             </div>`
+          : ""}
+
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;">
+          <div style="text-align:center;flex-shrink:0;">
+            <div style="font-size:2.5rem;font-weight:800;color:${scoreColor};line-height:1;">
+              ${score}<span style="font-size:1rem;color:var(--gray-400);font-weight:500;">/10</span>
+            </div>
+            <div style="font-size:.7rem;color:var(--gray-500);">NIS2 pontszám</div>
+          </div>
+          <div style="flex:1;min-width:140px;">
+            <div style="height:8px;background:#e5e7eb;border-radius:99px;overflow:hidden;margin-bottom:.35rem;">
+              <div style="height:100%;width:${pct}%;background:${scoreColor};border-radius:99px;"></div>
+            </div>
+            <span style="display:inline-block;padding:.2rem .6rem;border-radius:12px;font-size:.75rem;font-weight:700;background:${scopeBadge.color};color:${scopeBadge.tc};">
+              ${scopeBadge.text}
+            </span>
+          </div>
+        </div>
+
+        <h3 style="font-size:1.05rem;margin-bottom:.35rem;">
+          ${missing.length > 0
+            ? `🏃 Tegye meg MA — összesen ~${Math.min(120, missing.length * 30)} perc`
+            : "Az Ön NIS2 státusza"}
+        </h3>
+        <p style="font-size:.82rem;color:var(--gray-500);margin-bottom:1rem;">
+          ${missing.length > 0
+            ? `${missing.length} hiányzó lépés. Az alábbiakat még ma elvégezheti.`
+            : "Minden kulcsfontosságú intézkedés a helyén van."}
+        </p>
+
+        ${reskipBlock}
+
+        ${missing.length > 0 ? `
+          <div style="border-top:1px solid #e5e7eb;padding-top:1rem;margin-top:.5rem;">
+            <p style="font-size:.78rem;color:var(--gray-500);margin-bottom:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;">
+              Következő lépések (foglaljon időpontot)
+            </p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+              <a href="behatolasi-tesztek.html" style="font-size:.78rem;padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:6px;color:var(--gray-600);text-decoration:none;">
+                🔍 Behatolási teszt
+              </a>
+              <a href="iso-27001-tanusitas.html" style="font-size:.78rem;padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:6px;color:var(--gray-600);text-decoration:none;">
+                🏅 ISO 27001 tanúsítás
+              </a>
+              <a href="ellatasi-lanc-biztonsag.html" style="font-size:.78rem;padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:6px;color:var(--gray-600);text-decoration:none;">
+                🔗 Ellátási lánc biztonsága
+              </a>
+            </div>
+          </div>` : ""}
+
+        <div style="margin-top:1.25rem;display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;">
+          <button class="btn btn--outline btn--sm" id="quiz-restart">← Kezdje elölről</button>
+          <a href="porownanie.html" class="btn btn--primary btn--sm">Hasonlítsa össze a NIS2 eszközöket →</a>
+        </div>
+
+        ${!emailCaptured ? `
+          <div style="margin-top:1rem;background:#f0f7ff;border-radius:8px;padding:.85rem;text-align:center;">
+            <p style="font-size:.82rem;margin:0 0 .5rem;"><strong>Kapja meg a teljes tervet e-mailben</strong> AI-prompttal és eszközhivatkozásokkal</p>
+            <form id="late-email-form" style="display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;">
+              <input type="email" placeholder="az-on@email.hu" required
+                     style="flex:1;min-width:160px;padding:.45rem .75rem;border:1px solid #d1d5db;border-radius:6px;font-size:.85rem;">
+              <button type="submit" class="btn btn--primary btn--sm">Küldés →</button>
+            </form>
+          </div>` : ""}
+      </div>`;
+
+    document.getElementById("quiz-restart")?.addEventListener("click", () => {
+      state.step = 0; state.answers = {}; state.score = 0;
+      state.missing = []; state.email = null;
+      try { history.replaceState(null, "", window.location.pathname); } catch (e) {}
+      renderStep();
+    });
+
+    document.getElementById("late-email-form")?.addEventListener("submit", e => {
+      e.preventDefault();
+      const email = e.target.querySelector("input[type=email]").value.trim();
+      if (!email) return;
+      const btn = e.target.querySelector("button");
+      btn.disabled = true; btn.textContent = "Küldés...";
+      state.email = email;
+      _submitEmailAndReport(email, () => {
+        e.target.parentElement.innerHTML =
+          `<p style="font-size:.82rem;color:#166534;font-weight:700;">✅ Elküldve: ${email}</p>`;
+      });
+    });
+
+    track("quiz_result_shown", { score, scope, email_captured: emailCaptured });
+  }
+
+  // ── FAQ accordion ──────────────────────────────────────────────────────────
   function initFaq() {
     document.querySelectorAll(".faq-question").forEach(btn => {
       btn.addEventListener("click", () => {
-        const item = btn.closest(".faq-item");
+        const item   = btn.closest(".faq-item");
         const isOpen = item.classList.contains("open");
         document.querySelectorAll(".faq-item.open").forEach(i => i.classList.remove("open"));
-        if (!isOpen) { item.classList.add("open"); }
+        if (!isOpen) item.classList.add("open");
       });
     });
   }
 
-  // ── Init ────────────────────────────────────────────────────────────────────
+  // ── Init ───────────────────────────────────────────────────────────────────
   document.addEventListener("DOMContentLoaded", () => {
-    const quizContainer = document.getElementById("quiz-container");
-    if (quizContainer) {
-      const jumpToResult = loadStateFromUrl();
-      if (jumpToResult) {
-        renderResult();
-      } else {
-        renderStep();
-      }
-    }
+    const container = document.getElementById("quiz-container");
+    if (container) renderStep();
     initFaq();
   });
 
