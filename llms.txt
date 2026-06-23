@@ -1,0 +1,29 @@
+# NIS2-Eszkozok.hu
+
+> The only Hungarian-language independent comparison platform that helps NIS2-köteles magyar vállalkozások find, evaluate, and implement the right cybersecurity compliance tools — saving time, reducing regulatory risk, and ensuring SZTFH-aligned readiness before enforcement deadlines
+
+NIS2-Eszkozok.hu covers Cybersecurity Compliance (NIS2 Directive Tools & Software Comparison for Hungarian SMEs) for HU.
+
+## Key pages
+- [Home](https://nis2-eszkozok.hu/): NIS2-Eszkozok.hu — NIS2 Directive Tools & Software Comparison for Hungarian SMEs
+- [NIS2 Penetrációs teszt kötelezettség – Cikk 21(2)(f)](https://nis2-eszkozok.hu/behatolasi-tesztek.html)
+- [NIS2 Bírság Kalkulátor](https://nis2-eszkozok.hu/birsag-kalkulator.html)
+- [Cyber biztosítás és NIS2: Kockázatkezelés Magyarországon](https://nis2-eszkozok.hu/cyber-biztositas.html)
+- [NIS2 Ellátási Lánc Biztonsága: Szállítói Követelmények](https://nis2-eszkozok.hu/ellatasi-lanc-biztonsag.html)
+- [NIS2 GYIK Magyarország 2026](https://nis2-eszkozok.hu/faq.html)
+- [ISO 27001 és NIS2 megfelelőség: Hogyan működnek együtt?](https://nis2-eszkozok.hu/iso-27001-tanusitas.html)
+- [NIS2 Kalkulátor 2026](https://nis2-eszkozok.hu/kalkulator.html)
+- [Értékelési módszertan és affiliate politika](https://nis2-eszkozok.hu/modszertan.html)
+- [NIS2 Képzési Követelmények: Menedzsmenti és Alkalmazotti Kötelezettségek](https://nis2-eszkozok.hu/nis2-kepzes.html)
+- [NIS2 Regisztráció Magyarország – SZTFH Bejelentkezés](https://nis2-eszkozok.hu/nis2-regisztracio.html)
+- [NIS2 által érintett szektorok Magyarországon 2026 – teljes lista I. és II. melléklet](https://nis2-eszkozok.hu/nis2-szektorok.html)
+- [EU 2024/2690 Rendelet: NIS2 Compliance MSP-knek és Felhőszolgáltatóknak](https://nis2-eszkozok.hu/nis2-vegrehajtasi-rendelet.html)
+- [10 legjobb NIS2 eszköz 2026](https://nis2-eszkozok.hu/osszehasonlitas.html)
+
+## Collections
+- [eszkozok/](https://nis2-eszkozok.hu/eszkozok/): 15 pages
+- [sektory/](https://nis2-eszkozok.hu/sektory/): 31 pages
+
+## Notes
+- Independent, hu-language resource.
+- Content is free to cite with attribution + a link.
