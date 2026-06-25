@@ -118,59 +118,7 @@ function buildTags(body) {
 
 // Immediate sequence email — sent the moment someone subscribes
 async function sendSequenceEmail0(email, tier, env) {
-  const EMAILS = {
-  "A": {
-    "subject": "NIS2 cselekvési terved — 3 nap, 3 lépés",
-    "html": "<p style=\"font-family:sans-serif;font-size:15px;line-height:1.6;color:#111;\">Épp elvégezted a NIS2 kvízt — az eredményed azt mutatja, hogy még sok a teendő a határidő előtt.
-<br><br>
-<strong>A jó hír:</strong> A hasonló helyzetben lévő cégek 60–90 nap alatt elérik a megfelelőséget, ha a megfelelő lépésekkel kezdik.
-</p>
-<h3 style=\"font-family:sans-serif;color:#1e3a5f;\">A te 3 napos indulóterved:</h3>
-<p style=\"font-family:sans-serif;font-size:15px;line-height:1.7;color:#111;\">
-<strong>1. nap (30 perc) — Ellenőrizd a KSC-státuszt:</strong><br>
-<a href=\"https://nis2-eszkozok.hu/kalkulator.html\" style=\"color:#1e3a5f;\">Nézd meg, hogy a céged érintett-e a KSC által →</a>
-<br><br>
-<strong>2. nap (20 perc) — Indítsd el az ingyenes ISMS-t:</strong><br>
-<a href=\"https://nis2-eszkozok.hu/eszkozok/isms-online.html\" style=\"color:#1e3a5f;\">ISMS.online — ingyenes csomag 25 főig →</a>
-<br><br>
-<strong>3. nap (30 perc) — Képezd a vezetőséget:</strong><br>
-<a href=\"https://nis2-eszkozok.hu/nis2-kepzes.html\" style=\"color:#1e3a5f;\">NIS2 képzési lehetőségek →</a>
-<br><br>
-<a href=\"https://nis2-eszkozok.hu/#tracker-section\" style=\"color:#1e3a5f;\">Kövesd nyomon a haladásodat a NIS2 trackerben →</a>
-</p>"
-  },
-  "B": {
-    "subject": "NIS2 eredményed: jó alap — így érheted el a 100%-ot",
-    "html": "<p style=\"font-family:sans-serif;font-size:15px;line-height:1.6;color:#111;\">Megvan az NIS2 alapja — ez jó jel. Mindössze 2–3 elem hiányzik, amelyeket a felügyeleti hatóság a leggyakrabban ellenőriz.
-</p>
-<p style=\"font-family:sans-serif;font-size:15px;line-height:1.7;color:#111;\">
-<strong>Penetrációs tesztelés (21. cikk (2)(f)):</strong><br>
-<a href=\"https://nis2-eszkozok.hu/behatolasi-tesztek.html\" style=\"color:#1e3a5f;\">Útmutató a behatolási tesztekhez →</a>
-<br><br>
-<strong>MFA kiemelt jogosultságú fiókokhoz (21. cikk (2)(i)):</strong><br>
-<a href=\"https://nis2-eszkozok.hu/eszkozok/1password.html\" style=\"color:#1e3a5f;\">1Password Business — MFA + jelszókezelő →</a>
-<br><br>
-<strong>Ellátási lánc biztonsága (21. cikk (2)(d)):</strong><br>
-<a href=\"https://nis2-eszkozok.hu/ellatasi-lanc-biztonsag.html\" style=\"color:#1e3a5f;\">Beszállítói biztonság útmutató →</a>
-<br><br>
-<a href=\"https://nis2-eszkozok.hu/#tracker-section\" style=\"color:#1e3a5f;\">Jelöld meg a haladást a NIS2 trackerben →</a>
-</p>"
-  },
-  "C": {
-    "subject": "Kiváló NIS2 eredmény — itt az utolsó lépés",
-    "html": "<p style=\"font-family:sans-serif;font-size:15px;line-height:1.6;color:#111;\">Magas szintű NIS2 felkészültség — valóban jó eredmény. Egy nyitott pont maradt: a formális külső validáció.
-</p>
-<p style=\"font-family:sans-serif;font-size:15px;line-height:1.7;color:#111;\">
-<strong>Penetrációs teszt</strong> — a védelmi intézkedések hatékonyságának igazolása (21. cikk (2)(f)):<br>
-<a href=\"https://nis2-eszkozok.hu/behatolasi-tesztek.html\" style=\"color:#1e3a5f;\">Behatolási teszt útmutató →</a>
-<br><br>
-<strong>ISO 27001 tanúsítás</strong> — a teljes ISMS külső hitelesítése:<br>
-<a href=\"https://nis2-eszkozok.hu/iso-27001-tanusitas.html\" style=\"color:#1e3a5f;\">ISO 27001 tanúsítási útmutató →</a>
-<br><br>
-<a href=\"https://nis2-eszkozok.hu/#tracker-section\" style=\"color:#1e3a5f;\">Ellenőrizd az utolsó checkboxokat →</a>
-</p>"
-  }
-};
+  const EMAILS = {"A": {"subject": "NIS2 cselekvési terved — 3 nap, 3 lépés", "html": "<p style=\"font-family:sans-serif;font-size:15px;line-height:1.6;color:#111;\">Épp elvégezted a NIS2 kvízt — az eredményed azt mutatja, hogy még sok a teendő a határidő előtt.<br><br><strong>A jó hír:</strong> A hasonló helyzetben lévő cégek 60–90 nap alatt elérik a megfelelőséget, ha a megfelelő lépésekkel kezdik.</p><h3 style=\"font-family:sans-serif;color:#1e3a5f;\">A te 3 napos indulóterved:</h3><p style=\"font-family:sans-serif;font-size:15px;line-height:1.7;color:#111;\"><strong>1. nap (30 perc) — Ellenőrizd a KSC-státuszt:</strong><br><a href=\"https://nis2-eszkozok.hu/kalkulator.html\" style=\"color:#1e3a5f;\">Nézd meg, hogy a céged érintett-e a KSC által →</a><br><br><strong>2. nap (20 perc) — Indítsd el az ingyenes ISMS-t:</strong><br><a href=\"https://nis2-eszkozok.hu/eszkozok/isms-online.html\" style=\"color:#1e3a5f;\">ISMS.online — ingyenes csomag 25 főig →</a><br><br><strong>3. nap (30 perc) — Képezd a vezetőséget:</strong><br><a href=\"https://nis2-eszkozok.hu/nis2-kepzes.html\" style=\"color:#1e3a5f;\">NIS2 képzési lehetőségek →</a><br><br><a href=\"https://nis2-eszkozok.hu/#tracker-section\" style=\"color:#1e3a5f;\">Kövesd nyomon a haladásodat a NIS2 trackerben →</a></p>"}, "B": {"subject": "NIS2 eredményed: jó alap — így érheted el a 100%-ot", "html": "<p style=\"font-family:sans-serif;font-size:15px;line-height:1.6;color:#111;\">Megvan az NIS2 alapja — ez jó jel. Mindössze 2–3 elem hiányzik, amelyeket a felügyeleti hatóság a leggyakrabban ellenőriz.</p><p style=\"font-family:sans-serif;font-size:15px;line-height:1.7;color:#111;\"><strong>Penetrációs tesztelés (21. cikk (2)(f)):</strong><br><a href=\"https://nis2-eszkozok.hu/behatolasi-tesztek.html\" style=\"color:#1e3a5f;\">Útmutató a behatolási tesztekhez →</a><br><br><strong>MFA kiemelt jogosultságú fiókokhoz (21. cikk (2)(i)):</strong><br><a href=\"https://nis2-eszkozok.hu/eszkozok/1password.html\" style=\"color:#1e3a5f;\">1Password Business — MFA + jelszókezelő →</a><br><br><strong>Ellátási lánc biztonsága (21. cikk (2)(d)):</strong><br><a href=\"https://nis2-eszkozok.hu/ellatasi-lanc-biztonsag.html\" style=\"color:#1e3a5f;\">Beszállítói biztonság útmutató →</a><br><br><a href=\"https://nis2-eszkozok.hu/#tracker-section\" style=\"color:#1e3a5f;\">Jelöld meg a haladást a NIS2 trackerben →</a></p>"}, "C": {"subject": "Kiváló NIS2 eredmény — itt az utolsó lépés", "html": "<p style=\"font-family:sans-serif;font-size:15px;line-height:1.6;color:#111;\">Magas szintű NIS2 felkészültség — valóban jó eredmény. Egy nyitott pont maradt: a formális külső validáció.</p><p style=\"font-family:sans-serif;font-size:15px;line-height:1.7;color:#111;\"><strong>Penetrációs teszt</strong> — a védelmi intézkedések hatékonyságának igazolása (21. cikk (2)(f)):<br><a href=\"https://nis2-eszkozok.hu/behatolasi-tesztek.html\" style=\"color:#1e3a5f;\">Behatolási teszt útmutató →</a><br><br><strong>ISO 27001 tanúsítás</strong> — a teljes ISMS külső hitelesítése:<br><a href=\"https://nis2-eszkozok.hu/iso-27001-tanusitas.html\" style=\"color:#1e3a5f;\">ISO 27001 tanúsítási útmutató →</a><br><br><a href=\"https://nis2-eszkozok.hu/#tracker-section\" style=\"color:#1e3a5f;\">Ellenőrizd az utolsó checkboxokat →</a></p>"}};
 
   const msg = EMAILS[tier] || EMAILS["B"];
   const footer = `<hr style="margin:2rem 0;border:none;border-top:1px solid #e5e7eb;">
