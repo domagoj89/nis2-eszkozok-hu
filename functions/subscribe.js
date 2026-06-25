@@ -119,66 +119,63 @@ function buildTags(body) {
 // Immediate sequence email — sent the moment someone subscribes
 async function sendSequenceEmail0(email, tier, env) {
   const EMAILS = {
-    A: {
-      subject: "Twój plan działania NIS2 — 3 dni, 3 kroki",
-      html: `<p style="font-family:sans-serif;font-size:15px;line-height:1.6;color:#111;">
-Właśnie ukończyłeś quiz NIS2 — Twój wynik wskazuje, że masz jeszcze dużo do zrobienia przed terminem.
+  "A": {
+    "subject": "NIS2 cselekvési terved — 3 nap, 3 lépés",
+    "html": "<p style=\"font-family:sans-serif;font-size:15px;line-height:1.6;color:#111;\">Épp elvégezted a NIS2 kvízt — az eredményed azt mutatja, hogy még sok a teendő a határidő előtt.
 <br><br>
-<strong>Dobra wiadomość:</strong> Firmy w podobnej sytuacji osiągają zgodność w 60–90 dni, jeśli zaczną od właściwych kroków.
+<strong>A jó hír:</strong> A hasonló helyzetben lévő cégek 60–90 nap alatt elérik a megfelelőséget, ha a megfelelő lépésekkel kezdik.
 </p>
-<h3 style="font-family:sans-serif;color:#1e3a5f;">Twój 3-dniowy plan startowy:</h3>
-<p style="font-family:sans-serif;font-size:15px;line-height:1.7;color:#111;">
-<strong>Dzień 1 (30 min) — Sprawdź status KSC:</strong><br>
-<a href="https://nis2-eszkozok.hu/kalkulator.html" style="color:#1e3a5f;">Zweryfikuj czy Twoja firma podlega KSC →</a>
+<h3 style=\"font-family:sans-serif;color:#1e3a5f;\">A te 3 napos indulóterved:</h3>
+<p style=\"font-family:sans-serif;font-size:15px;line-height:1.7;color:#111;\">
+<strong>1. nap (30 perc) — Ellenőrizd a KSC-státuszt:</strong><br>
+<a href=\"https://nis2-eszkozok.hu/kalkulator.html\" style=\"color:#1e3a5f;\">Nézd meg, hogy a céged érintett-e a KSC által →</a>
 <br><br>
-<strong>Dzień 2 (20 min) — Uruchom darmowy ISMS:</strong><br>
-<a href="https://isms.online/" style="color:#1e3a5f;">ISMS.online — bezpłatny plan do 25 pracowników →</a>
+<strong>2. nap (20 perc) — Indítsd el az ingyenes ISMS-t:</strong><br>
+<a href=\"https://nis2-eszkozok.hu/eszkozok/isms-online.html\" style=\"color:#1e3a5f;\">ISMS.online — ingyenes csomag 25 főig →</a>
 <br><br>
-<strong>Dzień 3 (30 min) — Przeszkol zarząd:</strong><br>
-<a href="https://www.knowbe4.com/" style="color:#1e3a5f;">KnowBe4 — 14-dniowy trial →</a>
+<strong>3. nap (30 perc) — Képezd a vezetőséget:</strong><br>
+<a href=\"https://nis2-eszkozok.hu/nis2-kepzes.html\" style=\"color:#1e3a5f;\">NIS2 képzési lehetőségek →</a>
 <br><br>
-<a href="https://nis2-eszkozok.hu/#tracker-section" style="color:#1e3a5f;">Śledź swój postęp w trackerze NIS2 →</a>
-</p>`,
-    },
-    B: {
-      subject: "Twój wynik NIS2: dobry start — oto co dobić do 100%",
-      html: `<p style="font-family:sans-serif;font-size:15px;line-height:1.6;color:#111;">
-Masz już podstawy NIS2 — to dobry znak. Brakuje Ci 2–3 elementów najczęściej sprawdzanych przez organ nadzoru.
+<a href=\"https://nis2-eszkozok.hu/#tracker-section\" style=\"color:#1e3a5f;\">Kövesd nyomon a haladásodat a NIS2 trackerben →</a>
+</p>"
+  },
+  "B": {
+    "subject": "NIS2 eredményed: jó alap — így érheted el a 100%-ot",
+    "html": "<p style=\"font-family:sans-serif;font-size:15px;line-height:1.6;color:#111;\">Megvan az NIS2 alapja — ez jó jel. Mindössze 2–3 elem hiányzik, amelyeket a felügyeleti hatóság a leggyakrabban ellenőriz.
 </p>
-<p style="font-family:sans-serif;font-size:15px;line-height:1.7;color:#111;">
-<strong>Testy penetracyjne (Art. 21(2)(f)):</strong><br>
-<a href="https://cobalt.io/" style="color:#1e3a5f;">Cobalt.io — testy na żądanie →</a>
+<p style=\"font-family:sans-serif;font-size:15px;line-height:1.7;color:#111;\">
+<strong>Penetrációs tesztelés (21. cikk (2)(f)):</strong><br>
+<a href=\"https://nis2-eszkozok.hu/behatolasi-tesztek.html\" style=\"color:#1e3a5f;\">Útmutató a behatolási tesztekhez →</a>
 <br><br>
-<strong>MFA dla kont uprzywilejowanych (Art. 21(2)(i)):</strong><br>
-<a href="https://1password.com/" style="color:#1e3a5f;">1Password Business — MFA + menedżer haseł →</a>
+<strong>MFA kiemelt jogosultságú fiókokhoz (21. cikk (2)(i)):</strong><br>
+<a href=\"https://nis2-eszkozok.hu/eszkozok/1password.html\" style=\"color:#1e3a5f;\">1Password Business — MFA + jelszókezelő →</a>
 <br><br>
-<strong>Bezpieczeństwo łańcucha dostaw (Art. 21(2)(d)):</strong><br>
-<a href="https://nis2-eszkozok.hu/ellatasi-lanc-biztonsag.html" style="color:#1e3a5f;">Przewodnik bezpieczeństwa dostawców →</a>
+<strong>Ellátási lánc biztonsága (21. cikk (2)(d)):</strong><br>
+<a href=\"https://nis2-eszkozok.hu/ellatasi-lanc-biztonsag.html\" style=\"color:#1e3a5f;\">Beszállítói biztonság útmutató →</a>
 <br><br>
-<a href="https://nis2-eszkozok.hu/#tracker-section" style="color:#1e3a5f;">Zaznacz postęp w trackerze NIS2 →</a>
-</p>`,
-    },
-    C: {
-      subject: "Świetny wynik NIS2 — oto Twój ostatni krok",
-      html: `<p style="font-family:sans-serif;font-size:15px;line-height:1.6;color:#111;">
-Wysoki poziom gotowości NIS2 — naprawdę dobry wynik. Jeden niezałatwiony punkt: formalna walidacja zewnętrzna.
+<a href=\"https://nis2-eszkozok.hu/#tracker-section\" style=\"color:#1e3a5f;\">Jelöld meg a haladást a NIS2 trackerben →</a>
+</p>"
+  },
+  "C": {
+    "subject": "Kiváló NIS2 eredmény — itt az utolsó lépés",
+    "html": "<p style=\"font-family:sans-serif;font-size:15px;line-height:1.6;color:#111;\">Magas szintű NIS2 felkészültség — valóban jó eredmény. Egy nyitott pont maradt: a formális külső validáció.
 </p>
-<p style="font-family:sans-serif;font-size:15px;line-height:1.7;color:#111;">
-<strong>Test penetracyjny</strong> — dowód skuteczności zabezpieczeń (Art. 21(2)(f)):<br>
-<a href="https://cobalt.io/" style="color:#1e3a5f;">Cobalt.io →</a>
+<p style=\"font-family:sans-serif;font-size:15px;line-height:1.7;color:#111;\">
+<strong>Penetrációs teszt</strong> — a védelmi intézkedések hatékonyságának igazolása (21. cikk (2)(f)):<br>
+<a href=\"https://nis2-eszkozok.hu/behatolasi-tesztek.html\" style=\"color:#1e3a5f;\">Behatolási teszt útmutató →</a>
 <br><br>
-<strong>Certyfikacja ISO 27001</strong> — zewnętrzna walidacja całego ISMS:<br>
-<a href="https://nis2-eszkozok.hu/iso-27001-tanusitas.html" style="color:#1e3a5f;">Przewodnik ISO 27001 →</a>
+<strong>ISO 27001 tanúsítás</strong> — a teljes ISMS külső hitelesítése:<br>
+<a href=\"https://nis2-eszkozok.hu/iso-27001-tanusitas.html\" style=\"color:#1e3a5f;\">ISO 27001 tanúsítási útmutató →</a>
 <br><br>
-<a href="https://nis2-eszkozok.hu/#tracker-section" style="color:#1e3a5f;">Sprawdź ostatnie checkboxy →</a>
-</p>`,
-    },
-  };
+<a href=\"https://nis2-eszkozok.hu/#tracker-section\" style=\"color:#1e3a5f;\">Ellenőrizd az utolsó checkboxokat →</a>
+</p>"
+  }
+};
 
   const msg = EMAILS[tier] || EMAILS["B"];
   const footer = `<hr style="margin:2rem 0;border:none;border-top:1px solid #e5e7eb;">
 <p style="font-family:sans-serif;font-size:12px;color:#9ca3af;">
-  NIS2-Narzedzia.pl &nbsp;|&nbsp;
+  NIS2-Eszkozok.hu &nbsp;|&nbsp;
   <a href="https://nis2-eszkozok.hu/unsubscribe?email=${encodeURIComponent(email)}" style="color:#9ca3af;">Wypisz się</a>
 </p>`;
 
