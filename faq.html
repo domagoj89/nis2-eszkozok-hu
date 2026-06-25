@@ -28,37 +28,158 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Mi az a NIS2, és miben különbözik a magyar NIS2 törvénytől?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A NIS2 az Európai Unió 2022-es hálózat- és információbiztonsági irányelve. Magyarországon a NIS2 irányelvet a kiberbiztonsági törvény (2023. évi XXIII. törvény) ültette át a nemzeti jogba, amelynek végrehajtási szabályait a Szabályozott Tevékenységek Felügyeleti Hatósága (SZTFH) felügyeli. A határidő: 2026. október 1."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Mikor jár le az önbesorolás határideje?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Az önbesorolás határideje 2026. október 1. A cégeknek eddig az időpontig fel kell mérniük, hogy a NIS2 hatálya alá tartoznak-e, és regisztrálniuk kell magukat az SZTFH nyilvántartásában."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Milyen bírságok fenyegetnek a NIS2 be nem tartása esetén?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Alapvető szervezetek esetén: legfeljebb 10 000 000 EUR vagy a globális éves forgalom 2%-a (a magasabb összeg). Fontos szervezetek esetén: legfeljebb 7 000 000 EUR vagy a globális éves forgalom 1,4%-a. A szervezetek vezetői személyes pénzügyi felelősséggel is tartozhatnak."
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "url": "https://nis2-eszkozok.hu/faq.html",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Mi az a NIS2, és miben különbözik a magyar NIS2 törvénytől?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A NIS2 az Európai Parlament és az Európai Tanács 2022/2555 irányelve a hálózat- és információbiztonságról — az uniós kiberbiztonsági követelmények második szintje, amelyet 2022 decemberében fogadtak el. Az irányelv közvetlenül nem kötelezi a cégeket — nemzeti jogba kellett átültetni.\n\nA magyar NIS2 törvény (2023. évi XXIII. törvény a kiberbiztonsági tanúsításról és a kiberbiztonsági felügyeletről) ültette át a NIS2 irányelvet a magyar jogrendbe. A végrehajtást a Szabályozott Tevékenységek Felügyeleti Hatósága (SZTFH) felügyeli. A magyar cégeket a hazai törvény kötelezi — nem közvetlenül az irányelv.\n\nGyakorlati különbség: a magyar törvény a NIS2 minimumkövetelményeinél szigorúbb előírásokat is tartalmazhat. Az értelmezési kérdésekben az SZTFH az illetékes hatóság."
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Question",
+      "name": "Mikor lépett hatályba a magyar NIS2 törvény?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A NIS2 irányelvet átültető magyar kiberbiztonsági törvény (2023. évi XXIII. törvény) és végrehajtási rendeletei fokozatosan léptek hatályba. Az önbesorolás határideje 2026. október 1. A teljes technikai megfelelési követelmények határideje 2026. október 1., az első felügyeleti auditok 2027-től várhatók."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hány cég tartozik a NIS2 hatálya alá Magyarországon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A becslések szerint kb. 4 000 magyar szervezetnek kell megfelelnie a NIS2 követelményeinek — ez körülbelül tízszerese az előző szabályozás által érintett szervezetek számának. A növekedés oka az „kritikus szektorok\" definíciójának bővítése és az érintett cégek méretküszöbének csökkentése."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mi a különbség az alapvető és a fontos szervezet között?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alapvető szervezetek (Essential Entities): nagy cégek (250+ alkalmazott vagy 50 millió EUR feletti forgalom) az I. melléklet szerinti szektorokból (energia, közlekedés, bankszektor, egészségügy, ivóvíz, digitális infrastruktúra, közigazgatás, űrágazat). Aktív felügyeleti ellenőrzés alá esnek — a hatóság saját kezdeményezésére végez auditokat. Bírság: legfeljebb 10 millió EUR vagy a forgalom 2%-a.\n\nFontos szervezetek (Important Entities): közepes méretű cégek az I. mellékletből, vagy bármilyen méretű cégek a II. mellékletből (postai szolgáltatások, gyártás, vegyipar, élelmiszeripar, digitális szolgáltatások). Reaktív felügyeleti ellenőrzés alá esnek — audit csak incidens vagy panasz esetén. Bírság: legfeljebb 7 millió EUR vagy a forgalom 1,4%-a.\n\nA technikai követelmények mindkét kategóriára hasonlók — a felügyelet intenzitása és a bírságok mértéke különbözik."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mentesülnek-e a mikro- és kisvállalkozások a NIS2 alól?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Általában igen. A mikrovállalkozások (kevesebb mint 10 alkalmazott és 2 millió EUR alatti éves forgalom) és a kisvállalkozások (kevesebb mint 50 alkalmazott és 10 millió EUR alatti forgalom) mentesülnek a NIS2 hatálya alól.\n\nFontos kivételek: a kisvállalkozások mégis kötelesek lehetnek megfelelni, ha: ők az adott kritikus szolgáltatás egyetlen magyarországi szolgáltatói; bizalmi szolgáltatásokat nyújtanak (pl. minősített elektronikus aláírás); DNS-szolgáltatók vagy doménnév-nyilvántartók; vagy a hatóság biztonsági hatásuk miatt kulcsfontosságúnak minősíti őket."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mikor jár le az önbesorolás határideje?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Az önbesorolás határideje 2026. október 1. Eddig az időpontig minden érintett szervezetnek:\n\nFel kell mérnie, hogy megfelel-e az alapvető vagy fontos szervezet kritériumainak\n\nRegisztrálnia kell magát az SZTFH nyilvántartásában\n\nKi kell jelölnie a kiberbiztonsági feladatokért felelős személyt\n\nA 2026. október 1-jei határidőig elmulasztott regisztráció közigazgatási bírságot vonhat maga után."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mikorra kell teljesíteni a technikai követelményeket?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A teljes technikai megfelelés (bevezetett kockázatkezelési intézkedések, eljárások, ISMS) határideje 2026. október 1. Az alapvető szervezetek külső kiberbiztonsági auditját 2027-től kell elvégezni."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mit jelent a „felelős személy kijelölése\"? Kell CISO-t alkalmaznom?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A törvény előírja egy kiberbiztonsági feladatokért felelős személy vagy csapat kijelölését. Ez nem feltétlenül jelent teljes munkaidős CISO-t — lehet:\n\nBelső IT-munkavállaló kibővített feladatkörrel\n\nKülső tanácsadó vagy szolgáltató cég (MSSP)\n\nÜgyvezető vagy igazgató kisebb fontos szervezetek esetén\n\nA lényeg a szerep formális kijelölése a dokumentációban és tényleges ellátása."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mennyi idő áll rendelkezésre biztonsági incidensek bejelentésére?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A NIS2 háromszintű incidensbejelentési rendszert ír elő:\n\n24 óra az észleléstől: korai figyelmeztetés az SZTFH-nak vagy az illetékes ágazati hatóságnak\n\n72 óra az észleléstől: teljes incidensbejelentés a hatás értékelésével\n\n1 hónap az észleléstől: részletes zárójelentés az okok elemzésével és a megtett intézkedésekkel\n\nA bejelentési kötelezettség csak a szolgáltatás folyamatosságára jelentős hatást gyakorló súlyos incidensekre vonatkozik — nem minden biztonsági riasztásra."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Konkrétan milyen technikai intézkedéseket kell bevezetnem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A NIS2 irányelv 21. cikke (amelyet a magyar törvény is átültetett) legalább a következőket írja elő:\n\nKockázatelemzési és információbiztonsági rendszer-politikák\n\nIncidenskezelési eljárások (észlelés, bejelentés, reagálás)\n\nÜzletmenet-folytonosság kezelése (biztonsági mentés, katasztrófa-helyreállítás, válságkezelés)\n\nEllátási lánc biztonsága (szállítók és partnerek értékelése)\n\nHálózatok és rendszerek beszerzésének, fejlesztésének és karbantartásának biztonsága\n\nA kockázatkezelési intézkedések hatékonyságának értékelésére vonatkozó politikák és eljárások\n\nAlapvető kiberbiztonsági higiéniai gyakorlatok és képzés\n\nKriptográfiára és titkosításra vonatkozó politikák és eljárások\n\nHR-biztonság, hozzáférés-felügyelet, eszközkezelés\n\nTöbbfaktoros hitelesítés (MFA) vagy SSO alkalmazása\n\nAz ISMS-eszközök mindezeket a követelményeket lefedik — hasonlítsa össze az eszközöket →"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mentesít-e az ISO 27001 tanúsítvány a NIS2 kötelezettségek alól?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem mentesít teljesen, de jelentősen megkönnyíti a megfelelést. Az ISO 27001 és a NIS2 átfedő területeket fed le — becslések szerint az ISO 27001 tanúsítvánnyal rendelkező cég a NIS2 technikai követelményeinek kb. 80–85%-át teljesíti.\n\nA fennmaradó 15–20% a NIS2-specifikus elemekből áll: incidensbejelentési eljárások a hatóságok felé, az ellátási lánc biztonságának értékelése a NIS2 kritériumai szerint, regisztráció az SZTFH nyilvántartásában. Az ISO 27001 tanúsítvány azonban enyhítheti a bírságokat, és a felügyeleti hatóság pozitívan értékeli."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kell-e speciális megfelelési szoftvert vásárolnom?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem, nincs törvényi kötelezettség meghatározott szoftver vásárlására. A NIS2 törvény technikai és eljárási követelményeket ír elő — nem határozza meg, hogyan kezelje a cég ezt a folyamatot.\n\nA gyakorlatban a nagy cégek (alapvető szervezetek) GRC-eszközre szorulnak majd a dokumentáció, bizonyítékok és monitoring kezeléséhez — az 50+ kontroll kézi kezelése nem reális. A kisebb fontos szervezetek elkezdhetnek a Reglyze ingyenes tervével vagy a Microsoft Purview-val. Hasonlítsa össze a lehetőségeket →"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mi az az ISMS, és miért fontos a NIS2 szempontjából?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Az ISMS (Information Security Management System) az információbiztonsági irányítási rendszer — politikák, eljárások, folyamatok és kontrollok összessége a kiberbiztonsági kockázatok kezelésére. Az ISMS-t meghatározó szabvány az ISO/IEC 27001.\n\nA NIS2 nem követeli meg az ISO 27001 tanúsítást, de az ISMS elemeit (biztonsági politikák, kockázatkezelés, incidenseljárások) igen. Az olyan eszközök, mint a Reglyze, a Secfix vagy az ISMS.online, automatizálják az ISMS kiépítését és fenntartását kifejezetten a NIS2 szempontjából."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mennyibe kerül a NIS2-megfelelés bevezetése?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A bevezetési költségek jelentősen eltérnek a megközelítéstől és a cég méretétől függően:\n\nKisebb cégek (fontos szervezet, 50–100 alkalmazott): €2 000–15 000 egyszeri + €500–2 000/év eszközökre és fenntartásra\n\nKözepes cégek (100–250 alkalmazott): €10 000–50 000 bevezetés + €3 000–8 000/év\n\nNagy cégek (alapvető szervezet): €50 000–250 000+ bevezetés + €15 000–50 000/év\n\nAz ISO 27001 audit (opcionális, de hasznos) további €8 000–25 000-be kerül az auditor cégtől függően."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kell-e magyar NIS2-eszköz-szolgáltatót választanom?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem — a NIS2 törvény nem követel meg magyar szoftverszolgáltatót. Bármely EU-s vagy EU-n kívüli ország eszközét használhatja, feltéve, hogy az adatok kezelése GDPR-konform.\n\nÉrdemes azonban figyelni a következőkre: adattárolás helye (EU vagy EU-n kívül), magyar nyelvű műszaki támogatás, a szolgáltató magyarországi jogszabályi ismerete. A listán szereplő egyetlen kifejezetten kiberbiztonsági magyar platform a Sycope (hálózatmonitoring). Olvassa el az értékelést →"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Milyen NIS2-eszközt válasszak kisvállalkozásként?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kisebb cégeknek (fontos szervezet, 50–100 alkalmazott) azt javasoljuk, hogy így kezdjék:\n\nReglyze (ingyenes terv) — végezze el az önbesorolást és a hiányelemzést. Generáljon biztonsági politikákat AI segítségével. Ideális kiindulópont, nulla költséggel.\n\nMicrosoft Purview (ha van M365 E3+ előfizetése) — beépített NIS2-sablon egy olyan eszközben, amelyet már fizet. Egészítse ki a Reglyze-t a Purview monitoringjával.\n\nA hiányelemzés után: döntse el, hogy szükség van-e fizetős eszközre (pl. ISMS.online £375/hótól) a konkrét hiányosságok alapján.\n\nHasználja a NIS2 kalkulátort →, hogy először megtudja, milyen típusú szervezetnek minősül a cége."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mely NIS2-eszközök EU-székhelyűek és tárolják az adatokat az EU-ban?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EU-székhelyű és EU-ban adatokat kezelő eszközök:\n\nReglyze — EU-székhellyel ✓\n\nComplyCloud — Dánia ✓\n\nSecfix — Németország ✓ (adatok az EU-ban)\n\nSycope — Lengyelország ✓\n\nISMS Copilot — Németország ✓\n\nAz USA-székhelyű eszközök (Vanta, Drata, Sprinto) és az UK-székhelyű ISMS.online EU-n kívül is kezelhetnek adatokat — vásárlás előtt ellenőrizze a DPA-jukat (adatfeldolgozói megállapodás) és az SCC-ket. A Microsoft Purview Azure-régiókban kezeli az adatokat — konfigurálható az EU Data Boundary."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Milyen bírságok fenyegetnek a NIS2 be nem tartása esetén?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alapvető szervezetek:\n\nLegfeljebb 10 000 000 EUR vagy a globális éves forgalom 2%-a (a magasabb összeg)\n\nTiltás a jogsértésért felelős személyek vezető tisztségviselői feladatainak ellátásától\n\nFontos szervezetek:\n\nLegfeljebb 7 000 000 EUR vagy a globális éves forgalom 1,4%-a (a magasabb összeg)\n\nA felügyeleti hatóság (SZTFH) bírságot szabhat ki: regisztráció elmulasztása, ISMS hiánya, incidensek be nem jelentése, techn\n\nVan további kérdése?\n\nNem találta meg a választ? Nézze meg részletes eszköz-értékeléseinket, vagy használja a KSC kalkulátort.\n\nKSC kalkulátor indítása →\n\nTöbb mint 2 400 magyar vállalat ellenőrizte KSC státuszukat ezen az oldalon"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
