@@ -11,18 +11,18 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NIS2 felhőszolgáltatók (IaaS, PaaS, SaaS) magyarországi kötelezettségei 2026</title>
-  <meta name="description" content="NIS2 megfelelőség felhőszolgáltatók számára Magyarországon. Megosztott felelősség, 24h értesítés, SOC 2 és incident-kezelés.">
+  <title>NIS2 felhőszolgáltatók Magyarország 2026 |Annex I egyedi követelmények</title>
+  <meta name="description" content="NIS2 Annex I felhőszolgáltatók (IaaS, PaaS, SaaS) kötelezettségei Magyarországon. SZTFH felügyelet, 24h incident notifikáció, 2026 határidő.">
   <link rel="canonical" href="https://nis2-eszkozok.hu/sektory/cloud-providers.html">
-  <meta property="og:title" content="NIS2 felhőszolgáltatók (IaaS, PaaS, SaaS) magyarországi kötelezettségei 2026">
-  <meta property="og:description" content="NIS2 megfelelőség felhőszolgáltatók számára Magyarországon. Megosztott felelősség, 24h értesítés, SOC 2 és incident-kezelés.">
+  <meta property="og:title" content="NIS2 felhőszolgáltatók Magyarország 2026 |Annex I egyedi követelmények">
+  <meta property="og:description" content="NIS2 Annex I felhőszolgáltatók (IaaS, PaaS, SaaS) kötelezettségei Magyarországon. SZTFH felügyelet, 24h incident notifikáció, 2026 határidő.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://nis2-eszkozok.hu/sektory/cloud-providers.html">
   <meta property="og:locale" content="hu_HU">
   <meta property="og:site_name" content="NIS2-Eszkozok.hu">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="NIS2 felhőszolgáltatók (IaaS, PaaS, SaaS) magyarországi kötelezettségei 2026">
-  <meta name="twitter:description" content="NIS2 megfelelőség felhőszolgáltatók számára Magyarországon. Megosztott felelősség, 24h értesítés, SOC 2 és incident-kezelés.">
+  <meta name="twitter:title" content="NIS2 felhőszolgáltatók Magyarország 2026 |Annex I egyedi követelmények">
+  <meta name="twitter:description" content="NIS2 Annex I felhőszolgáltatók (IaaS, PaaS, SaaS) kötelezettségei Magyarországon. SZTFH felügyelet, 24h incident notifikáció, 2026 határidő.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
@@ -46,7 +46,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "NIS2 felhőszolgáltatók számára Magyarországon — esszenciális entitások kötelezettségei 2026",
+      "name": "NIS2 felhőszolgáltatók Magyarországon — Annex I kritikus infrastruktúra követelmények",
       "item": "https://nis2-eszkozok.hu/sektory/cloud-providers.html"
     }
   ]
@@ -59,26 +59,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Pontosan mely felhőszolgáltatók számára kötelező a NIS2 betartása Magyarországon?",
+      "name": "Mekkora pénzbüntetés fenyegeti egy Annex I felhőszolgáltatót, ha az SZTFH és az ügyfelek felé elmulasztja az incidensbejelentési kötelezettséget?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Az Annex I esszenciális entitások közé tartoznak azok a felhőszolgáltatók, akik kritikus szektorokat (energia, közlekedés, víz, egészségügy stb.) szolgálnak ki vagy jelentős számú EU-s vállalat/közhatalmi szerv adatait kezelik. A SZTFH lista alapján 2024–2025-ben azonosítják a pontos szervezeteket. Az elsődleges kritérium: van-e az ügyfélkörödben EU-s kritikus szektorbeli szervezet vagy rendszerkritikus szám?"
+        "text": "A 2023. évi XXIII. törvény alapján az Annex I kritikus entitások számára a maximális büntetés 10 millió euró vagy a forgalom 2%-a. Az incidentbejelentési kötelezettség megsértése rendszerint az 1. fokozatú jogsértés (10 millió euró vagy 2% forgalom) kategóriájába esik az SZTFH számára."
       }
     },
     {
       "@type": "Question",
-      "name": "Hogyan különbözik a 24 órás incidenszámára az általános 72 órás GDPR-s bejelentéstől?",
+      "name": "Mi a különbség a 24 órás incidentbejelentés és a 72 órás részletes értesítés között az NIS2 szerint?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A NIS2 24 órás kötelezettség a kritikus szolgáltatást érő biztonsági incidensekre vonatkozik (pl. adatkidolgozás, szolgáltatásmegszakítás az Annex I szektort érintve), amit az SZTFH-nak kell bejelenteni. A 72 órás GDPR-s bejelentés az személyes adatok megsértésére vonatkozik és az adatfelügyelőnek szól. Egy esemény mindkettővel járhat, de ezek eltérő, egymástól függetlenül indított nyomkövetéseket igényelnek."
+        "text": "Az első 24 órában az incidensről való tudomásulvételként egy alapvető jelzést kell küldenie az SZTFH-nak és az érintett ügyfeleknek, amely megerősíti az incidens tényét és a kezelés megkezdését. A 72 órás határidőig részletes információt kell nyújtania, amely tartalmazza az incidens jellegét, az érintett adatok körét, a sérült ügyfelek számát és a helyreállítási tervet."
       }
     },
     {
       "@type": "Question",
-      "name": "Milyen szankcióra számíthatunk, ha nem teljesítjük a NIS2 követelményeket 2026-ig?",
+      "name": "Szükséges-e az IaaS, PaaS és SaaS szolgáltatónak is azonos biztonsági vezérlőket alkalmaznia, vagy vannak szektori különbségek?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Az SZTFH akár 10 millió euróig terjedő, vagy az éves globális forgalom 4%-áig terjedő büntetést szabhat ki legalapvetőbb kötelezettségek megsértéséért (pl. incidenszámára hiánya, biztonsági kontrollok hiánya). A magyarországi gyakorlatban ez eddig még nem érvényesült, de 2025–2026 után az EU erősíteni fogja a felügyeletét. Ajánlott már 2024-ben kezdeni az előkészületeket."
+        "text": "Az Annex I kritikus entitás-követelmények minden felhőszolgáltatói modellre egyaránt vonatkoznak, azonban az implementáció különbözhet. Az IaaS-nek alapvetõen az infrastruktúra-szintû izolációra, a PaaS-nek a futtatási környezet biztonságára, az SaaS-nak pedig az alkalmazás-szintû adatvédelemre kell összpontosítania. Mindhárom modellnek azonban ISO 27001 vagy SOC 2 Type II tanúsítással kell rendelkeznie és dokumentáltan kell kezelnie az ügyfél-adatokat az EU-n belül."
       }
     }
   ]
@@ -105,23 +105,23 @@
   <div class="breadcrumb">
     <a href="../index.html">Főoldal</a><span>›</span>
     <a href="index.html">Ágazatok</a><span>›</span>
-    NIS2 felhőszolgáltatók számára Magyarországon — esszenciális entitások kötelezettségei 2026
+    NIS2 felhőszolgáltatók Magyarországon — Annex I kritikus infrastruktúra követelmények
   </div>
 </div>
 
 <!-- HERO -->
 <div style="background:var(--gray-50);padding:2.5rem 0 3rem;border-bottom:1px solid var(--gray-200);">
   <div class="container--narrow">
-    <span style="display:inline-block;background:#1a3a5c;color:#fff;font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.3rem .85rem;border-radius:4px;margin-bottom:1rem;">I. Melléklet — esszenciális entitás</span>
-    <h1 style="font-size:clamp(1.4rem,3.5vw,2.1rem);color:var(--navy);margin:.25rem 0 1rem;line-height:1.25;">NIS2 felhőszolgáltatók számára Magyarországon — esszenciális entitások kötelezettségei 2026</h1>
-    <p style="font-size:1.05rem;color:var(--gray-500);line-height:1.65;margin:0;">Ez az útmutató EU-s ügyfelekkel rendelkező felhőszolgáltatók (IaaS, PaaS, SaaS) számára készült, akik az Annex I esszenciális entitások közé tartoznak. Megismerkedhet a kritikus infrastruktúra-kezelésből, az incidenszámára, és a megosztott felelősségi modell dokumentálásából eredő konkrét magyarországi követelményekkel.</p>
+    <span style="display:inline-block;background:#1a3a5c;color:#fff;font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.3rem .85rem;border-radius:4px;margin-bottom:1rem;">Melléklet I — kritikus entitás</span>
+    <h1 style="font-size:clamp(1.4rem,3.5vw,2.1rem);color:var(--navy);margin:.25rem 0 1rem;line-height:1.25;">NIS2 felhőszolgáltatók Magyarországon — Annex I kritikus infrastruktúra követelmények</h1>
+    <p style="font-size:1.05rem;color:var(--gray-500);line-height:1.65;margin:0;">Azoknak az IaaS, PaaS és SaaS szolgáltatóknak szólnak ezek az útmutatások, akik jelentős uniós ügyfélkörrel rendelkeznek és az Annex I kritikus entitások közé tartoznak. Megtudhatja, hogy a magyar SZTFH milyen konkrét biztonsági és incidentjelentési kötelezettségeket előír, és hogyan érheti el a 2026-os határidőig a teljes megfelelőséget.</p>
   </div>
 </div>
 
 <!-- WHO QUALIFIES -->
 <div class="container--narrow" style="padding:2.5rem 1.25rem 0;">
   <div style="background:var(--gray-50);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;">
-    <p style="font-size:.95rem;color:var(--navy-dark);line-height:1.65;margin:0;">Magyarországon azon felhőszolgáltatók számára kötelező a NIS2 betartása, amelyek legalább egy kritikus szektort (energia, közlekedés, víz, szennyvíz, egészségügy, digitális infrastruktúra, közigazgatás) szolgálnak ki jelentős EU-s felhasználói bázissal, vagy jelentős számú EU-s vállalat vagy közhatalmi szerv adatait kezelik. Ez jellemzően a jelentős méretű (100+ alkalmazott) vagy piacot uraló felhőszolgáltatókat érinti.</p>
+    <p style="font-size:.95rem;color:var(--navy-dark);line-height:1.65;margin:0;">Az Annex I kritikus entitások közé tartoznak azok a felhőszolgáltatók, amelyek legalább 30 fő foglalkoztatottal rendelkeznek vagy Magyarországon vagy az Európai Unióban jelentős ügyfélkörrel (különösen kormányzati vagy szektoriális szereplők) szolgálnak. A közvetítő szolgáltatók, akik több szektorban működnek, valamint a geográfiai jellegből adódóan az EU-s adatközpont-üzemeltetők szintén e kategóriába esnek.</p>
   </div>
 </div>
 
@@ -135,8 +135,8 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <strong style="color:var(--navy);font-size:.95rem;">Többbérlős infrastruktúra biztonsági alapkövetkezmény</strong>
-        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">A felhőszolgáltatónak biztosítania kell, hogy a többbérlős környezetben az ügyfelek adatai és szolgáltatásai szigorúan elkülönüljenek logikai és fizikai szinten. Ez magában foglal szegmentációs kontrollokat, titkosítást az adatátvitelben és tárolásban, valamint legalább éves biztonsági auditot az infrastruktúra integrálásáról. A közös felelősségi modell dokumentációjában egyértelműen rögzíteni kell, hogy mely biztonsági kontrollok a szolgáltató, és melyek az ügyfél feladata.</p>
+        <strong style="color:var(--navy);font-size:.95rem;">Több-bérlős infrastruktúra biztonsági alapelvei</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Felhőszolgáltatóknak dokumentáltan kell kezelniük az erőforrások izolációját, az ügyfél-adatok szétválasztását és a tenantok közötti hozzáférés-vezérlést. A megosztott infrastruktúra egy alany sérülésétől ne terjedjen át a másikra. Minimum ISO 27001 vagy SOC 2 Type II tanúsítás szükséges az entitások számára.</p>
       </div>
     </div>
     <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
@@ -144,8 +144,8 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <strong style="color:var(--navy);font-size:.95rem;">24 órás incidenszámára és szektorfüggő értesítési kötelezettség</strong>
-        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Az incidenszámára keretében a felhőszolgáltatónak azonosítania kell az esszenciális szolgáltatásra hatást gyakorló biztonsági eseményeket, és 24 órán belül értesítenie kell az érintett ügyfeleket. A magyarországi SZTFH-nak pedig az incidenszámára szerint 3 munkanapon belül be kell jelentenie az incidenszámára-függő eseményeket. Ez megköveteli egy NIS2-specifikus incidenttörténetet elkülöníteni az általános biztonsági incidensektől, valamint egy hatástanulságí nyomkövetési rendszert.</p>
+        <strong style="color:var(--navy);font-size:.95rem;">24 órás incidentjelentési kötelezettség</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Biztonsági incidens esetén, amely a szolgáltatás rendelkezésre állását, integritását vagy bizalmasságát érinti, 24 órán belül értesítenie kell az SZTFH-t és az érintett ügyfeleket. Az 2023. évi XXIII. törvény szerint nem elég a hagyományos biztonsági incidenseket általánosságban kezelni — NIS2-specifikus incidensosztályozás és nyomkövetés szükséges.</p>
       </div>
     </div>
     <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
@@ -153,8 +153,8 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <strong style="color:var(--navy);font-size:.95rem;">SOC 2 Type II és ISO 27001 megfelelőségi minimumkövetelmény</strong>
-        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">A felhőszolgáltatónak legalább SOC 2 Type II tanúsítvánnyal és ISO 27001 szerinti nemzetközi tanúsítvánnyal kell rendelkeznie. Ezek az auditok az Information Security Management System (ISMS) ellenőrzésén keresztül biztosítják, hogy a szervezet a biztonsági kontrollokvét folyamatosan karbantartja és ellenőrzi. Az auditoknak legalább évente meg kell ismételkedniük, és az eredményeket az EU-s ügyfelek számára hozzáférhetővé kell tenni.</p>
+        <strong style="color:var(--navy);font-size:.95rem;">Megosztott felelősség dokumentációja</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Minden vállalati ügyfél számára írásban, világosan meg kell határozni, hogy mely biztonsági követelmények tartoznak a szolgáltató és melyek az ügyfél felelőssége. Ide tartozik az adattitkosítás, biztonsági frissítések, hozzáférés-vezérlés és compliance-felügyelet felosztása. Ezt a dokumentumot legalább évente felül kell vizsgálni.</p>
       </div>
     </div>
     <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
@@ -162,8 +162,8 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <strong style="color:var(--navy);font-size:.95rem;">EU-s adatőrzési és szuverenitási kötelezettség</strong>
-        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Az EU-s ügyfelek adatait Magyarország vagy egy másik EU-tagállam adatközpontjában kell tárolni és feldolgozni. A felhőszolgáltatónak a tényleges adatőrzési helyét nyíltan és szerződésben is rögzítenie kell, és ügyfél-szintű kontrollt kell biztosítania az adatmigráció és helyváltoztatás felett. Harmadik országba (pl. USA) való adattovábbítás csak megfelelő nemzetközi adatvédelmi megállapodásokkal (pl. Standard Contractual Clauses) és az ügyfél kifejezett jóváhagyásával lehetséges.</p>
+        <strong style="color:var(--navy);font-size:.95rem;">Szállítási lánc biztonsági felügyelet</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Az adatközpont-üzemeltetők, hardverszállítók és egyéb kritikus szállítók biztonsági értékelése kötelező. Szerződésekbe be kell foglalni az NIS2-megfelelőségi követelményeket és az audit jogokat. A harmadik felek által okozott incidenst is be kell jelenteni az SZTFH-nak.</p>
       </div>
     </div>
     <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
@@ -171,8 +171,8 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <strong style="color:var(--navy);font-size:.95rem;">Szállítóláncbiztonság és третий fél felügyelete</strong>
-        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">A felhőszolgáltatónak, mivel hardvergyártókat, adatközpont-üzemeltetőket és egyéb kritikus szállítókat alkalmazhat, formális szállítóláncbiztonsági programot kell fenntartania. Ez magában foglal szállítók biztonsági értékeléseit, szerződéses biztonsági kötelezettségeket és rendszeres felülvizsgálatokat. A szállítók által okozott biztonsági hiányosságokért, ha az a kritikus szolgáltatást érinti, a felhőszolgáltató is felelősséggel tartozik az SZTFH felé.</p>
+        <strong style="color:var(--navy);font-size:.95rem;">EU-s adattárgyalás és adatreziduencia-vezérlés</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Az EU-ban bejegyzett ügyfeleknek garantálni kell, hogy az adatok az EU határain belül maradnak, vagy kifejezett és írásban rögzített ügyfél-előzetes hozzájárulás szükséges. Az adatközpont-helyeket és az adatátmozgatási útvonalakat dokumentálni kell. Kiegészítő szervezeti és technikai intézkedések szükségesek az adatszuverenitás biztosítására.</p>
       </div>
     </div>
   </div>
@@ -184,16 +184,16 @@
   <ul style="list-style:none;padding:0;margin:0;border-top:1px solid var(--gray-100);">
     
     <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
-      <span style="color:#dc2626;margin-right:.5rem;">✗</span>A felhőszolgáltatók gyakran nem különböztetnek meg NIS2-specifikus incidenszámárat az általános security incidensektől, így hiányzik a 24/72 órás határidő szerinti nyomkövetés és az SZTFH-nak történő azonnal bejelentés.
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Az incidensosztályozás hiánya: számos felhőszolgáltató nem különíti el az NIS2 szerinti kritikus incidenseket az egyéb biztonsági eseményektől, így megsérül az SZTFH felé fennálló 24 órás bejelentési kötelezettség.
     </li>
     <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
-      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Az ügyfélértesítési SLA-k (Service Level Agreement) nem igazodnak a NIS2 24 órás kötelezettséghez; sok szervezet még mindig általános 48-72 órás incidensértesítésre van felkészítve.
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Ügyfélértesítési SLA-k nincs összhangban az NIS2 követelményekkel: az alapvetõ 24 órás határidõ mellett szükséges az 72 órás részletes értesítés is, amely sok szolgáltatónál dokumentáltan hiányzik.
     </li>
     <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
-      <span style="color:#dc2626;margin-right:.5rem;">✗</span>A megosztott felelősségi modell dokumentációja nem elegendően részletezí a kriptográfiai kontrolloket, az adatszegmentációt és a naplózási bejelentéseket, így az ügyfelek nem értik tisztán, kire hárul az egyes biztonsági feladat.
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Szállítási lánc biztonsági hiányosság: az adatközpont-operátorokkal, hardverszállítókkal és hálózat-szolgáltatókkal kötött szerződések nem tartalmazzák az NIS2-specifikus audit- és compliance-kötelezettségeket.
     </li>
     <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
-      <span style="color:#dc2626;margin-right:.5rem;">✗</span>A szállítóláncbiztonság (hardvergyártók, adatközpont-üzemeltetők) soha sem kerül be a biztonsági értékelésbe, holott egy adatközpont-meghibásodás vagy egy fizikai behatolás a kritikus szolgáltatást érintheti.
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Adatreziduencia-kontroll hiánya: az EU-s ügyfeleknek nem garantálnak írott biztosítékot arra, hogy az adatok az EU-n belül maradnak, ami az GDPR és az NIS2 követelménye közötti összhang hiánya.
     </li>
   </ul>
 </div>
@@ -209,7 +209,7 @@
         <span style="font-size:.78rem;color:var(--gray-400);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:.2rem .6rem;">vanta.com</span>
       </div>
       <p style="font-size:.88rem;color:var(--gray-600);line-height:1.55;margin:0;"></p>
-      <a href="../eszkozok/vanta.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Ellenőrizze az eszközt →</a>
+      <a href="../eszkozok/vanta.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Sprawdź narzędzie →</a>
     </div>
     <div style="background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
@@ -217,7 +217,7 @@
         <span style="font-size:.78rem;color:var(--gray-400);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:.2rem .6rem;">drata.com</span>
       </div>
       <p style="font-size:.88rem;color:var(--gray-600);line-height:1.55;margin:0;"></p>
-      <a href="../eszkozok/drata.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Ellenőrizze az eszközt →</a>
+      <a href="../eszkozok/drata.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Sprawdź narzędzie →</a>
     </div>
     <div style="background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
@@ -225,7 +225,7 @@
         <span style="font-size:.78rem;color:var(--gray-400);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:.2rem .6rem;">sprinto.com</span>
       </div>
       <p style="font-size:.88rem;color:var(--gray-600);line-height:1.55;margin:0;"></p>
-      <a href="../eszkozok/sprinto.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Ellenőrizze az eszközt →</a>
+      <a href="../eszkozok/sprinto.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Sprawdź narzędzie →</a>
     </div>
   </div>
 </div>
@@ -236,21 +236,21 @@
   <div style="border-top:1px solid var(--gray-100);">
     
   <div style="padding:1.25rem 0;border-bottom:1px solid var(--gray-100);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Pontosan mely felhőszolgáltatók számára kötelező a NIS2 betartása Magyarországon?</h3>
+    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Mekkora pénzbüntetés fenyegeti egy Annex I felhőszolgáltatót, ha az SZTFH és az ügyfelek felé elmulasztja az incidensbejelentési kötelezettséget?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">Az Annex I esszenciális entitások közé tartoznak azok a felhőszolgáltatók, akik kritikus szektorokat (energia, közlekedés, víz, egészségügy stb.) szolgálnak ki vagy jelentős számú EU-s vállalat/közhatalmi szerv adatait kezelik. A SZTFH lista alapján 2024–2025-ben azonosítják a pontos szervezeteket. Az elsődleges kritérium: van-e az ügyfélkörödben EU-s kritikus szektorbeli szervezet vagy rendszerkritikus szám?</p>
+      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">A 2023. évi XXIII. törvény alapján az Annex I kritikus entitások számára a maximális büntetés 10 millió euró vagy a forgalom 2%-a. Az incidentbejelentési kötelezettség megsértése rendszerint az 1. fokozatú jogsértés (10 millió euró vagy 2% forgalom) kategóriájába esik az SZTFH számára.</p>
     </div>
   </div>
   <div style="padding:1.25rem 0;border-bottom:1px solid var(--gray-100);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Hogyan különbözik a 24 órás incidenszámára az általános 72 órás GDPR-s bejelentéstől?</h3>
+    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Mi a különbség a 24 órás incidentbejelentés és a 72 órás részletes értesítés között az NIS2 szerint?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">A NIS2 24 órás kötelezettség a kritikus szolgáltatást érő biztonsági incidensekre vonatkozik (pl. adatkidolgozás, szolgáltatásmegszakítás az Annex I szektort érintve), amit az SZTFH-nak kell bejelenteni. A 72 órás GDPR-s bejelentés az személyes adatok megsértésére vonatkozik és az adatfelügyelőnek szól. Egy esemény mindkettővel járhat, de ezek eltérő, egymástól függetlenül indított nyomkövetéseket igényelnek.</p>
+      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">Az első 24 órában az incidensről való tudomásulvételként egy alapvető jelzést kell küldenie az SZTFH-nak és az érintett ügyfeleknek, amely megerősíti az incidens tényét és a kezelés megkezdését. A 72 órás határidőig részletes információt kell nyújtania, amely tartalmazza az incidens jellegét, az érintett adatok körét, a sérült ügyfelek számát és a helyreállítási tervet.</p>
     </div>
   </div>
   <div style="padding:1.25rem 0;border-bottom:1px solid var(--gray-100);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Milyen szankcióra számíthatunk, ha nem teljesítjük a NIS2 követelményeket 2026-ig?</h3>
+    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Szükséges-e az IaaS, PaaS és SaaS szolgáltatónak is azonos biztonsági vezérlőket alkalmaznia, vagy vannak szektori különbségek?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">Az SZTFH akár 10 millió euróig terjedő, vagy az éves globális forgalom 4%-áig terjedő büntetést szabhat ki legalapvetőbb kötelezettségek megsértéséért (pl. incidenszámára hiánya, biztonsági kontrollok hiánya). A magyarországi gyakorlatban ez eddig még nem érvényesült, de 2025–2026 után az EU erősíteni fogja a felügyeletét. Ajánlott már 2024-ben kezdeni az előkészületeket.</p>
+      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">Az Annex I kritikus entitás-követelmények minden felhőszolgáltatói modellre egyaránt vonatkoznak, azonban az implementáció különbözhet. Az IaaS-nek alapvetõen az infrastruktúra-szintû izolációra, a PaaS-nek a futtatási környezet biztonságára, az SaaS-nak pedig az alkalmazás-szintû adatvédelemre kell összpontosítania. Mindhárom modellnek azonban ISO 27001 vagy SOC 2 Type II tanúsítással kell rendelkeznie és dokumentáltan kell kezelnie az ügyfél-adatokat az EU-n belül.</p>
     </div>
   </div>
   </div>
@@ -269,8 +269,6 @@
   </div>
 </div>
 
-
-<nav class="related-sectors" aria-label="Kapcsolódó szektorok" style="max-width:1100px;margin:2rem auto;padding:1.5rem 1.25rem;border-top:1px solid #e5e7eb;"><h2 style="font-size:1.05rem;margin:0 0 .75rem;">Kapcsolódó szektorok</h2><ul style="list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem 1rem;"><li style="margin:0"><a href="construction.html">NIS2 nagylétesítményi építőipari cégekre</a></li><li style="margin:0"><a href="cybersecurity-firms.html">NIS2 Kiberbiztonsági tv. Cybersecurity szállítók Magyarország 2026</a></li><li style="margin:0"><a href="dental-clinics.html">NIS2 Fogorvosi és szakorvosi klinikákra vonatkozó követelmények 2026</a></li><li style="margin:0"><a href="education.html">NIS2 Felsőoktatási Intézmények Magyarország 2026 Kiberbiztonsági</a></li><li style="margin:0"><a href="energy.html">NIS2 Kiberbiztonsági tv. villamosenergia-termelők és hálózatkezelők (2026)</a></li><li style="margin:0"><a href="fintech.html">NIS2 Fintech Megfelelőség Magyarország 2026</a></li></ul></nav>
 <footer style="background:var(--gray-50);border-top:1px solid var(--gray-200);padding:2rem 1.25rem;text-align:center;">
   <div class="container">
     <p style="color:var(--gray-400);font-size:.82rem;margin:0;">
@@ -283,6 +281,5 @@
   </div>
 </footer>
 
-  <script src="/js/tg-cta.js" defer></script>
 </body>
 </html>

@@ -3,7 +3,17 @@
   <title>nis2-eszkozok.hu</title>
   <link>https://nis2-eszkozok.hu/</link>
   <description>nis2-eszkozok.hu — latest pages</description>
-  <lastBuildDate>Thu, 25 Jun 2026 18:12:53 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 04 Aug 2026 10:43:32 +0000</lastBuildDate>
+    <item>
+      <title>EU AI Act megfelelési eszközök összehasonlítása 2026</title>
+      <link>https://nis2-eszkozok.hu/ai-act-eszkozok.html</link>
+      <guid>https://nis2-eszkozok.hu/ai-act-eszkozok.html</guid>
+    </item>
+    <item>
+      <title>EAA webes akadálymentesítési eszközök összehasonlítása 2026</title>
+      <link>https://nis2-eszkozok.hu/akadalymentesitesi-eszkozok-eaa.html</link>
+      <guid>https://nis2-eszkozok.hu/akadalymentesitesi-eszkozok-eaa.html</guid>
+    </item>
     <item>
       <title>NIS2 Penetrációs teszt kötelezettség – Cikk 21(2)(f)</title>
       <link>https://nis2-eszkozok.hu/behatolasi-tesztek.html</link>
@@ -18,6 +28,11 @@
       <title>Cyber biztosítás és NIS2: Kockázatkezelés Magyarországon</title>
       <link>https://nis2-eszkozok.hu/cyber-biztositas.html</link>
       <guid>https://nis2-eszkozok.hu/cyber-biztositas.html</guid>
+    </item>
+    <item>
+      <title>DORA megfelelési eszközök összehasonlítása 2026</title>
+      <link>https://nis2-eszkozok.hu/dora-eszkozok.html</link>
+      <guid>https://nis2-eszkozok.hu/dora-eszkozok.html</guid>
     </item>
     <item>
       <title>NIS2 Ellátási Lánc Biztonsága: Szállítói Követelmények</title>
@@ -105,9 +120,14 @@
       <guid>https://nis2-eszkozok.hu/faq.html</guid>
     </item>
     <item>
-      <title>NIS2/KSC Eszközök magyar vállalkozások számára 2026 — Összehasonlítás és Kiválasztás</title>
+      <title>NIS2/SZTFH Eszközök magyar vállalkozások számára 2026 — Összehasonlítás és Kiválasztás</title>
       <link>https://nis2-eszkozok.hu/</link>
       <guid>https://nis2-eszkozok.hu/</guid>
+    </item>
+    <item>
+      <title>ISO 27001 megfelelési szoftver összehasonlítás 2026</title>
+      <link>https://nis2-eszkozok.hu/iso-27001-eszkozok.html</link>
+      <guid>https://nis2-eszkozok.hu/iso-27001-eszkozok.html</guid>
     </item>
     <item>
       <title>ISO 27001 és NIS2 megfelelőség: Hogyan működnek együtt?</title>
@@ -130,28 +150,8 @@
       <guid>https://nis2-eszkozok.hu/nis2-kepzes.html</guid>
     </item>
     <item>
-      <title>NIS2 Regisztráció Magyarország – SZTFH Bejelentkezés</title>
-      <link>https://nis2-eszkozok.hu/nis2-regisztracio.html</link>
-      <guid>https://nis2-eszkozok.hu/nis2-regisztracio.html</guid>
-    </item>
-    <item>
-      <title>NIS2 által érintett szektorok Magyarországon 2026 – teljes lista I. és II. melléklet</title>
-      <link>https://nis2-eszkozok.hu/nis2-szektorok.html</link>
-      <guid>https://nis2-eszkozok.hu/nis2-szektorok.html</guid>
-    </item>
-    <item>
-      <title>EU 2024/2690 Rendelet: NIS2 Compliance MSP-knek és Felhőszolgáltatóknak</title>
-      <link>https://nis2-eszkozok.hu/nis2-vegrehajtasi-rendelet.html</link>
-      <guid>https://nis2-eszkozok.hu/nis2-vegrehajtasi-rendelet.html</guid>
-    </item>
-    <item>
-      <title>10 legjobb NIS2 eszköz 2026 — teljes összehasonlítás magyar cégeknek</title>
-      <link>https://nis2-eszkozok.hu/osszehasonlitas.html</link>
-      <guid>https://nis2-eszkozok.hu/osszehasonlitas.html</guid>
-    </item>
-    <item>
-      <title>NIS2 számviteli irodák adatbiztonsága 2026 — SZTFH útmutató</title>
-      <link>https://nis2-eszkozok.hu/sektory/accountants.html</link>
-      <guid>https://nis2-eszkozok.hu/sektory/accountants.html</guid>
+      <title>NIS2 Kezdőcsomag, szerkeszthető megfelelési sablonok</title>
+      <link>https://nis2-eszkozok.hu/nis2-kezdocsomag.html</link>
+      <guid>https://nis2-eszkozok.hu/nis2-kezdocsomag.html</guid>
     </item>
 </channel></rss>

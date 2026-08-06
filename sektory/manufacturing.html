@@ -11,18 +11,18 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NIS2 Iparági gyártók Magyarország 2026 – OT/ICS biztonsági követelmények</title>
-  <meta name="description" content="NIS2 szabályozás ipari gyártók számára Magyarországon. OT/ICS biztonság, ellátási lánc, incidens-bejelentés 2026-ig.">
+  <title>NIS2 ipari gyártók számára Magyarországon – 2026-os megfelelőség</title>
+  <meta name="description" content="NIS2 megfelelőség ipari gyártók részére Magyarországon. OT/ICS biztonsági kötelezettségek, ellátási lánc védelem és incidensbejelentés 2026-ig.">
   <link rel="canonical" href="https://nis2-eszkozok.hu/sektory/manufacturing.html">
-  <meta property="og:title" content="NIS2 Iparági gyártók Magyarország 2026 – OT/ICS biztonsági követelmények">
-  <meta property="og:description" content="NIS2 szabályozás ipari gyártók számára Magyarországon. OT/ICS biztonság, ellátási lánc, incidens-bejelentés 2026-ig.">
+  <meta property="og:title" content="NIS2 ipari gyártók számára Magyarországon – 2026-os megfelelőség">
+  <meta property="og:description" content="NIS2 megfelelőség ipari gyártók részére Magyarországon. OT/ICS biztonsági kötelezettségek, ellátási lánc védelem és incidensbejelentés 2026-ig.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://nis2-eszkozok.hu/sektory/manufacturing.html">
   <meta property="og:locale" content="hu_HU">
   <meta property="og:site_name" content="NIS2-Eszkozok.hu">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="NIS2 Iparági gyártók Magyarország 2026 – OT/ICS biztonsági követelmények">
-  <meta name="twitter:description" content="NIS2 szabályozás ipari gyártók számára Magyarországon. OT/ICS biztonság, ellátási lánc, incidens-bejelentés 2026-ig.">
+  <meta name="twitter:title" content="NIS2 ipari gyártók számára Magyarországon – 2026-os megfelelőség">
+  <meta name="twitter:description" content="NIS2 megfelelőség ipari gyártók részére Magyarországon. OT/ICS biztonsági kötelezettségek, ellátási lánc védelem és incidensbejelentés 2026-ig.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
@@ -46,7 +46,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "NIS2 a Connected Production Facility-khez és Industry 4.0 infrastruktúrához – Magyarország 2026",
+      "name": "NIS2 ipari gyártók számára Magyarországon – szabályozott entitások 2026-os követelményei",
       "item": "https://nis2-eszkozok.hu/sektory/manufacturing.html"
     }
   ]
@@ -59,26 +59,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Milyen eszközöket kell OT-ként kezelni, és melyeket IT-ként egy ipari gyártási üzemet tekintve?",
+      "name": "Milyen termelési zavarok kötelezik az incidensbejelentésre a SZTFH-nak?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "OT-ként kell kezelni az összes termelésszabályozó egységet (PLC, SCADA, DCS), szenzort, aktuátort, ipari robot-vezérlőt és valós idejű kommunikációs busz-interfészt (CAN, Profibus, OPC-UA). IT-ként kell kezelni az iroda-hálózatot, az ERP-szoftvert és az adminisztrációs számítógépeket. Amennyiben egy eszköz a termelési folyamatra közvetlenül hatással van, akkor OT-ként kell védeni, függetlenül a szállító vagy a technológia típusától."
+        "text": "Azon biztonsági incidenseket kell bejelenteni, amelyek a termelési sorokat 4 órán vagy annál hosszabb ideig érintik, vagy olyan gazdasági kárt okoznak, amely a vállalat éves forgalmának 0,5%-át meghaladja. Az incidensbejelentésnek 24 órán belül meg kell történnie."
       }
     },
     {
       "@type": "Question",
-      "name": "Hogyan működik a 24 órás incidens-bejelentés, ha a termelésszakadás több napig tart?",
+      "name": "Hogyan integrálhatok PLC-ket a biztonsági hálózatimba anélkül, hogy a termelést zavarná?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Az első bejelentést az incidens felismerésétől számított 24 órán belül meg kell tenni az SZTFH-nak, még akkor is, ha az oknyomozás nem fejeződött be. A bejelentésben közölni kell az ismert tényeket, az érintett rendszerek azonosítóit és az eddigi intézkedéseket. A nyomozás végeztével vagy a termelés helyreállítása után napi frissítéseket kell küldeni, végül egy záró jelentést az incidens teljes feltérképezésével."
+        "text": "Egy DMZ (demilitarizált zóna) hálózatot kell felépíteni a vállalati IT és az OT között, amelyen keresztül az összes kommunikáció átmegy. Az összes adatforgalomra szűrést és naplózást kell alkalmazni, valamint a PLC-khez való hozzáférést erős autentikációval (például token-alapú) kell védeni."
       }
     },
     {
       "@type": "Question",
-      "name": "Milyen büntetések várnak egy ipari gyártóra, ha nem felel meg a NIS2-nek a 2026-os határidőig?",
+      "name": "Mennyi ideig van még a megfelelésre, és mekkora a szankció, ha nem teljesítik?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A NIS2/Kiberbiztonsági tv. szerinti szankciók legfeljebb 10 millió euróig vagy az éves globális bevétel 2,5%-áig terjedhetnek az OT-biztonság súlyos mulasztása esetén. Emellett az SZTFH felügyeleti intézkedéseket (üzemeltetési tilalmak, obstrukcióért pénzbírság) és nyilvánosságra hozatalt (a média értesítése) rendelkezhet. A határidő 2026. október 19."
+        "text": "A 2026. szeptember 15-i határidőig kell teljes megfelelést elérni. Az importantes entitásokra (II. melléklet) maximum 7 millió euró vagy az éves forgalom 1,4%-a terjedő pénzbírság vonatkozhat, valamint a nem teljesítés alapján a hatóság korlátozhatja az entitás működésének kritikus részleteit."
       }
     }
   ]
@@ -105,23 +105,23 @@
   <div class="breadcrumb">
     <a href="../index.html">Főoldal</a><span>›</span>
     <a href="index.html">Ágazatok</a><span>›</span>
-    NIS2 a Connected Production Facility-khez és Industry 4.0 infrastruktúrához – Magyarország 2026
+    NIS2 ipari gyártók számára Magyarországon – szabályozott entitások 2026-os követelményei
   </div>
 </div>
 
 <!-- HERO -->
 <div style="background:var(--gray-50);padding:2.5rem 0 3rem;border-bottom:1px solid var(--gray-200);">
   <div class="container--narrow">
-    <span style="display:inline-block;background:#16a34a;color:#fff;font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.3rem .85rem;border-radius:4px;margin-bottom:1rem;">II. Melléklet — Fontos entitás</span>
-    <h1 style="font-size:clamp(1.4rem,3.5vw,2.1rem);color:var(--navy);margin:.25rem 0 1rem;line-height:1.25;">NIS2 a Connected Production Facility-khez és Industry 4.0 infrastruktúrához – Magyarország 2026</h1>
-    <p style="font-size:1.05rem;color:var(--gray-500);line-height:1.65;margin:0;">Ez az oldal az ipari gyártókat célozza meg, akiknek korszerűsített termelési soraik, PLC-controllereik és IoT-eszközeik vannak csatlakoztatva. Megtudhatja, hogyan feleljenek meg a NIS2/Kiberbiztonsági tv. követelményeinek az operációs technológia (OT) és az informatikai (IT) rendszerek biztonságosítása révén.</p>
+    <span style="display:inline-block;background:#16a34a;color:#fff;font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.3rem .85rem;border-radius:4px;margin-bottom:1rem;">II. melléklet – Fontos entitás</span>
+    <h1 style="font-size:clamp(1.4rem,3.5vw,2.1rem);color:var(--navy);margin:.25rem 0 1rem;line-height:1.25;">NIS2 ipari gyártók számára Magyarországon – szabályozott entitások 2026-os követelményei</h1>
+    <p style="font-size:1.05rem;color:var(--gray-500);line-height:1.65;margin:0;">Ez az útmutató azoknak az ipari gyártóknak készült, amelyek csatlakoztatott termelési sorokkal, PLC-ekkel és Ipar 4.0 infrastruktúrával rendelkeznek. Megismeri a 2023. évi XXIII. törvényen alapuló kötelezettségeket és a gyakorlati implementációs lépéseket.</p>
   </div>
 </div>
 
 <!-- WHO QUALIFIES -->
 <div class="container--narrow" style="padding:2.5rem 1.25rem 0;">
   <div style="background:var(--gray-50);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;">
-    <p style="font-size:.95rem;color:var(--navy-dark);line-height:1.65;margin:0;">A NIS2 szabályozás alá tartoznak azok az ipari gyártók Magyarországon, amelyeknek összefüggő termelési rendszerei, PLC-vezérlő rendszerei vagy Industry 4.0 infrastruktúrájuk van, és amelyek az energetika, víz-, gáz-, vagy élelmiszer-feldolgozás szektorban működnek, vagy amelyek kritikus infrastruktúra-szolgáltatásokra támaszkodnak. Az adatvédelmi hatóság és az SZTFH (Szervezeti Tanúsítási Fejlesztési Hivatal) által kijelölt fontos entitások kötelesek megfelelni. A méret szempontjából nincs fix küszöbérték, hanem az üzletági kritikusság és a társadalom-gazdasági hatás az irányadó.</p>
+    <p style="font-size:.95rem;color:var(--navy-dark);line-height:1.65;margin:0;">A NIS2-szabályozás alá tartoznak azok az ipari gyártók Magyarországon, amelyek termelési jellegű tevékenységet végeznek és akár közvetlenül, akár közvetett szolgáltatásokon keresztül kritikus infrastruktúra ellátásában részt vesznek. Különösen fontos entitásnak minősülnek a nagyobb vállalatok, amelyek nemzeti vagy európai ellátási lánc részei, valamint azok, amelyek termelési zavarai jelentős gazdasági hatást válthatnak ki.</p>
   </div>
 </div>
 
@@ -135,8 +135,8 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <strong style="color:var(--navy);font-size:.95rem;">OT/ICS biztonság – termelési sorok és PLC-vezérlők védelme</strong>
-        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Minden termelési soron működő PLC, SCADA és ipari IoT-eszközt azonosítani, nyilvántartani és aktívan védelemmel ellátni kell. Az OT-hálózatot szigorúan el kell különíteni az IT-hálózattól hitelesítésalapú hozzáférés-vezérléssel. Monitoring, behatolásérzékelés és valós idejű anomáliadetektálás szükséges az összes OT-csatornán.</p>
+        <strong style="color:var(--navy);font-size:.95rem;">OT/ICS biztonsági intézkedések termelési sorokban</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">A termelési vonalak, PLC-ek és ipari vezérlőrendszerek számára kötelezően be kell vezetni olyan biztonsági intézkedéseket, amelyek megakadályozzák az illetéktelen hozzáférést és a kiberhadakozást. Ez magában foglalja a szegmentált OT-hálózatok kialakítását, az ipari eszközök hozzáférés-vezérlésének szigorú kezelését, valamint az operációs technológia és információs technológia közötti egyértelmű elkülönítést.</p>
       </div>
     </div>
     <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
@@ -144,8 +144,8 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <strong style="color:var(--navy);font-size:.95rem;">Ellátási lánc biztonsága – firmware és komponens-szállítók</strong>
-        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Az ipari komponensek és vezérlőszoftver szállítóival írásos szerződéseket kell kötni, amelyek biztonsági követelményeket rögzítenek. Firmware-frissítéseket kizárólag hiteles csatornákon keresztül szabad telepíteni, előzetes tesztelés után izolált környezetben. Az ellátási lánc kockázatainak rendszeres felülvizsgálata és szállítói audit szükséges.</p>
+        <strong style="color:var(--navy);font-size:.95rem;">Ellátási lánc biztonsági szállítmányok és firmware-szállítók</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Garantálnia kell, hogy az ipari komponensek, vezérlőszoftverek és firmware-frissítések szállítói megfelelő biztonsági előintézkedéseket alkalmaznak. Szállítói szerződésekben rögzíteni kell a biztonsági követelményeket, és rendszeres felülvizsgálatokat kell végezni az ellátási lánc integritásának ellenőrzésére.</p>
       </div>
     </div>
     <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
@@ -153,8 +153,8 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <strong style="color:var(--navy);font-size:.95rem;">Incidens-bejelentés – a termelésszakadások napi 24 órán belüli jelzése</strong>
-        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">A termelésszakadásokat okozó kiberbiztonsági incidenseket az SZTFH-nak 24 órán belül be kell jelenteni, ha gazdasági hatásuk jelentős (termelési veszteség, megrendelés-teljesítési zavar). A bejelentésnek tartalmaznia kell az incidens leírását, az érintett rendszerek listáját és a megtett intézkedéseket. Külső szervizpartnerek közreműködése esetén ők is kötelesek az incidenst közvetlenül bejelenteni.</p>
+        <strong style="color:var(--navy);font-size:.95rem;">Incidensbejelentés termelési zavarokra</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">A termelést érintő biztonsági incidensek közül azokat kell bejelenteni a SZTFH-nak, amelyek jelentős gazdasági hatást okoznak vagy kritikus infrastruktúra-szolgáltatások zavart szenvednek. A bejelentésnek az incidens felfedezésétől számított 24 órán belül meg kell történnie, kezdeti értesítés formájában.</p>
       </div>
     </div>
     <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
@@ -162,8 +162,8 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <strong style="color:var(--navy);font-size:.95rem;">IT/OT hálózat-szegmentálás és monitorozás</strong>
-        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Az összes termelési kontrollert és ipari IoT-eszközt logikailag el kell különíteni a vállalati IT-hálózattól (DMZ-n vagy szegmentált VLAN-on keresztül). Az OT-hálózatra egész nap monitorozást és naplózást kell bevezetni, amely regisztrál minden egyedi bejelentkezést, parancsfuttatást és protokoll-váltást. A hálózati forgalom analízisét megerősített szabályokra kell alapozni.</p>
+        <strong style="color:var(--navy);font-size:.95rem;">IT/OT hálózat szegmentáció és monitorozás</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">A termelési rendszereket szigorúan el kell választani a vállalati informatikai hálózattól, és a közöttük lévő minden adatforgalmat monitorozni kell. A hozzáférési pontokra erős autentikációt és naplózást kell alkalmazni, hogy az illetéktelen behatolási kísérletek azonnal észlelhetők és nyomvonalazhatók legyenek.</p>
       </div>
     </div>
     <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
@@ -171,8 +171,8 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <strong style="color:var(--navy);font-size:.95rem;">Javítási kezelés az OT-rendszerekhez – patch-management és verziók nyomon követése</strong>
-        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Az összes PLC, SCADA, ipari szenzor és szoftverlicenc verziójáról naprakész leltárt kell vezetni. Kritikus biztonsági javításokat maximum 60 nap alatt kell telepíteni a termelésszakadás mellékhatásainak ismerete mellett. A javításokat tesztkörnyezetben előzetesen be kell praktizálni, az eredeti rendszerkonfigurációt dokumentálni kell.</p>
+        <strong style="color:var(--navy);font-size:.95rem;">Javítás és frissítéskezelés OT-eszközökhöz</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Formális patch-management eljárást kell bevezetni az ipari vezérlőknek, PLC-eknek és más OT-eszközöknek, amely biztosítja a biztonsági frissítések időben történő telepítését. Az eljárásnak tartalmaznia kell a tesztelési és validálási folyamatokat, hogy a termelés nem szakad meg, valamint az olyan eszközöket, amelyek nem támogatnak gyors frissítéseket.</p>
       </div>
     </div>
   </div>
@@ -184,16 +184,16 @@
   <ul style="list-style:none;padding:0;margin:0;border-top:1px solid var(--gray-100);">
     
     <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
-      <span style="color:#dc2626;margin-right:.5rem;">✗</span>A PLC-kontrollak és ipari IoT-eszközök közvetlenül a vállalati Wi-Fi-hez vagy Ethernet-hálózathoz kapcsolódnak hitelesítés nélkül, ami megkerülhető belső támadásokat tesz lehetővé.
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>PLC-k és ipari vezérlők közvetlenül a vállalati hálózatra csatlakoztatva, szegmentáció és tűzfal nélkül – ezek elkülönítést és DMZ-hálózatot igényelnek.
     </li>
     <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
-      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Nincs formális patch-management folyamat az OT-rendszerre; a firmware-frissítéseket ad hoc módon, papíralapon vagy USB-n keresztül telepítik dokumentáció nélkül.
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Nincs dokumentált, végrehajtott patch-management folyamat az OT-rendszerekhez, amely arra vezethet, hogy ismert sebezhetőségek a termelésben maradnak.
     </li>
     <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
-      <span style="color:#dc2626;margin-right:.5rem;">✗</span>A távolról elérésű karbantartási csatornák (SSH, Telnet, VPN) nincs titkosítva és korlátozva; bármilyen szervizpartner beléphet egyszerű jelszó használatával.
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Távolról karbantartók és szállítók biztonsági nélküli protokollokon (Telnet, nem titkosított FTP) keresztül férnek hozzá az ipari eszközökhöz – VPN és erős autentikáció szükséges.
     </li>
     <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
-      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Az ipari IoT-eszközök, szenzorokat és aktora nem számlálásolódnak egy központi leltárban; a biztonságcsapat nem tudja, hány eszköz működik és melyik szoftververziót fut.
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Nincs vagy hiányos eszközleltár az ipari IoT-eszközökről, mikrovezérlőkről és szenzorokról, ami lehetetlenné teszi a sérülékenységkezelést és a kockázatértékelést.
     </li>
   </ul>
 </div>
@@ -209,7 +209,7 @@
         <span style="font-size:.78rem;color:var(--gray-400);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:.2rem .6rem;">isms.online</span>
       </div>
       <p style="font-size:.88rem;color:var(--gray-600);line-height:1.55;margin:0;"></p>
-      <a href="../eszkozok/isms-online.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Ellenőrizze az eszközt →</a>
+      <a href="../eszkozok/isms-online.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Sprawdź narzędzie →</a>
     </div>
     <div style="background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
@@ -217,7 +217,7 @@
         <span style="font-size:.78rem;color:var(--gray-400);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:.2rem .6rem;">secfix.com</span>
       </div>
       <p style="font-size:.88rem;color:var(--gray-600);line-height:1.55;margin:0;"></p>
-      <a href="../eszkozok/secfix.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Ellenőrizze az eszközt →</a>
+      <a href="../eszkozok/secfix.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Sprawdź narzędzie →</a>
     </div>
     <div style="background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
@@ -225,7 +225,7 @@
         <span style="font-size:.78rem;color:var(--gray-400);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:.2rem .6rem;">reglyze.com</span>
       </div>
       <p style="font-size:.88rem;color:var(--gray-600);line-height:1.55;margin:0;"></p>
-      <a href="../eszkozok/reglyze.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Ellenőrizze az eszközt →</a>
+      <a href="../eszkozok/reglyze.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Sprawdź narzędzie →</a>
     </div>
   </div>
 </div>
@@ -236,21 +236,21 @@
   <div style="border-top:1px solid var(--gray-100);">
     
   <div style="padding:1.25rem 0;border-bottom:1px solid var(--gray-100);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Milyen eszközöket kell OT-ként kezelni, és melyeket IT-ként egy ipari gyártási üzemet tekintve?</h3>
+    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Milyen termelési zavarok kötelezik az incidensbejelentésre a SZTFH-nak?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">OT-ként kell kezelni az összes termelésszabályozó egységet (PLC, SCADA, DCS), szenzort, aktuátort, ipari robot-vezérlőt és valós idejű kommunikációs busz-interfészt (CAN, Profibus, OPC-UA). IT-ként kell kezelni az iroda-hálózatot, az ERP-szoftvert és az adminisztrációs számítógépeket. Amennyiben egy eszköz a termelési folyamatra közvetlenül hatással van, akkor OT-ként kell védeni, függetlenül a szállító vagy a technológia típusától.</p>
+      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">Azon biztonsági incidenseket kell bejelenteni, amelyek a termelési sorokat 4 órán vagy annál hosszabb ideig érintik, vagy olyan gazdasági kárt okoznak, amely a vállalat éves forgalmának 0,5%-át meghaladja. Az incidensbejelentésnek 24 órán belül meg kell történnie.</p>
     </div>
   </div>
   <div style="padding:1.25rem 0;border-bottom:1px solid var(--gray-100);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Hogyan működik a 24 órás incidens-bejelentés, ha a termelésszakadás több napig tart?</h3>
+    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Hogyan integrálhatok PLC-ket a biztonsági hálózatimba anélkül, hogy a termelést zavarná?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">Az első bejelentést az incidens felismerésétől számított 24 órán belül meg kell tenni az SZTFH-nak, még akkor is, ha az oknyomozás nem fejeződött be. A bejelentésben közölni kell az ismert tényeket, az érintett rendszerek azonosítóit és az eddigi intézkedéseket. A nyomozás végeztével vagy a termelés helyreállítása után napi frissítéseket kell küldeni, végül egy záró jelentést az incidens teljes feltérképezésével.</p>
+      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">Egy DMZ (demilitarizált zóna) hálózatot kell felépíteni a vállalati IT és az OT között, amelyen keresztül az összes kommunikáció átmegy. Az összes adatforgalomra szűrést és naplózást kell alkalmazni, valamint a PLC-khez való hozzáférést erős autentikációval (például token-alapú) kell védeni.</p>
     </div>
   </div>
   <div style="padding:1.25rem 0;border-bottom:1px solid var(--gray-100);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Milyen büntetések várnak egy ipari gyártóra, ha nem felel meg a NIS2-nek a 2026-os határidőig?</h3>
+    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Mennyi ideig van még a megfelelésre, és mekkora a szankció, ha nem teljesítik?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">A NIS2/Kiberbiztonsági tv. szerinti szankciók legfeljebb 10 millió euróig vagy az éves globális bevétel 2,5%-áig terjedhetnek az OT-biztonság súlyos mulasztása esetén. Emellett az SZTFH felügyeleti intézkedéseket (üzemeltetési tilalmak, obstrukcióért pénzbírság) és nyilvánosságra hozatalt (a média értesítése) rendelkezhet. A határidő 2026. október 19.</p>
+      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">A 2026. szeptember 15-i határidőig kell teljes megfelelést elérni. Az importantes entitásokra (II. melléklet) maximum 7 millió euró vagy az éves forgalom 1,4%-a terjedő pénzbírság vonatkozhat, valamint a nem teljesítés alapján a hatóság korlátozhatja az entitás működésének kritikus részleteit.</p>
     </div>
   </div>
   </div>
@@ -269,8 +269,6 @@
   </div>
 </div>
 
-
-<nav class="related-sectors" aria-label="Kapcsolódó szektorok" style="max-width:1100px;margin:2rem auto;padding:1.5rem 1.25rem;border-top:1px solid #e5e7eb;"><h2 style="font-size:1.05rem;margin:0 0 .75rem;">Kapcsolódó szektorok</h2><ul style="list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem 1rem;"><li style="margin:0"><a href="medical-devices.html">NIS2 orvosi eszközgyártók Magyarország 2026 kiberbiztonsági szabályozás</a></li><li style="margin:0"><a href="pharmacies.html">NIS2 Magyarország gyógyszertári láncok</a></li><li style="margin:0"><a href="public-administration.html">NIS2 megfelelőség közigazgatási szerveknek Magyarországon 2026</a></li><li style="margin:0"><a href="real-estate.html">NIS2 ingatlanügynökségek és ingatlankezelők Magyarország 2026</a></li><li style="margin:0"><a href="retail.html">NIS2 Kiberbiztonsági tv - Nagy kereskedelmi láncok és e-commerce operátorok 2026</a></li><li style="margin:0"><a href="sme-general.html">NIS2 Kötelezettségek</a></li></ul></nav>
 <footer style="background:var(--gray-50);border-top:1px solid var(--gray-200);padding:2rem 1.25rem;text-align:center;">
   <div class="container">
     <p style="color:var(--gray-400);font-size:.82rem;margin:0;">
@@ -283,6 +281,5 @@
   </div>
 </footer>
 
-  <script src="/js/tg-cta.js" defer></script>
 </body>
 </html>
