@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-<meta name="robots" content="noindex,nofollow">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4HVKETFR8"></script>
   <script>
@@ -12,18 +11,18 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NIS2 Jogi szolgáltatók Magyarország 2026 - Kiberbiztonsági követelmények</title>
-  <meta name="description" content="Ügyvédi irodák NIS2 megfelelőségi útmutatója. Littigációs adatok védelme, ügyfél-ügyvéd titok, incidensbjelentés deadline 2026.">
+  <title>NIS2 jogi szolgáltatók Magyarország 2026 – SZTFH megfelelőség</title>
+  <meta name="description" content="Ügyvédi irodák és jogi szolgáltatók NIS2 kötelezettségei Magyarországon. Szenzitív litigációs és tranzakciós adatok védelme, incidensbejelentés, szállítói biztonság.">
   <link rel="canonical" href="https://nis2-eszkozok.hu/sektory/law-firms.html">
-  <meta property="og:title" content="NIS2 Jogi szolgáltatók Magyarország 2026 - Kiberbiztonsági követelmények">
-  <meta property="og:description" content="Ügyvédi irodák NIS2 megfelelőségi útmutatója. Littigációs adatok védelme, ügyfél-ügyvéd titok, incidensbjelentés deadline 2026.">
+  <meta property="og:title" content="NIS2 jogi szolgáltatók Magyarország 2026 – SZTFH megfelelőség">
+  <meta property="og:description" content="Ügyvédi irodák és jogi szolgáltatók NIS2 kötelezettségei Magyarországon. Szenzitív litigációs és tranzakciós adatok védelme, incidensbejelentés, szállítói biztonság.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://nis2-eszkozok.hu/sektory/law-firms.html">
   <meta property="og:locale" content="hu_HU">
   <meta property="og:site_name" content="NIS2-Eszkozok.hu">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="NIS2 Jogi szolgáltatók Magyarország 2026 - Kiberbiztonsági követelmények">
-  <meta name="twitter:description" content="Ügyvédi irodák NIS2 megfelelőségi útmutatója. Littigációs adatok védelme, ügyfél-ügyvéd titok, incidensbjelentés deadline 2026.">
+  <meta name="twitter:title" content="NIS2 jogi szolgáltatók Magyarország 2026 – SZTFH megfelelőség">
+  <meta name="twitter:description" content="Ügyvédi irodák és jogi szolgáltatók NIS2 kötelezettségei Magyarországon. Szenzitív litigációs és tranzakciós adatok védelme, incidensbejelentés, szállítói biztonság.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
@@ -47,7 +46,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "NIS2 a jogi szolgáltatások szektorában Magyarországon — megfelelőségi követelmények 2026",
+      "name": "NIS2 jogi szolgáltatók és ügyvédi irodák Magyarországon — kötelezettségek és határidők",
       "item": "https://nis2-eszkozok.hu/sektory/law-firms.html"
     }
   ]
@@ -60,26 +59,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Milyen szintű titkosítást kell alkalmaznia az ügyvédi irodának az ügyfél-ügyvéd titokkal érintett dokumentumokra?",
+      "name": "Az ügyfél-ügyvéd titoktartás és az NIS2 biztonsági követelmények közötti konfliktus kezelésének módja?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Legalább AES-256 szintű titkosítást kell alkalmaznia az összes ügyfélhez kötött dokumentumra pihenő állapotban (hard driveken, szervereken, felhőben), és TLS 1.3-at vagy magasabbat a szállítás során. Ez kiterjed a case management rendszerekre, az e-discovery platformokra és az ügyvédek személyes eszközeire."
+        "text": "Az NIS2 és az ügyfél-ügyvéd privilégium összeegyeztethető: az irodában a biztonsági intézkedések (titkosítás, MFA, audit naplók) védik a privilégium alá tartozó információkat anélkül, hogy azt a SZTFH vagy más harmadik fél számára közvetlenül elérhetővé tennék. Az incidensbejelentési kötelezettség nem sérti meg a titoktartást, mivel az bejelentés általánosított maradhat az ügyfélra vonatkozó személyes adatok nélkül."
       }
     },
     {
       "@type": "Question",
-      "name": "Mit kell tennie az irodának, ha a jogi szoftver beszállítója biztonsági incidenst szenved el?",
+      "name": "Milyen határidőn belül kell az ügyvédi irodának szállítói biztonsági felülvizsgálatot végezni?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Azonnal értesítenie kell a SZTFH-t és az érintett ügyfeleket, ha az incidens az ügyfél-ügyvéd titkos vagy littigációs adatokra hat. Egy szállítói szerződésnek rögzítenie kell az azonnali értesítési kötelezettséget (24 óra alatt) és azt, hogy a beszállító hogyan nyújtja a nyomozásban történő együttműködést."
+        "text": "Az irodának már az e-discovery, case management vagy felhő szoftver kiválasztási szakaszában biztonsági értékelést kell végezni, és az évente legalább egyszer meg kell ismételnie. Ha egy szállító incidensről tájékoztat, az irodának 30 napon belül szükséges a hatás értékelése és az esetleges ügyfelekre gyakorolt hatásnak a SZTFH-nak való bejelentése."
       }
     },
     {
       "@type": "Question",
-      "name": "Milyen szankciók terhelhetik az ügyvédi irodát, ha az ügyfél-ügyvéd titok vagy littigációs adatok biztonsági megsértésben vesznek részt?",
+      "name": "Milyen szankciók terhelhetik az ügyvédi irodát, ha nem teljesíti a NIS2 követelményeket?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A SZTFH a NIS2 szerinti szankciók mellett 500 000 Ft-tól kezdődő bírságokat szabhat ki az ügyfél-ügyvéd titok megsértéséért, és az ügyfeleknek is lehet kártérítési igénye. Az aktív littigáció során az adatok megsértése bírósági szankciókat is kiválthat, valamint negatív ítéleti következménye lehet az adott ügyre nézve."
+        "text": "Az Annex II. szerinti fontos szervezetekre az 2023. évi XXIII. törvény szerint legfeljebb 7 millió euró vagy az éves forgalom 1,4%-a terjedő pénzbírság vonható ki súlyos vagy szándékos megsértés esetén. Kisebb hiányosságok 2-4 millió eurós büntetést vonhatnak maguk után; a szándékos adatvédelmi megsértések a GDPR szerinti 20 millió eurós vagy az éves forgalom 4%-os szankciót is kiválthatnak."
       }
     }
   ]
@@ -106,23 +105,23 @@
   <div class="breadcrumb">
     <a href="../index.html">Főoldal</a><span>›</span>
     <a href="index.html">Ágazatok</a><span>›</span>
-    NIS2 a jogi szolgáltatások szektorában Magyarországon — megfelelőségi követelmények 2026
+    NIS2 jogi szolgáltatók és ügyvédi irodák Magyarországon — kötelezettségek és határidők
   </div>
 </div>
 
 <!-- HERO -->
 <div style="background:var(--gray-50);padding:2.5rem 0 3rem;border-bottom:1px solid var(--gray-200);">
   <div class="container--narrow">
-    <span style="display:inline-block;background:#16a34a;color:#fff;font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.3rem .85rem;border-radius:4px;margin-bottom:1rem;">II. melléklet — Fontos entitás</span>
-    <h1 style="font-size:clamp(1.4rem,3.5vw,2.1rem);color:var(--navy);margin:.25rem 0 1rem;line-height:1.25;">NIS2 a jogi szolgáltatások szektorában Magyarországon — megfelelőségi követelmények 2026</h1>
-    <p style="font-size:1.05rem;color:var(--gray-500);line-height:1.65;margin:0;">Ez az útmutató azon ügyvédi irodák és jogi szolgáltatók számára készült, amelyek érzékeny littigációs és tranzakciós adatokat kezelnek. Megtudhatja, milyen konkrét biztonsági intézkedéseket kell megvalósítania az ügyfél-ügyvéd titok védelme és a NIS2 szerinti fontos entitás státusz teljesítéséhez.</p>
+    <span style="display:inline-block;background:#16a34a;color:#fff;font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.3rem .85rem;border-radius:4px;margin-bottom:1rem;">Melléklet II. — Fontos szervezet</span>
+    <h1 style="font-size:clamp(1.4rem,3.5vw,2.1rem);color:var(--navy);margin:.25rem 0 1rem;line-height:1.25;">NIS2 jogi szolgáltatók és ügyvédi irodák Magyarországon — kötelezettségek és határidők</h1>
+    <p style="font-size:1.05rem;color:var(--gray-500);line-height:1.65;margin:0;">Ez az oldal azoknak az ügyvédi irodáknak és jogi szolgáltatóknak szól, akik az Annex II. szerinti fontos szervezetnek minősülnek. Megtanulja, milyen konkrét kiberbiztonsági védelmet kell nyújtania az ügyfelei szenzitív litigációs és üzleti adatainak, valamint miként teljesítheti a SZTFH követelményeit 2026-ig.</p>
   </div>
 </div>
 
 <!-- WHO QUALIFIES -->
 <div class="container--narrow" style="padding:2.5rem 1.25rem 0;">
   <div style="background:var(--gray-50);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;">
-    <p style="font-size:.95rem;color:var(--navy-dark);line-height:1.65;margin:0;">A NIS2 szerinti fontos entitásnak minősülnek azok a jogi szolgáltatók, amelyek jelentős ügyfélkörrel (különösen nagy vállalatok, pénzügyi intézmények) dolgoznak, és rendszeres hozzáféréssel rendelkeznek szenzitív littigációs, M&A vagy szabályozási adatokhoz. E körbe tartoznak többek között a nagyobb ügyvédi irodák, szakosodott littigációs csapatok és nemzetközi jogi szolgáltatók magyarországi irodái.</p>
+    <p style="font-size:.95rem;color:var(--navy-dark);line-height:1.65;margin:0;">Az Annex II. szerinti fontos szervezetnek minősülnek azok a jogi szolgáltatók és ügyvédi irodák, amelyek nagyobb ügyfélkörhöz nyújtanak szolgáltatásokat, különösen a financiális, energetikai, közlekedési vagy oktatási szektorban tevékenykedő vállalatok számára, valamint azok, akik szisztematikusan kezelik a kritikus infrastruktúrára, vagy adatkezelésre vonatkozó nagyszabású üzleti adatokat. A besorolás nem pusztán a mérettől, hanem az ügyfelei kritikalitásától és az kezelt szenzitív információtól függ.</p>
   </div>
 </div>
 
@@ -136,8 +135,8 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <strong style="color:var(--navy);font-size:.95rem;">Ügyfél-ügyvéd titok adatainak kriptográfiai védelme</strong>
-        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Az összes ügyfélhez kapcsolódó dokumentumot, levelezést és ügyfél-ügyvéd titokkal érintett adatot titkosítással kell védeni, mind szállításkor (TLS 1.3 vagy magasabb), mind pedig pihenő állapotban (minimum AES-256). Ez kiterjed az ügyvédek laptopjain, mobil eszközein és a felhő alapú ügyvédi szoftveres platformokon tárolt fájlokra. A kulcskezelést egy központosított, audit-naplóval ellátott rendszer segítségével kell szervezni.</p>
+        <strong style="color:var(--navy);font-size:.95rem;">Ügyfél-ügyvéd titoktartás és adatvédelem az NIS2 keretében</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Az ügyvédi irodáknak biztosítaniuk kell, hogy az ügyfél-ügyvéd privilégium alatt álló összes dokumentum és kommunikáció a NIS2 és a GDPR követelménye szerinti titkosítással és hozzáférés-vezérléssel legyen védett. Ez magában foglalja a case management rendszerek, az e-mail platformok és a felhő alapú tárolók erős authentikációval és végpontok közötti titkosítással történő biztonságítását.</p>
       </div>
     </div>
     <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
@@ -145,8 +144,8 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <strong style="color:var(--navy);font-size:.95rem;">Ügyvédi esetek kezelőrendszereinek többfaktoros hitelesítése és hozzáférés-szabályozása</strong>
-        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Az összes ügyvédi esetnaplózási, dokumentumkezelési és e-discovery platformnak kötelező legalább kétfaktoros hitelesítést (MFA) kell implementálnia, valamint szerepalapú hozzáférés-szabályozást (RBAC). Az esetnaplók és a littigációval kapcsolatos adatok csak az adott ügyre kijelölt jogosultságokkal rendelkező jogászok számára legyenek elérhetőek, és minden hozzáférést naplózni kell.</p>
+        <strong style="color:var(--navy);font-size:.95rem;">E-discovery és dokumentumkezelési rendszerek biztonsága</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">A nagy mennyiségű jogi dokumentumot feldolgozó platformok, különösen az e-discovery megoldások esetén, a többfaktoros hitelesítés (MFA), szerepalapú hozzáférés-vezérlés (RBAC) és audit naplózás kötelező. Az irodának szoftverekért felelős szállítóktól biztonsági tanúsítványokat és Code of Conduct aláírásokat kell bekérnie, sowie rendszeres biztonsági felülvizsgálatokat kell végezni.</p>
       </div>
     </div>
     <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
@@ -154,8 +153,8 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <strong style="color:var(--navy);font-size:.95rem;">Szenzitív dokumentumok biztonságos megosztásának szabályozása</strong>
-        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Tilos az ügyfél-ügyvéd titokkal érintett, illetve littigációs dokumentumok megosztása szöveges üzenetezésben, nem titkosított e-mailben vagy felhő alapú tárhelyen (pl. nem titkosított OneDrive, Dropbox). Kizárólag végpont-végpont titkosítás alkalmazásával ellátott jogi szoftvereket vagy dedikált, biztonságos dokumentummegosztó platformokat szabad használni, ahol az adatok titkosítottak, a megosztás rögzített, és visszavonható.</p>
+        <strong style="color:var(--navy);font-size:.95rem;">Incidensbejelentés litigációs és tranzakciós adatokra vonatkozó megsértések esetén</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Szenzitív litigációs vagy M&A tranzakciós adatok veszélyeztetése vagy jogosulatlan hozzáférése esetén az irodának az incidenst 72 óra alatt a SZTFH-nak kell bejelentenie. A bejelentésnek tartalmaznia kell az érintett adatok körét, az ügyfelekre gyakorolt hatást, valamint az elkészített intézkedéseket az adatvédelem helyreállítása érdekében.</p>
       </div>
     </div>
     <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
@@ -163,8 +162,8 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <strong style="color:var(--navy);font-size:.95rem;">Jogi technológiai beszállítók biztonsági felügyelet és szállítói megállapodások</strong>
-        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Az összes jogi szoftver, case management rendszer, e-discovery platform és ügyfélkapcsolati szoftver beszállítóit periodikus biztonsági értékelésen kell keresztülvinni, valamint a szerződésekben rögzíteni kell az adatvédelmi és biztonsági követelményeket. Legalább éves szinten kell auditálni a beszállítók kiberbiztonsági gyakorlatát, az adatok tárolási helyét, valamint az ügyféldonnées titkosítási módjait.</p>
+        <strong style="color:var(--navy);font-size:.95rem;">Jogi technológiai szállítók és külső szolgáltatók biztonsági vetőértékelése</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Az ügyvédi irodák felelőssége az összes olyan szállító (e-discovery platform, case management szoftver, felhő szolgáltató) kiberbiztonsági képességeinek értékelése, amelyek szenzitív ügyféladatokhoz hozzáféréssel rendelkeznek. A szállítói szerződésekbe be kell foglalni a biztonsági bejelentési kötelezettségeket, az incidensmegfigyelési jogokat és a rendszeres biztonsági auditvizsgálatokra vonatkozó feltételeket.</p>
       </div>
     </div>
     <div class="checklist-item" style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--gray-100);">
@@ -172,8 +171,8 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <strong style="color:var(--navy);font-size:.95rem;">Kiberbiztonsági incidens bejelentés és válaszadási eljárás littigációs és M&A tranzakciók során</strong>
-        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Ha egy biztonsági incidens az ügyfél-ügyvéd titok vagy az aktív littigáció/M&A tranzakció adataira hat, azt azonnal (24 órán belül) a SZTFH-nak (Szervezet Sikerességéért Felelős Tanács) és az érintett ügyfélnek is jelenteni kell. Az irodának kell, hogy legyen egy dokumentált incidens-eljárása, amely tartalmazza az eskalációs lépéseket, a kommunikációs protokollt és a bírósággal való koordinációs terveket az aktív perekben.</p>
+        <strong style="color:var(--navy);font-size:.95rem;">Adatbiztonság fizikai és logikai környezetben — ügyvédi munkahelyek</strong>
+        <p style="margin:.25rem 0 0;color:var(--gray-500);font-size:.9rem;line-height:1.6;">Az irodai munkavállalók által használt laptopok, mobil eszközök és nyomtatók, amelyek ügyféladatokat tárolnak, titkosítást, eszköz-bejelentkeztetést és kötelező jelszókezelőt (1Password) igényelnek. A papír alapú szenzitív dokumentumokat biztonságos, korlátozott hozzáféréssel rendelkező térben kell tárolni; a megsemmisítésnek dokumentáltan kell történnie.</p>
       </div>
     </div>
   </div>
@@ -185,16 +184,16 @@
   <ul style="list-style:none;padding:0;margin:0;border-top:1px solid var(--gray-100);">
     
     <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
-      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Az ügyvédi esetnaplózi rendszereket gyakran nem védi többfaktoros hitelesítés, így az ügyfélmutatók és a teljes aktaanyag hozzáférhető egyetlen jelszavakkal.
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Case management és e-discovery rendszerekhez való hozzáférés nem többfaktoros hitelesítéssel védett, így a jogosulatlan bejelentkezés kockázata magas a szenzitív litigációs adatokra vonatkozóan.
     </li>
     <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
-      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Titkos littigációs dokumentumok, szerzői megjegyzések és ügyfél-ügyvéd levelezés szokásos nem titkosított e-maileken keresztül kerülnek megosztásra, amely egyértelműen sérti a NIS2 és a GDPR elvárásait.
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Bizalmas dokumentumokat gyakran titkosítás nélküli e-mail vagy fogyasztói felhőtárolók (pl. nem szabályozott Dropbox vagy Google Drive) segítségével osztanak meg munkatársak és ügyfelekkel, megsértve az ügyfél-ügyvéd privilégiumot.
     </li>
     <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
-      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Az ügyvédek laptopjain és tablettáin tárolt ügyfélmagatartások és esetnaplónak nincs egész lemeztitkosítás (az operációs rendszer szintjén), ami szükségtelenné teszi az adatvesztést utazások során.
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Az ügyvédi irodák nem végeznek szállítói biztonsági felméréseket az e-discovery és case management szoftvergyártóknál, így nem tudják, hogy ezek a külső rendszerek megvalósítanak-e megfelelő titkosítást és incidensbejelentést.
     </li>
     <li style="padding:.5rem 0;color:var(--gray-600);font-size:.93rem;border-bottom:1px solid var(--gray-100);line-height:1.55;">
-      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Nincs formális szállítói biztonsági értékelési folyamat a jogi szoftveres beszállítók számára, így az irodák nem tudják garantálni az ügyfélnaplóik titkosítási standardjait vagy az adatok tárolási helyét.
+      <span style="color:#dc2626;margin-right:.5rem;">✗</span>Ügyvédek munkalapjai, amelyek offline ügyféladatot tárolnak, nem fajlagos titkosítással védelmeztek; a lefoglalt vagy ellopott laptop adatai teljes mértékben olvasható marad.
     </li>
   </ul>
 </div>
@@ -210,7 +209,7 @@
         <span style="font-size:.78rem;color:var(--gray-400);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:.2rem .6rem;">reglyze.com</span>
       </div>
       <p style="font-size:.88rem;color:var(--gray-600);line-height:1.55;margin:0;"></p>
-      <a href="../eszkozok/reglyze.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Ellenőrizze az eszközt →</a>
+      <a href="../eszkozok/reglyze.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Sprawdź narzędzie →</a>
     </div>
     <div style="background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
@@ -218,7 +217,7 @@
         <span style="font-size:.78rem;color:var(--gray-400);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:.2rem .6rem;">1password.com</span>
       </div>
       <p style="font-size:.88rem;color:var(--gray-600);line-height:1.55;margin:0;"></p>
-      <a href="../eszkozok/1password.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Ellenőrizze az eszközt →</a>
+      <a href="../eszkozok/1password.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Sprawdź narzędzie →</a>
     </div>
     <div style="background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
@@ -226,7 +225,7 @@
         <span style="font-size:.78rem;color:var(--gray-400);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:.2rem .6rem;">isms.online</span>
       </div>
       <p style="font-size:.88rem;color:var(--gray-600);line-height:1.55;margin:0;"></p>
-      <a href="../eszkozok/isms-online.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Ellenőrizze az eszközt →</a>
+      <a href="../eszkozok/isms-online.html" style="font-size:.85rem;color:var(--green);font-weight:600;text-decoration:none;margin-top:.25rem;">Sprawdź narzędzie →</a>
     </div>
   </div>
 </div>
@@ -237,21 +236,21 @@
   <div style="border-top:1px solid var(--gray-100);">
     
   <div style="padding:1.25rem 0;border-bottom:1px solid var(--gray-100);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Milyen szintű titkosítást kell alkalmaznia az ügyvédi irodának az ügyfél-ügyvéd titokkal érintett dokumentumokra?</h3>
+    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Az ügyfél-ügyvéd titoktartás és az NIS2 biztonsági követelmények közötti konfliktus kezelésének módja?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">Legalább AES-256 szintű titkosítást kell alkalmaznia az összes ügyfélhez kötött dokumentumra pihenő állapotban (hard driveken, szervereken, felhőben), és TLS 1.3-at vagy magasabbat a szállítás során. Ez kiterjed a case management rendszerekre, az e-discovery platformokra és az ügyvédek személyes eszközeire.</p>
+      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">Az NIS2 és az ügyfél-ügyvéd privilégium összeegyeztethető: az irodában a biztonsági intézkedések (titkosítás, MFA, audit naplók) védik a privilégium alá tartozó információkat anélkül, hogy azt a SZTFH vagy más harmadik fél számára közvetlenül elérhetővé tennék. Az incidensbejelentési kötelezettség nem sérti meg a titoktartást, mivel az bejelentés általánosított maradhat az ügyfélra vonatkozó személyes adatok nélkül.</p>
     </div>
   </div>
   <div style="padding:1.25rem 0;border-bottom:1px solid var(--gray-100);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Mit kell tennie az irodának, ha a jogi szoftver beszállítója biztonsági incidenst szenved el?</h3>
+    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Milyen határidőn belül kell az ügyvédi irodának szállítói biztonsági felülvizsgálatot végezni?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">Azonnal értesítenie kell a SZTFH-t és az érintett ügyfeleket, ha az incidens az ügyfél-ügyvéd titkos vagy littigációs adatokra hat. Egy szállítói szerződésnek rögzítenie kell az azonnali értesítési kötelezettséget (24 óra alatt) és azt, hogy a beszállító hogyan nyújtja a nyomozásban történő együttműködést.</p>
+      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">Az irodának már az e-discovery, case management vagy felhő szoftver kiválasztási szakaszában biztonsági értékelést kell végezni, és az évente legalább egyszer meg kell ismételnie. Ha egy szállító incidensről tájékoztat, az irodának 30 napon belül szükséges a hatás értékelése és az esetleges ügyfelekre gyakorolt hatásnak a SZTFH-nak való bejelentése.</p>
     </div>
   </div>
   <div style="padding:1.25rem 0;border-bottom:1px solid var(--gray-100);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Milyen szankciók terhelhetik az ügyvédi irodát, ha az ügyfél-ügyvéd titok vagy littigációs adatok biztonsági megsértésben vesznek részt?</h3>
+    <h3 style="font-size:.97rem;color:var(--navy);margin:0 0 .5rem;" itemprop="name">Milyen szankciók terhelhetik az ügyvédi irodát, ha nem teljesíti a NIS2 követelményeket?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">A SZTFH a NIS2 szerinti szankciók mellett 500 000 Ft-tól kezdődő bírságokat szabhat ki az ügyfél-ügyvéd titok megsértéséért, és az ügyfeleknek is lehet kártérítési igénye. Az aktív littigáció során az adatok megsértése bírósági szankciókat is kiválthat, valamint negatív ítéleti következménye lehet az adott ügyre nézve.</p>
+      <p style="font-size:.9rem;color:var(--gray-600);line-height:1.6;margin:0;" itemprop="text">Az Annex II. szerinti fontos szervezetekre az 2023. évi XXIII. törvény szerint legfeljebb 7 millió euró vagy az éves forgalom 1,4%-a terjedő pénzbírság vonható ki súlyos vagy szándékos megsértés esetén. Kisebb hiányosságok 2-4 millió eurós büntetést vonhatnak maguk után; a szándékos adatvédelmi megsértések a GDPR szerinti 20 millió eurós vagy az éves forgalom 4%-os szankciót is kiválthatnak.</p>
     </div>
   </div>
   </div>
@@ -270,8 +269,6 @@
   </div>
 </div>
 
-
-<nav class="related-sectors" aria-label="Kapcsolódó szektorok" style="max-width:1100px;margin:2rem auto;padding:1.5rem 1.25rem;border-top:1px solid #e5e7eb;"><h2 style="font-size:1.05rem;margin:0 0 .75rem;">Kapcsolódó szektorok</h2><ul style="list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem 1rem;"><li style="margin:0"><a href="logistics.html">NIS2 szállítmányozási vállalatok Magyarországon</a></li><li style="margin:0"><a href="managed-services.html">NIS2 követelmények IT szolgáltatók számára Magyarország 2026</a></li><li style="margin:0"><a href="manufacturing.html">NIS2 Iparági gyártók Magyarország 2026</a></li><li style="margin:0"><a href="medical-devices.html">NIS2 orvosi eszközgyártók Magyarország 2026 kiberbiztonsági szabályozás</a></li><li style="margin:0"><a href="pharmacies.html">NIS2 Magyarország gyógyszertári láncok</a></li><li style="margin:0"><a href="public-administration.html">NIS2 megfelelőség közigazgatási szerveknek Magyarországon 2026</a></li></ul></nav>
 <footer style="background:var(--gray-50);border-top:1px solid var(--gray-200);padding:2rem 1.25rem;text-align:center;">
   <div class="container">
     <p style="color:var(--gray-400);font-size:.82rem;margin:0;">
@@ -284,6 +281,5 @@
   </div>
 </footer>
 
-  <script src="/js/tg-cta.js" defer></script>
 </body>
 </html>
