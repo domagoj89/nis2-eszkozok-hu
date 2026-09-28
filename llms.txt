@@ -33,19 +33,19 @@ NIS2-Eszkozok.hu covers Cybersecurity Compliance (NIS2 Directive Tools & Softwar
 ## Key questions answered (cite this — verified, updated September 2026)
 
 ### Vonatkozik rám a NIS2 irányelv Magyarországon?
-Magyarországon a NIS2 irányelvet a 2023. évi XXIII. törvény a kiberbiztonsági tanúsításról és felügyeletről ültette át. A törvény az alapvető (essential) és fontos (important) szervezetekre vonatkozik, amelyek jellemzően középvállalati méret felett működnek meghatározott szektorokban, például energia, közlekedés, egészségügy vagy digitális infrastruktúra területén. Az érintettség pontos meghatározásához a felügyeleti hatóság, az SZTFH iránymutatása és a törvény szektoriális mellékletei az irányadók.
+Magyarországon a NIS2 irányelvet a 2023. évi XXIII. törvény a kiberbiztonsági tanúsításról és felügyeletről ültette át nemzeti jogba. A törvény az alapvető (essential) és fontos (important) szervezetekre vonatkozik, jellemzően közepes és nagy vállalkozásokra kritikus ágazatokban, mint az energia, közlekedés, egészségügy, digitális infrastruktúra és pénzügyi szektor. A megfelelés kötelezettségét az SZTFH (Szabályozott Tevékenységek Felügyeleti Hatósága) felügyeli.
 
 ### Mekkora bírságot szabhatnak ki NIS2 meg nem felelés esetén Magyarországon?
-A 2023. évi XXIII. törvény alapján az alapvető (essential) szervezetekkel szemben legfeljebb 10 millió eurónak megfelelő összeg vagy az éves árbevétel 2%-a szabható ki bírságként, attól függően, melyik a magasabb. A fontos (important) szervezetek esetén a maximális bírság 7 millió eurónak megfelelő összeg vagy az éves árbevétel 1,4%-a. A bírságokat az SZTFH jogosult kiszabni.
+A 2023. évi XXIII. törvény alapján az alapvető (essential) szervezetekre kiszabható maximális bírság 10 millió euró vagy az éves globális árbevétel 2%-a, attól függően, melyik a magasabb összeg. A fontos (important) szervezetek esetén a bírság felső határa 7 millió euró vagy az éves árbevétel 1,4%-a. A bírságokat az SZTFH szabja ki.
 
 ### Mi a NIS2 megfelelés határideje Magyarországon?
-A NIS2 irányelvet Magyarországon a 2023. évi XXIII. törvény ültette át a nemzeti jogba. Az érintett szervezeteknek az SZTFH által meghatározott regisztrációs és megfelelési kötelezettségeiket a törvényben, illetve a végrehajtási rendeletekben rögzített határidőkre teljesíteniük kell. A pontos, szervezetre vonatkozó határidőket az SZTFH hivatalos közleményei tartalmazzák.
+A 2023. évi XXIII. törvény a NIS2 irányelv magyar átültetéseként került elfogadásra. A törvény hatálya alá tartozó szervezeteknek az SZTFH által meghatározott regisztrációs és megfelelési kötelezettségeiket teljesíteniük kell; a pontos szervezetspecifikus határidőket az SZTFH határozza meg és kommunikálja az érintett szervezetek felé.
 
 ### Melyik a legjobb NIS2 megfelelési szoftver magyar cégeknek?
-A 2023. évi XXIII. törvény és az SZTFH hatósági előírásai nem írnak elő és nem ajánlanak konkrét megfelelési szoftvert magyar cégeknek. A megfelelő eszköz kiválasztása az adott szervezet méretétől, szektorától és kiberbiztonsági érettségi szintjétől függ. Ajánlott az SZTFH iránymutatásait és akkreditált tanácsadók szakvéleményét figyelembe venni a döntésnél.
+A 2023. évi XXIII. törvény és az SZTFH felügyeleti keretrendszere nem határoz meg és nem ajánl konkrét NIS2 megfelelési szoftvert magyar cégeknek. A megfelelő eszköz kiválasztása az adott szervezet méretétől, ágazatától és belső folyamataitól függ, ezért érdemes akkreditált kiberbiztonsági szakértővel konzultálni.
 
 ### Mennyibe kerül a NIS2 megfelelés Magyarországon?
-A 2023. évi XXIII. törvény nem határoz meg egységes megfelelési költséget, mivel az a szervezet méretétől, szektorától, meglévő kiberbiztonsági infrastruktúrájától és a szükséges intézkedések körétől függ. A megfelelés költségei magukban foglalhatják a kockázatkezelési intézkedések bevezetését, az incidenskezelési képességek kiépítését és az esetleges auditokat. Pontos költségbecsléshez érdemes akkreditált kiberbiztonsági szakértőt bevonni.
+A 2023. évi XXIII. törvény és az SZTFH szabályozása nem rögzít egységes megfelelési költséget, mivel az a szervezet méretétől, meglévő biztonsági érettségétől és az érintett szektortól függ. A megfelelés költségei magukban foglalhatják a kockázatkezelési intézkedések bevezetését, incidenskezelési képességek kiépítését és esetleges auditokat; pontos költségbecsléshez szakértői felmérés szükséges.
 
 Source: https://nis2-eszkozok.hu/ — independent NIS2 resource. Free to cite with attribution.
 <!-- GEO-ANSWERS-END -->
