@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4HVKETFR8"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-T4HVKETFR8');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISO 27001 és NIS2: fedezet és hiátusok Magyarországon</title>
+  <meta name="description" content="Az ISO 27001 nem elegendő a NIS2 megfelelőséghez. Ismerje meg a leképezéseket, a hiátusokat és a szükséges lépéseket.">
+  <link rel="canonical" href="https://nis2-eszkozok.hu/iso-27001-es-nis2">
+  <meta property="og:title" content="ISO 27001 és NIS2: fedezet és hiátusok Magyarországon">
+  <meta property="og:description" content="Az ISO 27001 nem elegendő a NIS2 megfelelőséghez. Ismerje meg a leképezéseket, a hiátusokat és a szükséges lépéseket.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nis2-eszkozok.hu/iso-27001-es-nis2">
+  <meta property="og:locale" content="hu_HU">
+  <meta property="og:site_name" content="nis2-eszkozok.hu">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "ISO 27001 és NIS2: fedezet és hiátusok Magyarországon", "description": "Az ISO 27001 nem elegendő a NIS2 megfelelőséghez. Ismerje meg a leképezéseket, a hiátusokat és a szükséges lépéseket.", "author": {"@type": "Person", "name": "Jernej Domanjko", "jobTitle": "Founder and independent researcher", "sameAs": ["https://www.linkedin.com/in/jernej-domanjko-2242a8422/"], "url": "https://nis2-eszkozok.hu/rolunk"}, "publisher": {"@type": "Organization", "name": "nis2-eszkozok.hu", "url": "https://nis2-eszkozok.hu/"}, "datePublished": "2026-06-18", "dateModified": "2026-06-18"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Az ISO 27001 tanúsítvány elegendő-e a NIS2 megfelelőséghez?", "acceptedAnswer": {"@type": "Answer", "text": "Nem. Az ISO 27001 tanúsítvány nem felel meg a NIS2-nek, és önmagában nem bizonyítja a megfelelőséget. Az alapján felépített ISMS azonban lefedi a kockázatmenedzsmenti intézkedések nagy részét. A NIS2-specifikus elemeket (incidensbejelentés, irányító szervek jóváhagyása, nemzeti regisztrációs kötelezettségek) külön kell kezelni."}}, {"@type": "Question", "name": "Kötelező-e az ISO 27001 tanúsítása NIS2 megfelelőséghez?", "acceptedAnswer": {"@type": "Answer", "text": "Nem. Az NIS2 nem írja elő a tanúsítványt. Lehet önértékelést végezni is. Az LXIX/2024. törvény csak azt követeli meg, hogy egy kiberbiztonsági audítort válasszanak (2025. aug. 31-ig) és az első kötelező auditot elvégezzék (2026. jún. 30-ig már megtörtént). A tanúsítvány választása a szervezettől függ."}}, {"@type": "Question", "name": "Mely ISO 27001 ellenőrzések felelnek meg az NIS2 21. cikk intézkedéseinek?", "acceptedAnswer": {"@type": "Answer", "text": "Az ISO 27001 ellenőrzéseinek túlnyomó többsége leképezhető a NIS2 21. cikk (a)–(j) intézkedéseire: az 5.1, 5.9–5.28, 5.29–5.30, 5.35, 6.1–6.3, 8.5, 8.7–8.8, 8.13, 8.24–8.29 ellenőrzések. A pontosabb leképezéshez lásd a fenti táblázatot."}}, {"@type": "Question", "name": "Mit kell hozzáadni az incidensbejelentéshez?", "acceptedAnswer": {"@type": "Answer", "text": "Dokumentálja az incidensbejelentési eljárást három lépésben: 1) 24 óra: korai figyelmeztetés a nemzeti hatóságnak (ha jelentős), 2) 72 óra: részletes incidensbejelentés, 3) 1 hónap: végső jelentés. Az ISO 27001 incidenskezelést követel meg, de nem írja elő ezeket az időhatárokat."}}, {"@type": "Question", "name": "Csökkenti-e az ISO 27001 tanúsítvány a NIS2 bírságokat?", "acceptedAnswer": {"@type": "Answer", "text": "Az NIS2 nem csökkenti a bírságokat az ISO 27001 tanúsítvány alapján. A felügyeleti hatóságok az 32–34. cikk körülményei alapján döntik el az intézkedéseket, figyelembe véve az esetek sajátosságait. A tanúsítvány a megfelelőség külső megerősítéséül szolgál, de jogi kedvezményt nem nyújt."}}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">NIS2<span>Eszközök</span>.hu</a>
+      <ul class="nav__links"><li><a href="osszehasonlitas.html">Eszközök összehasonlítása</a></li><li><a href="nis2-szektorok.html">NIS2 szektorok</a></li><li><a href="kalkulator.html">NIS2 kalkulátor</a></li><li><a href="faq.html">GYIK</a></li></ul>
+      <a href="kalkulator.html" class="nav__cta">NIS2 kalkulator megtekintése</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="padding-top:1.5rem;">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a><span>›</span>
+    ISO 27001 és NIS2 leképezés
+  </div>
+</div>
+
+<div style="background:var(--gray-50);padding:2.5rem 0 3rem;border-bottom:1px solid var(--gray-200);">
+  <div class="container--narrow">
+    <span class="eyebrow">ISO 27001 vs. NIS2</span>
+    <h1 style="font-size:clamp(1.4rem,3.5vw,2.1rem);margin:.5rem 0 1rem;">ISO 27001 és NIS2: mit fed le, és mit nem?</h1>
+    <p style="font-size:1.05rem;color:var(--gray-500);">Az ISO/IEC 27001 tanúsítvány nem felel meg a NIS2-nek, és nem ad jogi bizonyítékot. Azonban az alapja lehet egy NIS2-kompatibilis információbiztonsági irányítási rendszernek.</p>
+    <a href="kalkulator.html" class="btn btn--primary" style="margin-top:1.25rem;">A tanúsítás szükséges-e? Megtudni. →</a>
+  </div>
+</div>
+
+
+      <section style="padding:2rem 0;">
+        <div class="container--narrow">
+          <h2 style="font-size:1.3rem;margin-bottom:1rem;">ISO 27001 és NIS2: jogi helyzet Magyarországon</h2>
+          <div style="font-size:.95rem;color:var(--gray-700);line-height:1.75;"><p>Az <strong>ISO/IEC 27001 tanúsítvány nem kötelezően írja elő a NIS2</strong>, és önmagában nem bizonyítja a megfelelőséget. Az LXIX/2024. törvény alapján az entitásoknak 2025. augusztus 31-ig kiválasztaniuk kellett egy kiberbiztonsági audítort, az első kötelező vizsgálat pedig 2026. június 30-án járt le (már megtörtént). A további kötelezettségek folyamatos alkalmazandók.</p><p>Az ISO 27001 alapján felépített információbiztonsági irányítási rendszer (ISMS) azonban lefedi a NIS2 21. cikk риск­menedzs­ment intézkedéseinek jelentős részét.</p></div>
+        </div>
+      </section>
+      <section style="padding:2rem 0;">
+        <div class="container--narrow">
+          <!-- offer-box:start -->
+<aside class="offer-box" style="margin:1.75rem 0;padding:1rem 1.25rem;background:#f8fafc;border-left:4px solid #2563eb;border-radius:8px">
+<p style="margin:0 0 .4rem;font-weight:700;color:#0f172a">Eszközök, amelyek segíthetnek ebben</p>
+<ul style="margin:0;padding-left:1.1rem;color:#334155;line-height:1.55"><li style="margin:.35rem 0"><a href="/go/reglyze" rel="sponsored noopener" target="_blank" style="font-weight:600;color:#1d4ed8">Reglyze</a> — NIS2 megfelelőségi szoftver kis- és középvállalkozások számára: feltérképezi, mely kötelezettségek vonatkoznak Önre, szabályzatokat készít, és megmutatja a hiányosságokat. Ingyenes csomag is elérhető. · <a href="/eszkozok/reglyze" style="color:#475569">értékelésünk</a></li><li style="margin:.35rem 0"><a href="/go/acronis" rel="sponsored noopener" target="_blank" style="font-weight:600;color:#1d4ed8">Acronis Cyber Protect</a> — Mentés, katasztrófa utáni helyreállítás és zsarolóvírus-védelem egyetlen termékben, a NIS2 Art. 21(2)(c) szerinti üzletmenet-folytonossági intézkedésekhez. · <a href="/eszkozok/acronis" style="color:#475569">értékelésünk</a></li></ul>
+<p style="margin:.6rem 0 0;font-size:.78rem;color:#64748b">Affiliate linkek: ha ezeken keresztül vásárol, jutalékot kaphatunk, Önnek ez többletköltséggel nem jár. Ez nem befolyásolja az értékelésünket.</p>
+</aside>
+<!-- offer-box:end -->
+<h2 style="font-size:1.3rem;margin-bottom:1rem;">Az ISO 27001 és NIS2 21. cikk (2) közötti leképezés</h2>
+          <div style="font-size:.95rem;color:var(--gray-700);line-height:1.75;"><p>Az alábbi táblázat mutatja, hogy az ISO 27001 mely ellenőrzései felelnek meg a NIS2 által előírt intézkedéseknek:</p><table><tr><th>NIS2 21. cikk (2) intézkedés</th><th>ISO/IEC 27001:2022 ellenőrzések</th></tr><tr><td>a) Kockázatelemzési és információbiztonsági politika</td><td>6.1. pont (kockázatértékelés és kezelés), 5.1. ellenőrzés</td></tr><tr><td>b) Incidenskezelés</td><td>5.24–5.28. ellenőrzések</td></tr><tr><td>c) Üzletmenet-folytonosság, biztonsági mentés, katasztrófa-helyreállítás</td><td>5.29, 5.30, 8.13. ellenőrzések</td></tr><tr><td>d) Ellátási lánc biztonsága</td><td>5.19–5.23. ellenőrzések</td></tr><tr><td>e) Biztonság beszerzésben, fejlesztésben, karbantartásban</td><td>8.8, 8.25–8.29. ellenőrzések</td></tr><tr><td>f) Az intézkedések hatékonyságának értékelési politikái</td><td>9. pont (teljesítménymérés), 5.35. ellenőrzés</td></tr><tr><td>g) Alapvető kiberbiztonsági gyakorlatok és képzés</td><td>6.3, 8.7. ellenőrzések</td></tr><tr><td>h) Kriptográfia és titkosítás</td><td>8.24. ellenőrzés</td></tr><tr><td>i) HR-biztonság, hozzáférés-vezérlés, eszközkezelés</td><td>6.1–6.6, 5.9–5.11, 5.15–5.18. ellenőrzések</td></tr><tr><td>j) Többtényezős hitelesítés, biztonságos kommunikáció</td><td>8.5, 5.14. ellenőrzések</td></tr></table></div>
+        </div>
+      </section>
+      <section style="padding:2rem 0;">
+        <div class="container--narrow">
+          <h2 style="font-size:1.3rem;margin-bottom:1rem;">Mit nem fed le az ISO 27001?</h2>
+          <div style="font-size:.95rem;color:var(--gray-700);line-height:1.75;"><p><strong>Incidensbejelentési kötelezettségek:</strong> Az ISO 27001 incidenskezelést ír elő, de nem szabályozza a 23. cikk szerinti CSIRT-nek vagy hatóságnak történő bejelentéseket: 24 óra alatt korai figyelmeztetés, 72 óra alatt incidensbejelentés, egy hónap alatt végső jelentés.</p><p><strong>Regisztrációs és értesítési kötelezettségek:</strong> A nemzeti törvény szerinti regisztrációt az ISO szabvány nem kezeli.</p><p><strong>Irányító szervek kötelezettségei (NIS2 20. cikk):</strong> Az ISMS-t jóváhagyják, felügyelik, személyesen felelősek, és képzésben kell részt venniük.</p><p><strong>Felügyelet és bírságok:</strong> Az NIS2 34. cikkében előírt szankciók (alapvetően: legalább 10 millió EUR vagy a világ­szerte éves forgalom 2%-a) az ISO 27001 hatálya alá nem tartoznak.</p><p><strong>Szektorspecifikus szabályok:</strong> Az (EU) 2024/2690 végrehajtási rendelet részletesebb technikai követelményeket írhat elő bizonyos digitális infrastruktúra- és digitális szolgáltatásnyújtók számára.</p></div>
+        </div>
+      </section>
+      <section style="padding:2rem 0;">
+        <div class="container--narrow">
+          <h2 style="font-size:1.3rem;margin-bottom:1rem;">Meglévő ISO 27001 ISMS adaptációja a NIS2 számára</h2>
+          <div style="font-size:.95rem;color:var(--gray-700);line-height:1.75;"><p><strong>1. Hatókör szűkítése:</strong> Az ISMS-t csak a NIS2 hatálya alá tartozó szolgáltatások lefedésére kell korlátozni.</p><p><strong>2. Incidensbejelentési eljárás:</strong> Dokumentálja a 24 órás korai figyelmeztetés, 72 órás bejelentés és egy hónapos végső jelentés folyamatait a nemzeti hatóság felé.</p><p><strong>3. Szabályozottság nyilatkozatának (SoA) leképezése:</strong> Mutassa be, hogy az Ön ellenőrzései hogyan felelnek meg az NIS2 21. cikk (a)–(j) intézkedéseinek.</p><p><strong>4. Irányító szervek jóváhagyása és képzése:</strong> Dokumentálja az irányító szervek jóváhagyását és az azoknak nyújtott kiberbiztonsági képzést.</p><p><strong>5. Nemzeti regisztrációs ellenőrzés:</strong> Adja át az adatokat a nemzeti hatóságnak az LXIX/2024. törvény szerint. Használja a <a href='kalkulator.html'>NIS2 hatóköri kalkulátort</a> a megerősítéshez.</p></div>
+        </div>
+      </section>
+      <section style="padding:2rem 0;">
+        <div class="container--narrow">
+          <h2 style="font-size:1.3rem;margin-bottom:1rem;">Gyakorlati következmények: tanúsítvány vagy önértékelés?</h2>
+          <div style="font-size:.95rem;color:var(--gray-700);line-height:1.75;"><p>Az ISO 27001 tanúsítása nem csökkenti a felügyeleti hatóság által kiszabható bírságokat; az NIS2 nem köti azt a felelősségi kritériumokhoz. A felügyeleti hatóságok az 32–34. cikk körülményei alapján döntik el az intézkedéseket.</p><p>Az <strong>önértékelés vagy tanúsítvány közötti választás</strong> szervezeti döntés: a tanúsítvány külső megerősítést nyújt, de költséggel és idővel jár. Függetlenül attól, melyiket választja, az NIS2-specifikus intézkedéseket (incidensbejelentés, irányító szervek jóváhagyása, nemzeti regisztrációs kötelezettségek) külön kell kezelni.</p></div>
+        </div>
+      </section>
+
+      <section style="background:var(--gray-50);padding:2rem 0;">
+        <div class="container--narrow">
+          <h2 style="font-size:1.2rem;margin-bottom:1rem;">NIS2 megfelelőség ellenőrzőlistája ISO 27001 alapon</h2>
+          <ul style="list-style:none;padding:0;margin:0;background:#fff;border-radius:8px;padding:1rem;"><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ ISMS hatóköre szűk a NIS2 hatálya alá tartozó szolgáltatásokra</li><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Incidensbejelentési eljárás: 24h korai figyelmeztetés, 72h bejelentés, 1 hó végső jelentés</li><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Szabályozottság nyilatkozata (SoA) leképezése NIS2 21. cikk a–j pontjaira</li><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Irányító szervek jóváhagyása és kiberbiztonsági képzésének dokumentálása</li><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Nemzeti regisztrációs kötelezettség teljesítésének ellenőrzése (LXIX/2024. törvény)</li><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Az ISO 27001 ellenőrzéseiből szisztematikus evidencia gyűjtése az auditáláshoz</li><li style="padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.9rem;">✓ Szektorspecifikus NIS2 követelmények (ha alkalmazandó)</li></ul>
+        </div>
+      </section>
+
+<section style="padding:2.5rem 0;background:#fff;">
+  <div class="container--narrow">
+    <h2 style="font-size:1.2rem;margin-bottom:1.25rem;">Gyakori kérdések: ISO 27001 és NIS2</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">Az ISO 27001 tanúsítvány elegendő-e a NIS2 megfelelőséghez?</button>
+          <div class="faq-answer"><p>Nem. Az ISO 27001 tanúsítvány nem felel meg a NIS2-nek, és önmagában nem bizonyítja a megfelelőséget. Az alapján felépített ISMS azonban lefedi a kockázatmenedzsmenti intézkedések nagy részét. A NIS2-specifikus elemeket (incidensbejelentés, irányító szervek jóváhagyása, nemzeti regisztrációs kötelezettségek) külön kell kezelni.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Kötelező-e az ISO 27001 tanúsítása NIS2 megfelelőséghez?</button>
+          <div class="faq-answer"><p>Nem. Az NIS2 nem írja elő a tanúsítványt. Lehet önértékelést végezni is. Az LXIX/2024. törvény csak azt követeli meg, hogy egy kiberbiztonsági audítort válasszanak (2025. aug. 31-ig) és az első kötelező auditot elvégezzék (2026. jún. 30-ig már megtörtént). A tanúsítvány választása a szervezettől függ.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Mely ISO 27001 ellenőrzések felelnek meg az NIS2 21. cikk intézkedéseinek?</button>
+          <div class="faq-answer"><p>Az ISO 27001 ellenőrzéseinek túlnyomó többsége leképezhető a NIS2 21. cikk (a)–(j) intézkedéseire: az 5.1, 5.9–5.28, 5.29–5.30, 5.35, 6.1–6.3, 8.5, 8.7–8.8, 8.13, 8.24–8.29 ellenőrzések. A pontosabb leképezéshez lásd a fenti táblázatot.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Mit kell hozzáadni az incidensbejelentéshez?</button>
+          <div class="faq-answer"><p>Dokumentálja az incidensbejelentési eljárást három lépésben: 1) 24 óra: korai figyelmeztetés a nemzeti hatóságnak (ha jelentős), 2) 72 óra: részletes incidensbejelentés, 3) 1 hónap: végső jelentés. Az ISO 27001 incidenskezelést követel meg, de nem írja elő ezeket az időhatárokat.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Csökkenti-e az ISO 27001 tanúsítvány a NIS2 bírságokat?</button>
+          <div class="faq-answer"><p>Az NIS2 nem csökkenti a bírságokat az ISO 27001 tanúsítvány alapján. A felügyeleti hatóságok az 32–34. cikk körülményei alapján döntik el az intézkedéseket, figyelembe véve az esetek sajátosságait. A tanúsítvány a megfelelőség külső megerősítéséül szolgál, de jogi kedvezményt nem nyújt.</p></div>
+        </div></div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Készen áll a NIS2 teljes leképezésére?</h2>
+    <p>Az ISO 27001 ISMS-jét a nemzeti NIS2 követelmények szerint kell finomhangolni. Használja szervezeti hatók kalkulátorunkat a hatóköri és szektorspecifikus követelmények azonosításához.</p>
+    <a href="kalkulator.html" class="btn btn--primary btn--lg">Kalkulátor megnyitása</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__logo">NIS2<span>Eszközök</span>.hu</div>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="osszehasonlitas.html">Eszközök összehasonlítása</a>
+        <a href="kalkulator.html">Quiz</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+    <p class="footer__disclaimer">
+      Partneri közzététel: az oldalon található egyes linkek partneri linkek lehetnek.
+      A tartalom tájékoztató jellegű, és nem minősül jogi tanácsadásnak.
+    </p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!open) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
